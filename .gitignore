@@ -1,0 +1,59 @@
+# ==============================================================================
+# KiCad .gitignore Template
+# ==============================================================================
+
+# Project local settings (window sizes, active layers, etc.)
+*.kicad_prl
+
+# Footprint library cache
+fp-info-cache
+
+# ------------------------------------------------------------------------------
+# Backups and Auto-saves
+# ------------------------------------------------------------------------------
+
+# KiCad 6+ backups
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_pro-bak
+
+# KiCad 5 and older backups
+*-bak
+*.sch-bak
+*.bck
+
+# Auto-saves
+*~
+_autosave-*
+
+# ------------------------------------------------------------------------------
+# Temporary and Generated Files
+# ------------------------------------------------------------------------------
+
+# Temporary files
+*.tmp
+
+# Netlist files (these can be regenerated from the schematic)
+*.net
+
+# Spice simulation output files
+*.sim
+*.sub
+
+# Autorouter (Freerouting) files
+*.dsn
+*.ses
+
+# ------------------------------------------------------------------------------
+# Fabrication Outputs (Optional)
+# ------------------------------------------------------------------------------
+# If you prefer not to version control generated manufacturing files,
+# uncomment the lines below and ensure your outputs are saved in these folders.
+
+# gerbers/
+# fabrication/
+# production/
+# *.gbr
+# *.drl
+# *.pdf
+# *.svg
