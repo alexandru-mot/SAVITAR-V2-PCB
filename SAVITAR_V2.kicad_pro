@@ -632,8 +632,12 @@
         "uuid": "f6d97783-3721-4b78-8f0f-ed81f34e7161"
       }
     ],
-    "used_designators": "",
-    "variants": []
+    "used_designators": "#FLG1-2,#PWR2-5,#PWR25,#PWR30,#PWR32-36,J1,R3-8,R17,IC3-4",
+    "variants": [
+      {
+        "name": "SENSOR_ARRAY"
+      }
+    ]
   },
   "sheets": [
     [
