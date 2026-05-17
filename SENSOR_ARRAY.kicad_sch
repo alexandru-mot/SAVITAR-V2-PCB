@@ -3382,6 +3382,145 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "power:VCC"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "VCC"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"VCC\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "VCC_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "VCC_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(text "SENSOR ARRAY"
 		(exclude_from_sim no)
@@ -3408,10 +3547,10 @@
 		(uuid "2b4ac4bb-64bd-46a1-a97f-a2cf2b2b16a8")
 	)
 	(junction
-		(at 162.56 36.83)
+		(at 219.71 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "338ceebf-c146-4e61-90b4-e30f44a9f1bb")
+		(uuid "2f3e0b99-7eba-4581-a6fe-6537e4985a22")
 	)
 	(junction
 		(at 111.76 119.38)
@@ -3432,10 +3571,10 @@
 		(uuid "5ea02779-399a-4d44-82c9-fa24ad97d1f6")
 	)
 	(junction
-		(at 162.56 39.37)
+		(at 170.18 39.37)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "783f07ba-4305-482e-8ce7-7e9d46e03820")
+		(uuid "79b983f0-f1b4-4c51-ab8d-0f272144520b")
 	)
 	(junction
 		(at 156.21 31.75)
@@ -3450,10 +3589,10 @@
 		(uuid "87208a1a-1a47-4970-9758-08616ed1c6ed")
 	)
 	(junction
-		(at 219.71 71.12)
+		(at 162.56 36.83)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b765d6ba-01cc-4c93-8daa-015b1edc5a03")
+		(uuid "937cc829-62ad-4048-a572-f49afc3f0466")
 	)
 	(junction
 		(at 167.64 118.11)
@@ -4195,7 +4334,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 36.83) (xy 170.18 36.83)
+			(xy 162.56 36.83) (xy 177.8 36.83)
 		)
 		(stroke
 			(width 0)
@@ -4265,7 +4404,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 39.37) (xy 162.56 45.72)
+			(xy 170.18 39.37) (xy 170.18 29.21)
 		)
 		(stroke
 			(width 0)
@@ -4415,7 +4554,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 39.37) (xy 162.56 39.37)
+			(xy 139.7 39.37) (xy 170.18 39.37)
 		)
 		(stroke
 			(width 0)
@@ -4452,16 +4591,6 @@
 			(type default)
 		)
 		(uuid "b48ac1e4-1e5a-4ff6-b193-219b853e9ab8")
-	)
-	(wire
-		(pts
-			(xy 162.56 39.37) (xy 170.18 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b5291238-5f84-4bd1-94dc-36bd9d8e718f")
 	)
 	(wire
 		(pts
@@ -4542,6 +4671,16 @@
 			(type default)
 		)
 		(uuid "c4da7bc9-0e17-4550-8bc4-25ced8656629")
+	)
+	(wire
+		(pts
+			(xy 170.18 39.37) (xy 177.8 39.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c86a35d9-61eb-4dba-beb2-af5085edc054")
 	)
 	(wire
 		(pts
@@ -5217,7 +5356,7 @@
 		(uuid "70685c82-d961-4d1f-baac-549ce4c8cf66")
 	)
 	(label "COUT2"
-		(at 170.18 36.83 180)
+		(at 177.8 36.83 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5690,7 +5829,7 @@
 		(uuid "f784be67-989d-42da-907d-a9935bd7bcda")
 	)
 	(label "COUT1"
-		(at 170.18 39.37 180)
+		(at 177.8 39.37 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8092,162 +8231,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 228.6 29.21 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3a55d62e-cba1-45f4-babe-fbc00fef6623")
-		(property "Reference" "#PWR034"
-			(at 228.6 33.02 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 228.6 24.13 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 228.6 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 228.6 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 228.6 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "324f815d-fd5c-4b4c-b166-feaf81a12abe")
-		)
-		(instances
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR034")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 198.12 67.31 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3aa5fa7c-70cd-4e1d-abca-7ae23e9a82da")
-		(property "Reference" "#PWR048"
-			(at 198.12 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 198.12 62.23 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 198.12 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 198.12 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 198.12 67.31 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9e25f738-e44f-4216-9e3e-340e546329ce")
-		)
-		(instances
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR048")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 87.63 88.9 0)
 		(unit 1)
@@ -8944,165 +8927,6 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "#PWR052")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 170.18 45.72 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "65c46443-a39c-4843-85ae-1b1761a2a459")
-		(property "Reference" "#PWR015"
-			(at 166.37 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 173.99 45.7199 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 170.18 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 170.18 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 170.18 45.72 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "579f4d5e-bdce-427c-a2a3-a6480cfa6d8c")
-		)
-		(instances
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR015")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 170.18 29.21 270)
-		(mirror x)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "68f7b80e-1c01-4de8-a5e2-ce22bc03a134")
-		(property "Reference" "#PWR016"
-			(at 166.37 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 173.99 29.2101 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 170.18 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 170.18 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 170.18 29.21 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "d4376f22-2283-4ff0-bc5e-dea5f1a9bea3")
-		)
-		(instances
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -10249,84 +10073,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 219.71 71.12 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "9fe2e9b3-6056-4247-85c2-53a9d506b847")
-		(property "Reference" "#PWR023"
-			(at 219.71 74.93 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 219.71 66.04 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 219.71 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 219.71 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 219.71 71.12 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "6e5bb017-2d6e-4c3f-90c7-e14721b03588")
-		)
-		(instances
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR023")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Sensor_Proximity:QRE1113GR")
 		(at 80.01 54.61 0)
 		(unit 1)
@@ -10407,6 +10153,162 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "U10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 170.18 21.59 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a1af54c9-1482-4321-a733-3ad036c4cc26")
+		(property "Reference" "#PWR016"
+			(at 170.18 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 170.18 16.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 170.18 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 170.18 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "0831d904-4efa-405a-8b47-4664bb2b660c")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 226.06 134.62 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a3f1de9c-5307-4b53-a18b-5d329a1e8c34")
+		(property "Reference" "#PWR030"
+			(at 226.06 138.43 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 226.06 129.54 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 226.06 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 226.06 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 226.06 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "04ce6c6a-503c-420f-87cc-1538e758dcce")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -10813,8 +10715,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 226.06 134.62 0)
+		(lib_id "power:VCC")
+		(at 226.06 100.33 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10823,9 +10725,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "acc3edbf-0781-4ef0-87ab-241b053303b2")
-		(property "Reference" "#PWR031"
-			(at 226.06 138.43 0)
+		(uuid "ad22edd3-66a9-479e-8770-28c9decac5d0")
+		(property "Reference" "#PWR029"
+			(at 226.06 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10835,8 +10737,8 @@
 				)
 			)
 		)
-		(property "Value" "+3.3V"
-			(at 226.06 129.54 0)
+		(property "Value" "VCC"
+			(at 226.06 95.25 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10846,7 +10748,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 226.06 134.62 0)
+			(at 226.06 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10857,7 +10759,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 226.06 134.62 0)
+			(at 226.06 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10867,8 +10769,8 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 226.06 134.62 0)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 226.06 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10879,19 +10781,19 @@
 			)
 		)
 		(pin "1"
-			(uuid "237349c3-5035-43d7-a3ee-a25c9b9419a3")
+			(uuid "f0e22d91-b352-48ca-9c72-5573daeb37c9")
 		)
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR031")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
+		(lib_id "power:VCC")
 		(at 152.4 29.21 0)
 		(unit 1)
 		(body_style 1)
@@ -10901,8 +10803,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "bc1c0469-0882-4ffd-a508-c078a4d03895")
-		(property "Reference" "#PWR030"
+		(uuid "ae0aa0cb-a8ec-4a2b-b4bc-7c90976131e0")
+		(property "Reference" "#PWR014"
 			(at 152.4 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -10913,7 +10815,7 @@
 				)
 			)
 		)
-		(property "Value" "+3.3V"
+		(property "Value" "VCC"
 			(at 152.4 24.13 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10945,7 +10847,7 @@
 				)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
 			(at 152.4 29.21 0)
 			(hide yes)
 			(show_name no)
@@ -10957,12 +10859,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "073bd7e5-5216-4de6-a2c3-27433891ccfb")
+			(uuid "f4bd2b0a-dcde-4db0-8148-ca969702a533")
 		)
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR030")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -10970,7 +10872,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 166.37 45.72 90)
+		(at 170.18 25.4 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -10980,7 +10882,7 @@
 		(dnp no)
 		(uuid "c33e539a-55e9-4bb8-a059-a7aa39c85db7")
 		(property "Reference" "RC1"
-			(at 166.37 42.926 90)
+			(at 173.736 24.13 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10990,7 +10892,7 @@
 			)
 		)
 		(property "Value" "47kΩ"
-			(at 166.37 48.514 90)
+			(at 174.244 26.416 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -11000,7 +10902,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 166.624 44.704 90)
+			(at 169.164 25.146 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11011,7 +10913,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 166.37 45.72 0)
+			(at 170.18 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11022,7 +10924,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 166.37 45.72 0)
+			(at 170.18 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11298,6 +11200,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VCC")
+		(at 198.12 67.31 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d6f1088a-38ef-43e7-a071-cf293376920c")
+		(property "Reference" "#PWR019"
+			(at 198.12 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 198.12 62.23 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 198.12 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 198.12 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 198.12 67.31 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "bf0d9016-0cae-44ab-a5bc-0e1647297f9f")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "#PWR019")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_US")
 		(at 68.58 104.14 90)
 		(unit 1)
@@ -11532,6 +11512,84 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 228.6 29.21 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d9220e90-2da5-40ef-a165-0d1ca7385e71")
+		(property "Reference" "#PWR023"
+			(at 228.6 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 228.6 24.13 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 228.6 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 228.6 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 228.6 29.21 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d53a9273-e7a0-4fed-8a43-64e13dcddb05")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -11782,84 +11840,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 226.06 100.33 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "df3805fc-4420-429f-a4c6-3730ca6b2be4")
-		(property "Reference" "#PWR029"
-			(at 226.06 104.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 226.06 95.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 226.06 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 226.06 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 226.06 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "87098e1b-7192-443c-88f3-a3727ea1bde1")
-		)
-		(instances
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR029")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 52.07 104.14 0)
 		(unit 1)
@@ -11933,6 +11913,84 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "#PWR043")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 162.56 21.59 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e6eae0d0-7737-4086-9ee1-35c366361945")
+		(property "Reference" "#PWR015"
+			(at 162.56 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 162.56 16.51 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 162.56 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 162.56 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "4a64b5cf-bcfb-4c2d-b66f-4182a5e2a41a")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -12248,6 +12306,84 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "#FLG02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 219.71 71.12 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "edda7855-24ca-43e0-9a54-32946cab5599")
+		(property "Reference" "#PWR020"
+			(at 219.71 74.93 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 219.71 66.04 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 219.71 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 219.71 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 219.71 71.12 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "125c78db-d04e-4698-b2cd-f9bca27ba10a")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -12808,7 +12944,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 166.37 29.21 90)
+		(at 162.56 25.4 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12818,7 +12954,7 @@
 		(dnp no)
 		(uuid "f9bcad1b-0bfd-4d05-8d78-4d830dfb1e60")
 		(property "Reference" "RC2"
-			(at 166.37 26.416 90)
+			(at 159.512 24.384 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12828,7 +12964,7 @@
 			)
 		)
 		(property "Value" "47kΩ"
-			(at 166.37 32.004 90)
+			(at 158.75 26.416 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12838,7 +12974,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder"
-			(at 166.624 28.194 90)
+			(at 161.544 25.146 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12849,7 +12985,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 166.37 29.21 0)
+			(at 162.56 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12860,7 +12996,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 166.37 29.21 0)
+			(at 162.56 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

@@ -68,7 +68,7 @@
 		(uuid "fef2f079-882c-468e-bdae-7c93ed1584c6")
 	)
 	(sheet
-		(at 88.9 36.83)
+		(at 19.05 35.56)
 		(size 25.654 22.098)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -84,7 +84,7 @@
 		)
 		(uuid "c16c02dc-523d-461d-bb67-ac432d665908")
 		(property "Sheetname" "MCU"
-			(at 88.9 36.1184 0)
+			(at 19.05 34.8484 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -95,7 +95,7 @@
 			)
 		)
 		(property "Sheetfile" "MCU.kicad_sch"
-			(at 88.9 59.5126 0)
+			(at 19.05 58.2426 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -114,7 +114,7 @@
 		)
 	)
 	(sheet
-		(at 19.304 36.576)
+		(at 87.884 36.576)
 		(size 23.114 20.828)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -130,7 +130,7 @@
 		)
 		(uuid "e84093f3-7daf-47f9-beee-2a07e86aef91")
 		(property "Sheetname" "Sensor Array"
-			(at 19.304 35.8644 0)
+			(at 87.884 35.8644 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -141,7 +141,7 @@
 			)
 		)
 		(property "Sheetfile" "SENSOR_ARRAY.kicad_sch"
-			(at 19.304 57.9886 0)
+			(at 87.884 57.9886 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
