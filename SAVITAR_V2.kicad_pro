@@ -502,7 +502,7 @@
         "name": "Motor",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 0,
-        "schematic_color": "rgb(0, 0, 194)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
         "tuning_profile": "",
         "wire_width": 31
       }
@@ -534,6 +534,12 @@
         "Motor"
       ],
       "/TEENSY4 ESP32/MOT_B2": [
+        "Motor"
+      ],
+      "/TEENSY4 ESP32/SENSE_IN_A1": [
+        "Motor"
+      ],
+      "/TEENSY4 ESP32/SENSE_IN_B1": [
         "Motor"
       ]
     },
@@ -667,7 +673,7 @@
         "uuid": "f6d97783-3721-4b78-8f0f-ed81f34e7161"
       }
     ],
-    "used_designators": "TPB1-2,TPA1-2,SHUNT1-2,SWEN1,Q1,NMOS1,MUX1-2,L1-2,INAB1,DEMUX1,#PWR1-100,D1-2,U1-19,C1-32,INAA1,#FLG1-6,RVD1-4,IC1-2,J1-2,DRV1-2,SWB1,R1-29",
+    "used_designators": "TPB1-2,TPA1-2,SHUNT1-2,SWEN1,Q1,NMOS1,MUX1-3,L1,DEMUX1,INAB1,INAA1,#FLG1-3,IC1,RVD3-4,D1-4,#PWR1-110,U1-20,C1-40,J1-2,DRV1-2,SWB1,R1-36",
     "variants": [
       {
         "name": "SENSOR_ARRAY"
