@@ -7,7 +7,7 @@
 	(lib_symbols)
 	(text "FFC/FPC Cable "
 		(exclude_from_sim no)
-		(at 68.326 25.146 0)
+		(at 67.31 48.26 0)
 		(effects
 			(font
 				(size 1.778 1.778)
@@ -17,19 +17,9 @@
 		)
 		(uuid "a3db9934-d3b1-4963-9ec5-2cbc8cb70be6")
 	)
-	(wire
-		(pts
-			(xy 52.07 52.705) (xy 81.28 52.705)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "05adc0aa-393b-404f-8b2e-c4ee70a018c0")
-	)
 	(polyline
 		(pts
-			(xy 50.8 30.48) (xy 47.498 26.924)
+			(xy 49.784 53.594) (xy 46.482 50.038)
 		)
 		(stroke
 			(width 0)
@@ -37,29 +27,9 @@
 		)
 		(uuid "0f075318-4c5a-4c1f-b273-b3279a60013d")
 	)
-	(wire
-		(pts
-			(xy 52.07 42.545) (xy 81.28 42.545)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3303f488-862f-44d3-84d0-caf1db2000c6")
-	)
-	(wire
-		(pts
-			(xy 52.07 45.085) (xy 81.28 45.085)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "75217483-5037-4940-ab79-e0c113f49744")
-	)
 	(polyline
 		(pts
-			(xy 50.8 23.622) (xy 47.498 26.924)
+			(xy 49.784 46.736) (xy 46.482 50.038)
 		)
 		(stroke
 			(width 0)
@@ -67,19 +37,9 @@
 		)
 		(uuid "8974f259-9b00-42a6-a715-3355583a1fda")
 	)
-	(wire
-		(pts
-			(xy 52.07 55.245) (xy 81.28 55.245)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8eb54b4f-ec0d-4768-981a-0e3ff8406fdb")
-	)
 	(polyline
 		(pts
-			(xy 82.55 23.368) (xy 85.852 26.924)
+			(xy 81.534 46.482) (xy 84.836 50.038)
 		)
 		(stroke
 			(width 0)
@@ -87,39 +47,9 @@
 		)
 		(uuid "992c94a8-3524-4954-8cbc-0a749bef5b72")
 	)
-	(wire
-		(pts
-			(xy 52.07 40.005) (xy 81.28 40.005)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a41cc411-c5d7-4d80-b50c-c26253f559b5")
-	)
-	(wire
-		(pts
-			(xy 52.07 47.625) (xy 81.28 47.625)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b7b0361e-9b38-42a3-945f-47ac7a4ddbee")
-	)
-	(wire
-		(pts
-			(xy 52.07 57.785) (xy 81.28 57.785)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d8daaff4-8eac-463a-a131-7624bd42641a")
-	)
 	(polyline
 		(pts
-			(xy 82.55 30.226) (xy 85.852 26.924)
+			(xy 81.534 53.34) (xy 84.836 50.038)
 		)
 		(stroke
 			(width 0)
@@ -127,19 +57,9 @@
 		)
 		(uuid "f6a2c40f-31f1-41dc-bd6a-d6d1c8bfef40")
 	)
-	(wire
-		(pts
-			(xy 52.07 50.165) (xy 81.28 50.165)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fe7d5ef7-3c84-4598-a706-03485017e307")
-	)
 	(polyline
 		(pts
-			(xy 47.498 26.924) (xy 85.852 26.924)
+			(xy 46.482 50.038) (xy 84.836 50.038)
 		)
 		(stroke
 			(width 0)
@@ -148,8 +68,8 @@
 		(uuid "fef2f079-882c-468e-bdae-7c93ed1584c6")
 	)
 	(sheet
-		(at 26.67 38.1)
-		(size 25.4 21.59)
+		(at 25.4 39.37)
+		(size 19.05 20.32)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -164,7 +84,7 @@
 		)
 		(uuid "c16c02dc-523d-461d-bb67-ac432d665908")
 		(property "Sheetname" "TEENSY4 ESP32"
-			(at 26.67 37.3884 0)
+			(at 25.4 38.6584 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -175,7 +95,7 @@
 			)
 		)
 		(property "Sheetfile" "MCU.kicad_sch"
-			(at 26.67 60.2746 0)
+			(at 25.4 60.2746 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -183,86 +103,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
-			)
-		)
-		(pin "A0" output
-			(at 52.07 57.785 0)
-			(uuid "605fad59-8cfb-445a-b269-931ebf87b4aa")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "A1" output
-			(at 52.07 55.245 0)
-			(uuid "e6d962fd-fa3a-4bdc-8edc-7069535a639e")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "A2" output
-			(at 52.07 52.705 0)
-			(uuid "c31beae7-c432-4ff7-9fc3-eaa11d30d8da")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "EN" output
-			(at 52.07 45.085 0)
-			(uuid "ecd94782-5511-4771-91ce-052eccbef667")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "MUX1" input
-			(at 52.07 50.165 0)
-			(uuid "09ea4df1-b068-4935-bacc-73478cd7c24c")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "MUX2" input
-			(at 52.07 47.625 0)
-			(uuid "d90645cc-f824-4a50-a5a0-80e58cf66373")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "GND" input
-			(at 52.07 42.545 0)
-			(uuid "d1958699-7afb-4f53-83f3-5340255865a5")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "VCC" input
-			(at 52.07 40.005 0)
-			(uuid "83025039-7024-428c-8507-d7ae751a076a")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 			)
 		)
 		(instances
@@ -274,8 +114,8 @@
 		)
 	)
 	(sheet
-		(at 81.28 38.1)
-		(size 22.86 21.59)
+		(at 86.36 39.37)
+		(size 17.78 20.32)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -290,7 +130,7 @@
 		)
 		(uuid "e84093f3-7daf-47f9-beee-2a07e86aef91")
 		(property "Sheetname" "SENSOR ARRAY"
-			(at 81.28 37.3884 0)
+			(at 86.36 38.6584 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -301,7 +141,7 @@
 			)
 		)
 		(property "Sheetfile" "SENSOR_ARRAY.kicad_sch"
-			(at 81.28 60.2746 0)
+			(at 86.36 60.2746 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -309,86 +149,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
-			)
-		)
-		(pin "A0" input
-			(at 81.28 57.785 180)
-			(uuid "68202cd6-32da-48ea-8fe6-e8b7d6d24f71")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "A1" input
-			(at 81.28 55.245 180)
-			(uuid "746fbb99-1b88-43d9-8779-8e12d00f9324")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "A2" input
-			(at 81.28 52.705 180)
-			(uuid "7f68044d-75dc-4e40-9d51-7f832f5e2cc2")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "COUT1" output
-			(at 81.28 50.165 180)
-			(uuid "8c2aa47b-9b47-4ef7-a118-085c6fe084d6")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "COUT2" output
-			(at 81.28 47.625 180)
-			(uuid "5c2242c8-ec60-4c34-b630-7a946ef37f52")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "EN" input
-			(at 81.28 45.085 180)
-			(uuid "afd734e1-84fb-4b82-8c5a-fe0a6cf1669d")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "GND" input
-			(at 81.28 42.545 180)
-			(uuid "bb101005-5d2c-4735-b7ff-1fbca16abd7c")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(pin "VCC" input
-			(at 81.28 40.005 180)
-			(uuid "2ad59143-4134-4af4-a255-c16639b5ed54")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 		(instances
