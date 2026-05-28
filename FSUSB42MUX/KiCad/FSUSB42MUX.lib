@@ -1,0 +1,33 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model FSUSB42MUX
+#/968674/1362498/2.50/10/2/Undefined or Miscellaneous
+DEF FSUSB42MUX U 0 30 Y Y 1 F N
+F0 "U" 950 300 50 H V L CNN
+F1 "FSUSB42MUX" 950 200 50 H V L CNN
+F2 "SOP50P490X110-10N" 950 100 50 H I L CNN
+F3 "https://www.onsemi.com/pub/Collateral/FSUSB42-D.PDF" 950 0 50 H I L CNN
+F4 "15A Maximum ICCT over and Expanded Control Voltage Range (VIN= 1.8V, VCC= 4.3V) ; Packaged in: ; Low On Resistance: 3.9 Typical ; 8kV ESD Rating, >16kV Power/GND ESD Rating ; 10-Lead MSOP ; Low Power Consumption: 1A Maximum ; Wide -3dB Bandwitch: > 720MHz ; Low On Capacitance: 3.7pF Typical ; Over-Voltage Tolerance (OVT) on all USB Ports Up to 5.25V without External Components; 10-Lead UMLP (1.4 x 1.8mm)" 950 -100 50 H I L CNN "Description"
+F5 "1.1" 950 -200 50 H I L CNN "Height"
+F6 "onsemi" 950 -300 50 H I L CNN "Manufacturer_Name"
+F7 "FSUSB42MUX" 950 -400 50 H I L CNN "Manufacturer_Part_Number"
+F8 "512-FSUSB42MUX" 950 -500 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.co.uk/ProductDetail/onsemi-Fairchild/FSUSB42MUX?qs=yA6kp8fx8Y59RAD4iJDRWg%3D%3D" 950 -600 50 H I L CNN "Mouser Price/Stock"
+F10 "FSUSB42MUX" 950 -700 50 H I L CNN "Arrow Part Number"
+F11 "https://www.arrow.com/en/products/fsusb42mux/on-semiconductor?utm_currency=USD&region=nac" 950 -800 50 H I L CNN "Arrow Price/Stock"
+DRAW
+X VCC 1 0 0 200 R 50 50 0 0 P
+X SEL 2 0 -100 200 R 50 50 0 0 P
+X D+ 3 0 -200 200 R 50 50 0 0 P
+X D- 4 0 -300 200 R 50 50 0 0 P
+X GND 5 0 -400 200 R 50 50 0 0 P
+X /OE 10 1100 0 200 L 50 50 0 0 P
+X HSD2+ 9 1100 -100 200 L 50 50 0 0 P
+X HSD2- 8 1100 -200 200 L 50 50 0 0 P
+X HSD1+ 7 1100 -300 200 L 50 50 0 0 W
+X HSD1- 6 1100 -400 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 900 100 900 -500 200 -500 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library

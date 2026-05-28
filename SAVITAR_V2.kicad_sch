@@ -83,7 +83,7 @@
 			(color 0 0 0 0)
 		)
 		(uuid "c16c02dc-523d-461d-bb67-ac432d665908")
-		(property "Sheetname" "TEENSY4 ESP32"
+		(property "Sheetname" "SAMD51 ESP32"
 			(at 25.4 38.6584 0)
 			(show_name no)
 			(do_not_autoplace no)

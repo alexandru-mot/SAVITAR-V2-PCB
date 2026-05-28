@@ -512,6 +512,24 @@
     },
     "net_colors": null,
     "netclass_assignments": {
+      "/SAMD51 ESP32/MOT_A1": [
+        "Motor"
+      ],
+      "/SAMD51 ESP32/MOT_A2": [
+        "Motor"
+      ],
+      "/SAMD51 ESP32/MOT_B1": [
+        "Motor"
+      ],
+      "/SAMD51 ESP32/MOT_B2": [
+        "Motor"
+      ],
+      "/SAMD51 ESP32/SENSE_IN_A1": [
+        "Motor"
+      ],
+      "/SAMD51 ESP32/SENSE_IN_B1": [
+        "Motor"
+      ],
       "/TEENSY4 ESP32/AOUT1": [
         "Motor"
       ],
@@ -673,7 +691,7 @@
         "uuid": "f6d97783-3721-4b78-8f0f-ed81f34e7161"
       }
     ],
-    "used_designators": "U21,P1,FB1,#PWR45,#PWR91,#PWR109,#PWR115-124,C41-50,R37-40,J3-5",
+    "used_designators": "",
     "variants": [
       {
         "name": "SENSOR_ARRAY"
@@ -687,7 +705,7 @@
     ],
     [
       "c16c02dc-523d-461d-bb67-ac432d665908",
-      "TEENSY4 ESP32"
+      "SAMD51 ESP32"
     ],
     [
       "e84093f3-7daf-47f9-beee-2a07e86aef91",

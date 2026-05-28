@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP FSUSB42MUX
+D 15A Maximum ICCT over and Expanded Control Voltage Range (VIN= 1.8V, VCC= 4.3V) ; Packaged in: ; Low On Resistance: 3.9 Typical ; 8kV ESD Rating, >16kV Power/GND ESD Rating ; 10-Lead MSOP ; Low Power Consumption: 1A Maximum ; Wide -3dB Bandwitch: > 720MHz ; Low On Capacitance: 3.7pF Typical ; Over-Voltage Tolerance (OVT) on all USB Ports Up to 5.25V without External Components; 10-Lead UMLP (1.4 x 1.8mm)
+K
+F https://www.onsemi.com/pub/Collateral/FSUSB42-D.PDF
+$ENDCMP
+#
+#End Doc Library
