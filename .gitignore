@@ -57,3 +57,16 @@ _autosave-*
 # *.drl
 # *.pdf
 # *.svg
+
+# ------------------------------------------------------------------------------
+# Local project extras (not versioned)
+# ------------------------------------------------------------------------------
+
+# Timestamped project backups (kept on disk, not versioned — git already provides history)
+SAVITAR_V2-backups/
+
+# OS metadata
+.DS_Store
+
+# VS Code Local History extension data (separate embedded git repo)
+.history/
