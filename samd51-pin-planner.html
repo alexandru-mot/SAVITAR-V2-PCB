@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAMD51J19A Pin Planner — Savitar v2</title>
+<style>
+:root{
+  --bg:#14181d; --panel:#1b2026; --panel-2:#21272f; --inset:#10141a;
+  --line:#2c343e; --line-soft:#242b34;
+  --ink:#e7edf3; --muted:#8d99a6; --faint:#5d6873;
+  --copper:#d9a05b; --copper-dim:#8a6437;
+  --sercom:#5aa7ff; --adc:#46c489; --tcc:#e8a33d; --tc:#b48cfa;
+  --dac:#56cfc4; --other:#9aa4af;
+  --conflict:#ff5e5e; --warn:#ffc857; --ok:#46c489;
+  --power:#3b434d; --power-ink:#7d8894;
+  --chip-body:#262d36; --chip-edge:#39424e;
+  --mono:ui-monospace,"Cascadia Mono","JetBrains Mono",Consolas,"Liberation Mono",monospace;
+  --sans:"Segoe UI",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background:var(--bg); color:var(--ink); font-family:var(--sans);
+  font-size:13.5px; line-height:1.45;
+}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+select,input[type=text]{
+  font-family:var(--mono); font-size:12px; color:var(--ink);
+  background:var(--inset); border:1px solid var(--line); border-radius:4px;
+  padding:4px 6px; max-width:100%;
+}
+select:focus,input:focus,button:focus-visible{outline:2px solid var(--copper);outline-offset:1px}
+select:disabled{opacity:.45;cursor:not-allowed}
+
+/* ---------- app frame ---------- */
+header.app{
+  display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;
+  padding:12px 18px 10px;border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#1a2026,#161b21);
+}
+header.app h1{
+  font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.04em;
+}
+header.app h1 .ref{color:var(--copper)}
+header.app .sub{font-size:11.5px;color:var(--muted);font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase}
+header.app .spacer{flex:1}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap}
+.btn{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;
+  border:1px solid var(--line);border-radius:4px;background:var(--panel-2);
+  padding:5px 10px;color:var(--ink);
+}
+.btn:hover{border-color:var(--copper-dim);background:#262d37}
+.btn.primary{border-color:var(--copper-dim);color:var(--copper)}
+.btn.danger:hover{border-color:var(--conflict);color:var(--conflict)}
+
+main{
+  display:grid;grid-template-columns:330px minmax(0,1fr) 360px;
+  gap:0;align-items:stretch;height:calc(100vh - 53px);
+}
+@media (max-width:1180px){
+  main{grid-template-columns:1fr;height:auto}
+  #viewport{min-height:560px}
+}
+.pane{overflow-y:auto;border-right:1px solid var(--line);padding:14px;min-width:0}
+.pane:last-child{border-right:none}
+.eyebrow{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--faint);margin:4px 0 8px;
+}
+.eyebrow b{color:var(--muted);font-weight:600}
+
+/* ---------- left: peripherals ---------- */
+.periph{
+  border:1px solid var(--line-soft);border-radius:6px;background:var(--panel);
+  margin-bottom:10px;overflow:hidden;
+}
+.periph>header{
+  display:flex;align-items:center;gap:8px;padding:8px 10px;cursor:pointer;user-select:none;
+  background:var(--panel-2);
+}
+.periph>header:hover{background:#272e38}
+.dot{width:9px;height:9px;border-radius:2px;flex:none}
+.periph .pname{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:.02em}
+.periph .pmeta{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--faint)}
+.periph .chev{color:var(--faint);font-size:10px;transition:transform .15s}
+.periph.open .chev{transform:rotate(90deg)}
+.periph .body{display:none;padding:8px 10px 10px;border-top:1px solid var(--line-soft)}
+.periph.open .body{display:block}
+.periph .note{font-size:11.5px;color:var(--muted);padding:2px 0 6px}
+.modebar{display:flex;gap:6px;align-items:center;margin-bottom:8px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.sigrow{
+  display:grid;grid-template-columns:86px minmax(0,1fr);gap:6px;align-items:center;
+  padding:4px 0;border-bottom:1px dashed var(--line-soft);
+}
+.sigrow:last-child{border-bottom:none}
+.sigrow .sname{font-family:var(--mono);font-size:11.5px}
+.sigrow .role{display:block;font-size:10px;color:var(--copper);letter-spacing:.04em}
+.sigrow .role.unused{color:var(--faint)}
+.sigrow select{width:100%}
+.sigrow.assigned .sname{color:var(--ink)}
+.sigrow.unused-row{opacity:.5}
+.badge{
+  display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;
+  border:1px solid var(--line);border-radius:3px;padding:0 4px;color:var(--muted);margin-left:5px;vertical-align:1px;
+}
+.badge.warn{border-color:var(--warn);color:var(--warn)}
+.badge.err{border-color:var(--conflict);color:var(--conflict)}
+.badge.ok{border-color:var(--ok);color:var(--ok)}
+
+/* ---------- center: viewport ---------- */
+#viewport{
+  position:relative;display:flex;flex-direction:column;background:
+    radial-gradient(1200px 700px at 60% 20%, #181e25 0%, var(--bg) 70%);
+}
+#viewport .vp-toolbar{
+  display:flex;align-items:center;gap:10px;padding:10px 14px;
+  border-bottom:1px solid var(--line-soft);flex-wrap:wrap;
+}
+#svgwrap{flex:1;display:flex;align-items:center;justify-content:center;overflow:auto;padding:6px}
+#chipsvg{max-width:100%;max-height:100%;height:auto}
+.statusbar{
+  display:flex;gap:18px;padding:7px 14px;border-top:1px solid var(--line-soft);
+  font-family:var(--mono);font-size:10.5px;color:var(--faint);flex-wrap:wrap;
+}
+.statusbar .lit{color:var(--muted)}
+.legend{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+
+/* SVG element classes */
+.pin-lead{fill:#aeb6bf}
+.pin-hit{fill:transparent;cursor:pointer}
+.pin-label{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.pin-label.io:hover{fill:var(--ink)}
+.pin-num{font-family:var(--mono);font-size:8.5px;fill:var(--faint);pointer-events:none}
+.pin-tag{font-family:var(--mono);font-size:10px;font-weight:600}
+g.pin.power .pin-label{fill:var(--power-ink)}
+g.pin.power .pin-lead{fill:#5a636e}
+g.pin.assigned .pin-label{fill:var(--ink)}
+g.pin.conflict .pin-label{fill:var(--conflict)}
+g.pin.hl .pin-lead{fill:var(--copper)}
+g.pin .selring{fill:none;stroke:none}
+g.pin.hl .selring{stroke:var(--copper);stroke-dasharray:3 2}
+.silk{font-family:var(--mono);fill:#aab4bf;letter-spacing:.1em}
+
+/* ---------- pin popover ---------- */
+#pop{
+  position:fixed;z-index:40;min-width:230px;max-width:300px;display:none;
+  background:var(--panel-2);border:1px solid var(--line);border-radius:6px;
+  box-shadow:0 10px 30px rgba(0,0,0,.55);font-size:12px;
+}
+#pop header{
+  display:flex;align-items:baseline;gap:8px;padding:8px 10px;border-bottom:1px solid var(--line);
+  font-family:var(--mono);
+}
+#pop header .pn{font-weight:700}
+#pop header .pk{color:var(--faint);font-size:10.5px}
+#pop .fnlist{max-height:280px;overflow-y:auto;padding:4px}
+#pop .fn{
+  display:flex;align-items:center;gap:7px;width:100%;text-align:left;
+  padding:5px 7px;border-radius:4px;font-family:var(--mono);font-size:11.5px;
+}
+#pop .fn:hover{background:#2b333e}
+#pop .fn .mx{margin-left:auto;color:var(--faint);font-size:10px}
+#pop .fn.active{outline:1px solid var(--copper-dim)}
+#pop .empty{padding:10px;color:var(--muted)}
+#pop footer{padding:6px;border-top:1px solid var(--line)}
+
+/* ---------- right: report ---------- */
+.panelbox{border:1px solid var(--line-soft);border-radius:6px;background:var(--panel);margin-bottom:12px;overflow:hidden}
+.panelbox>header{padding:7px 10px;background:var(--panel-2);font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.panelbox .inner{padding:8px 10px}
+.conflict-item,.ioset-item{
+  font-family:var(--mono);font-size:11.5px;padding:5px 7px;border-radius:4px;margin-bottom:5px;
+  border:1px solid transparent;
+}
+.conflict-item{background:rgba(255,94,94,.08);border-color:rgba(255,94,94,.35);color:#ffb1b1}
+.ioset-item.bad{background:rgba(255,200,87,.07);border-color:rgba(255,200,87,.35);color:#ffd98c}
+.ioset-item.good{background:rgba(70,196,137,.06);border-color:rgba(70,196,137,.3);color:#8fdfb9}
+.allclear{font-family:var(--mono);font-size:11.5px;color:var(--ok)}
+table.assign{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:11px}
+table.assign th{
+  text-align:left;color:var(--faint);font-weight:600;letter-spacing:.06em;font-size:9.5px;text-transform:uppercase;
+  padding:4px 6px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);
+}
+table.assign td{padding:4px 6px;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+table.assign tr:hover td{background:#232a33}
+table.assign .x{color:var(--faint)}
+table.assign .x:hover{color:var(--conflict)}
+.tblwrap{max-height:300px;overflow:auto}
+.searchrow{display:flex;gap:6px;margin-bottom:8px}
+.searchrow input{flex:1}
+.smallnote{font-size:11px;color:var(--faint);margin-top:6px}
+.kbd{font-family:var(--mono);font-size:10px;border:1px solid var(--line);border-radius:3px;padding:0 4px;color:var(--muted)}
+#toast{
+  position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;display:none;
+  background:var(--panel-2);border:1px solid var(--copper-dim);color:var(--ink);
+  font-family:var(--mono);font-size:12px;padding:8px 14px;border-radius:6px;
+  box-shadow:0 8px 24px rgba(0,0,0,.5);
+}
+@media print{
+  header.app .toolbar,.pane:first-child,#viewport .vp-toolbar{display:none}
+  body{background:#fff;color:#000}
+}
+</style>
+</head>
+<body>
+<header class="app">
+  <h1><span class="ref">U1</span> ATSAMD51J19A · 64-TQFP</h1>
+  <span class="sub">Pin planner — Savitar v2 line follower</span>
+  <span class="spacer"></span>
+  <div class="toolbar">
+    <button class="btn" id="btn-export-csv" title="Export assignment table as CSV">Export CSV</button>
+    <button class="btn" id="btn-export-json" title="Save assignments + dataset state to a JSON file">Save plan</button>
+    <button class="btn" id="btn-import-json" title="Load a previously saved plan JSON">Load plan</button>
+    <button class="btn primary" id="btn-load-dataset" title="Load/merge a peripheral dataset JSON (same schema as SAMD51A19J.json)">Load dataset JSON</button>
+    <button class="btn danger" id="btn-reset" title="Clear all assignments">Reset</button>
+    <input type="file" id="file-plan" accept=".json,application/json" hidden>
+    <input type="file" id="file-dataset" accept=".json,application/json" hidden>
+  </div>
+</header>
+
+<main>
+  <!-- ============ LEFT: peripheral config ============ -->
+  <section class="pane" id="pane-periph" aria-label="Peripheral configuration">
+    <div class="eyebrow">Peripherals · <b id="periph-count"></b></div>
+    <div id="periph-list"></div>
+    <p class="smallnote">
+      Click a pin on the package to see every function it can take, or pick pins per signal here.
+      Adding new peripheral types (TC, DAC, extra I²C…) requires only a dataset JSON — no code changes.
+    </p>
+  </section>
+
+  <!-- ============ CENTER: chip ============ -->
+  <section id="viewport" aria-label="Package view">
+    <div class="vp-toolbar">
+      <button class="btn" id="btn-rot-ccw" title="Rotate counter-clockwise (Shift+R)">⟲ 90°</button>
+      <button class="btn" id="btn-rot-cw" title="Rotate clockwise (R)">⟳ 90°</button>
+      <span class="sub" id="rot-readout">R0°</span>
+      <div class="legend" id="legend"></div>
+    </div>
+    <div id="svgwrap"></div>
+    <div class="statusbar">
+      <span>PKG <span class="lit">TQFP-64 · 9×9 mm · 0.5 mm pitch</span></span>
+      <span>PINOUT <span class="lit">verified vs DS60001507 Fig. 4-2</span></span>
+      <span id="status-assigned"></span>
+      <span id="status-conflicts"></span>
+      <span style="margin-left:auto">EP <span class="lit">exposed pad → GND</span></span>
+    </div>
+  </section>
+
+  <!-- ============ RIGHT: report ============ -->
+  <section class="pane" id="pane-report" aria-label="Assignment report">
+    <div class="panelbox">
+      <header>Conflicts</header>
+      <div class="inner" id="conflict-panel"></div>
+    </div>
+    <div class="panelbox">
+      <header>IOSET check</header>
+      <div class="inner" id="ioset-panel">
+        <div class="smallnote">Signals of one peripheral instance must come from a single IOSET
+        (datasheet §6.2.8). Checked live for SERCOM / TC / TCC assignments.</div>
+        <div id="ioset-list" style="margin-top:6px"></div>
+      </div>
+    </div>
+    <div class="panelbox">
+      <header>Assignments</header>
+      <div class="inner">
+        <div class="searchrow">
+          <input type="text" id="tbl-search" placeholder="filter… (pin, signal, role)">
+        </div>
+        <div class="tblwrap">
+          <table class="assign" id="assign-table">
+            <thead><tr>
+              <th>Signal</th><th>Role</th><th>Pin</th><th>#</th><th>Mux</th><th>IOSET</th><th></th>
+            </tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="smallnote" id="tbl-empty">Nothing assigned yet.</div>
+      </div>
+    </div>
+    <div class="panelbox">
+      <header>Dataset notes</header>
+      <div class="inner" id="dataset-notes"></div>
+    </div>
+  </section>
+</main>
+
+<div id="pop" role="dialog" aria-label="Pin functions"></div>
+<div id="toast"></div>
+<script>
+"use strict";
+/* =====================================================================
+   SAMD51J19A pin planner — single file, zero dependencies.
+   Physical pin map + IOSET tables verified against Microchip
+   SAM D5x/E5x Family Data Sheet DS60001507 (Fig. 4-2, Tables 6-10…6-32).
+   ===================================================================== */
+
+/* ---------- 64-TQFP physical pin map (pin 1..64, datasheet view) ---------- */
+const PACKAGE_PINS = [
+  "PA00","PA01","PA02","PA03","PB04","PB05","GNDANA","VDDANA",      /* 1-8   left  */
+  "PB06","PB07","PB08","PB09","PA04","PA05","PA06","PA07",          /* 9-16  left  */
+  "PA08","PA09","PA10","PA11","VDDIOB","GND","PB10","PB11",         /* 17-24 bottom*/
+  "PB12","PB13","PB14","PB15","PA12","PA13","PA14","PA15",          /* 25-32 bottom*/
+  "GND","VDDIO","PA16","PA17","PA18","PA19","PB16","PB17",          /* 33-40 right */
+  "PA20","PA21","PA22","PA23","PA24","PA25","GND","VDDIO",          /* 41-48 right */
+  "PB22","PB23","PA27","RESETN","VDDCORE","GND","VSW","VDDIO",      /* 49-56 top   */
+  "PA30","PA31","PB30","PB31","PB00","PB01","PB02","PB03"           /* 57-64 top   */
+];
+const IO_PIN_SET = new Set(PACKAGE_PINS.filter(p=>/^P[AB]\d\d$/.test(p)));
+const PIN_NUMBER = {}; PACKAGE_PINS.forEach((p,i)=>{ if(IO_PIN_SET.has(p)) PIN_NUMBER[p]=i+1; });
+
+/* Pins with I2C (SDA/SCL) support on the 64-pin package — DS Table 6-8 */
+const I2C_PINS = new Set(["PA08","PA09","PA12","PA13","PA16","PA17","PA22","PA23"]);
+/* High-sink capable pads bonded on 64-pin — DS Table 6-1 note 3 */
+const HIGH_SINK = new Set(["PA08","PA09","PA12","PA13","PA16","PA17","PA22","PA23"]);
+
+/* ---------- IOSET tables (DS §6.2.8), trimmed at runtime to bonded pins ----------
+   Order of pins array follows the signal order given in `sig`. */
+const IOSETS = {
+  SERCOM0:{sig:["PAD0","PAD1","PAD2","PAD3"],sets:[
+    ["PA08","PA09","PA10","PA11"],["PB24","PB25","PC24","PC25"],
+    ["PA04","PA05","PA06","PA07"],["PC17","PC16","PC18","PC19"]]},
+  SERCOM1:{sig:["PAD0","PAD1","PAD2","PAD3"],sets:[
+    ["PA16","PA17","PA18","PA19"],["PC22","PC23","PD20","PD21"],
+    ["PC27","PC28","PB22","PB23"],["PA00","PA01","PA30","PA31"]]},
+  SERCOM2:{sig:["PAD0","PAD1","PAD2","PAD3"],sets:[
+    ["PA12","PA13","PA14","PA15"],["PB26","PB27","PB28","PB29"],
+    ["PA09","PA08","PA10","PA11"],["PB25","PB24","PC24","PC25"]]},
+  SERCOM3:{sig:["PAD0","PAD1","PAD2","PAD3"],sets:[
+    ["PA22","PA23","PA24","PA25"],["PB20","PB21","PA20","PA21"],
+    ["PA17","PA16","PA18","PA19"],["PC23","PC22","PD20","PD21"]]},
+  SERCOM4:{sig:["PAD0","PAD1","PAD2","PAD3"],sets:[
+    ["PB12","PB13","PB14","PB15"],["PB08","PB09","PB10","PB11"],
+    ["PA13","PA12","PA14","PA15"],["PB27","PB26","PB28","PB29"]]},
+  SERCOM5:{sig:["PAD0","PAD1","PAD2","PAD3"],sets:[
+    ["PB16","PB17","PB18","PB19"],["PA23","PA22","PA20","PA21"],
+    ["PA23","PA22","PA24","PA25"],["PA23","PA22","PB22","PB23"],
+    ["PB31","PB30","PB00","PB01"],["PB02","PB03","PB00","PB01"]]},
+  SERCOM6:{sig:["PAD0","PAD1","PAD2","PAD3"],sets:[
+    ["PC16","PC17","PC18","PC19"],["PC04","PC05","PC06","PC07"],
+    ["PD09","PD08","PD10","PD11"],["PC13","PC12","PC14","PC15"],
+    ["PC13","PC12","PC10","PC11"]]},
+  SERCOM7:{sig:["PAD0","PAD1","PAD2","PAD3"],sets:[
+    ["PC12","PC13","PC14","PC15"],["PD08","PD09","PD10","PD11"],
+    ["PC12","PC13","PC10","PC11"],["PB21","PB20","PB18","PB19"],
+    ["PB30","PB31","PA30","PA31"]]},
+  TCC0:{sig:["WO0","WO1","WO2","WO3","WO4","WO5","WO6","WO7"],sets:[
+    ["PA08","PA09","PA10","PA11","PB10","PB11","PA12","PA13"],
+    ["PC04","PD08","PD09","PD10","PD11","PD12","PC22","PC23"],
+    ["PC10","PC11","PC12","PC13","PC14","PC15","PA18","PA19"],
+    ["PC16","PC17","PC18","PC19","PC20","PC21","PB30","PB31"],
+    ["PB12","PB13","PB14","PB15","PA16","PA17",null,null],
+    ["PA20","PA21","PA22","PA23","PB16","PB17",null,null]]},
+  TCC1:{sig:["WO0","WO1","WO2","WO3","WO4","WO5","WO6","WO7"],sets:[
+    ["PA16","PA17","PA18","PA19","PA20","PA21","PA22","PA23"],
+    ["PD20","PD21","PB20","PB21","PB28","PB29","PA10","PA11"],
+    ["PB18","PB19","PB26","PB27","PA08","PA09","PC12","PC13"],
+    ["PB10","PB11","PA12","PA13","PC10","PC11",null,null],
+    ["PC14","PC15","PA14","PA15",null,null,null,null]]},
+  TCC2:{sig:["WO0","WO1","WO2"],sets:[["PA14","PA15","PA24"],["PA30","PA31","PB02"]]},
+  TCC3:{sig:["WO0","WO1"],sets:[["PB12","PB13"],["PB16","PB17"]]},
+  TCC4:{sig:["WO0","WO1"],sets:[["PB14","PB15"],["PB30","PB31"]]},
+  TC0:{sig:["WO0","WO1"],sets:[["PA04","PA05"],["PA08","PA09"],["PB30","PB31"]]},
+  TC1:{sig:["WO0","WO1"],sets:[["PA06","PA07"],["PA10","PA11"]]},
+  TC2:{sig:["WO0","WO1"],sets:[["PA00","PA01"],["PA12","PA13"],["PA16","PA17"]]},
+  TC3:{sig:["WO0","WO1"],sets:[["PA14","PA15"],["PA18","PA19"]]},
+  TC4:{sig:["WO0","WO1"],sets:[["PB08","PB09"],["PB12","PB13"],["PA22","PA23"]]},
+  TC5:{sig:["WO0","WO1"],sets:[["PB10","PB11"],["PB14","PB15"],["PA24","PA25"]]},
+  TC6:{sig:["WO0","WO1"],sets:[["PB16","PB17"],["PA30","PA31"],["PB02","PB03"]]},
+  TC7:{sig:["WO0","WO1"],sets:[["PA20","PA21"],["PB22","PB23"],["PB00","PB01"]]}
+};
+
+/* ---------- Embedded peripheral dataset (SAMD51A19J.json, as provided) ----------
+   Kept verbatim on purpose: all cleanup (PA010→PA10, string-vs-array shapes,
+   missing mux for ADC, unbonded pins) is done by the normalization layer,
+   so a future replacement file needs zero manual fixes. */
+const EMBEDDED_DATASET = {
+  "SERCOM0":{"pads":{
+    "PAD0":{"pins":["PA08","PA04"],"mux":["C","D"]},
+    "PAD1":{"pins":["PA09","PA05"],"mux":["C","D"]},
+    "PAD2":{"pins":["PA10","PA06"],"mux":["C","D"]},
+    "PAD3":{"pins":["PA11","PA07"],"mux":["C","D"]}}},
+  "SERCOM1":{"pads":{
+    "PAD0":{"pins":["PA16","PA00"],"mux":["C","D"]},
+    "PAD1":{"pins":["PA17","PA01"],"mux":["C","D"]},
+    "PAD2":{"pins":["PA18","PA30"],"mux":["C","D"]},
+    "PAD3":{"pins":["PA19","PA31"],"mux":["C","D"]}}},
+  "SERCOM2":{"pads":{
+    "PAD0":{"pins":["PA12","PA09"],"mux":["C","D"]},
+    "PAD1":{"pins":["PA13","PA08"],"mux":["C","D"]},
+    "PAD2":{"pins":["PA14","PA10"],"mux":["C","D"]},
+    "PAD3":{"pins":["PA15","PA11"],"mux":["C","D"]}}},
+  "SERCOM3":{"pads":{
+    "PAD0":{"pins":["PA22","PA17"],"mux":["C","D"]},
+    "PAD1":{"pins":["PA23","PA16"],"mux":["C","D"]},
+    "PAD2":{"pins":["PA24","PA18"],"mux":["C","D"]},
+    "PAD3":{"pins":["PA25","PA19"],"mux":["C","D"]}}},
+  "SERCOM4":{"pads":{
+    "PAD0":{"pins":["PB12","PB08","PA13"],"mux":["C","D","D"]},
+    "PAD1":{"pins":["PB13","PB09","PA12"],"mux":["C","D","D"]},
+    "PAD2":{"pins":["PB14","PB10","PA14"],"mux":["C","D","D"]},
+    "PAD3":{"pins":["PB15","PB11","PA15"],"mux":["C","D","D"]}}},
+  "SERCOM5":{"pads":{
+    "PAD0":{"pins":["PB16","PA23","PB31","PB02"],"mux":["C","D","D","D"]},
+    "PAD1":{"pins":["PB17","PA22","PB30","PB03"],"mux":["C","D","D","D"]},
+    "PAD2":{"pins":["PA20","PA24","PB22","PB00"],"mux":["C","D","D","D"]},
+    "PAD3":{"pins":["PA21","PA25","PB23","PB01"],"mux":["C","D","D","D"]}}},
+  "SERCOM6":{"pads":{
+    "PAD0":{"pins":[],"mux":[]},"PAD1":{"pins":[],"mux":[]},
+    "PAD2":{"pins":[],"mux":[]},"PAD3":{"pins":[],"mux":[]}}},
+  "SERCOM7":{"pads":{
+    "PAD0":{"pins":"PB30","mux":"C"},"PAD1":{"pins":"PB31","mux":"C"},
+    "PAD2":{"pins":"PA30","mux":"C"},"PAD3":{"pins":"PA31","mux":"C"}}},
+  "ADC0":{"pads":{
+    "AIN0":"PA02","AIN1":"PA03","AIN2":"PB08","AIN3":"PB09","AIN4":"PA04",
+    "AIN5":"PA05","AIN6":"PA06","AIN7":"PA07","AIN8":"PA08","AIN9":"PA09",
+    "AIN10":"PA010","AIN11":"PA011","AIN12":"PB00","AIN13":"PB01",
+    "AIN14":"PB02","AIN15":"PB03"}},
+  "ADC1":{"pads":{
+    "AIN0":"PB08","AIN1":"PB09","AIN2":"PA08","AIN3":"PA09",
+    "AIN6":"PB04","AIN7":"PB05","AIN8":"PB06","AIN9":"PB07"}},
+  "TCC0":{"pads":{
+    "WO0":{"pins":["PA08","PB12"],"mux":["F","G"]},
+    "WO1":{"pins":["PA09","PB13"],"mux":["F","G"]},
+    "WO2":{"pins":["PA10","PB14"],"mux":["F","G"]},
+    "WO3":{"pins":["PA11","PB15"],"mux":["F","G"]},
+    "WO4":{"pins":["PB10","PA16"],"mux":["F","G"]},
+    "WO5":{"pins":["PB11","PA17"],"mux":["F","G"]},
+    "WO6":{"pins":"PA12","mux":"F"},
+    "WO7":{"pins":"PA13","mux":"F"}}},
+  "TCC1":{"pads":{
+    "WO0":{"pins":"PA16","mux":"F"},"WO1":{"pins":"PA17","mux":"F"},
+    "WO2":{"pins":"PA18","mux":"F"},"WO3":{"pins":"PA19","mux":"F"},
+    "WO4":{"pins":"PA20","mux":"F"},"WO5":{"pins":"PB21","mux":"F"},
+    "WO6":{"pins":"PA22","mux":"F"},"WO7":{"pins":"PA23","mux":"F"}}}
+};
+
+/* ---------- SERCOM signal roles per mode ---------- */
+const SERCOM_MODES = {
+  none:{label:"GPIO / unused"},
+  spi :{label:"SPI host"},
+  uart:{label:"USART"},
+  i2c :{label:"I²C host"}
+};
+function sercomRoles(mode,cfg){
+  const r={PAD0:null,PAD1:null,PAD2:null,PAD3:null};
+  if(mode==="i2c"){ r.PAD0="SDA"; r.PAD1="SCL"; }
+  else if(mode==="spi"){
+    r.PAD1="SCK";
+    r["PAD"+(cfg.dopo===2?3:0)]="MOSI";
+    const miso="PAD"+(cfg.dipo??3);
+    r[miso]=r[miso]?r[miso]+"+MISO ⚠":"MISO";
+    if(cfg.ss && !r.PAD2) r.PAD2="SS";
+  }else if(mode==="uart"){
+    r.PAD0="TX";
+    if(cfg.txpo===0||cfg.txpo===3) r.PAD1="XCK";
+    if(cfg.txpo===2){ r.PAD2="RTS"; r.PAD3="CTS"; }
+    if(cfg.txpo===3) r.PAD2="TE";
+    const rx="PAD"+(cfg.rxpo??1);
+    r[rx]=r[rx]?r[rx]+"+RX ⚠":"RX";
+  }
+  return r;
+}
+</script>
+<script>
+"use strict";
+/* =====================================================================
+   Normalization layer — accepts messy dataset JSON and fixes it in code.
+   ===================================================================== */
+const normNotes=[];
+function normalizePinName(raw){
+  if(typeof raw!=="string") return null;
+  const m=raw.trim().toUpperCase().replace(/\s+/g,"").match(/^P([A-D])0*(\d{1,2})$/);
+  if(!m) return null;
+  const fixed="P"+m[1]+String(parseInt(m[2],10)).padStart(2,"0");
+  if(fixed!==raw.trim().toUpperCase()) normNotes.push(`Normalized pin name "${raw}" → ${fixed}`);
+  return fixed;
+}
+function detectType(name){
+  if(/^SERCOM/i.test(name))return"SERCOM";
+  if(/^ADC/i.test(name))return"ADC";
+  if(/^TCC/i.test(name))return"TCC";
+  if(/^TC\d/i.test(name))return"TC";
+  if(/^DAC/i.test(name))return"DAC";
+  return"OTHER";
+}
+const TYPE_COLOR={SERCOM:"var(--sercom)",ADC:"var(--adc)",TCC:"var(--tcc)",TC:"var(--tc)",DAC:"var(--dac)",OTHER:"var(--other)"};
+const TYPE_HEX={SERCOM:"#5aa7ff",ADC:"#46c489",TCC:"#e8a33d",TC:"#b48cfa",DAC:"#56cfc4",OTHER:"#9aa4af"};
+const DEFAULT_MUX={ADC:"B",DAC:"B"};
+
+function normalizeDataset(raw){
+  normNotes.length=0;
+  const periphs=[];
+  for(const [pname,pdef] of Object.entries(raw||{})){
+    if(!pdef||typeof pdef!=="object"){normNotes.push(`Skipped "${pname}": unrecognized entry`);continue;}
+    const pads=pdef.pads||pdef.signals||pdef;
+    if(!pads||typeof pads!=="object"){normNotes.push(`Skipped "${pname}": no pads/signals`);continue;}
+    const type=detectType(pname);
+    const signals=[];
+    for(const [sname,sdef] of Object.entries(pads)){
+      let pins=[],mux=[];
+      if(typeof sdef==="string"){ pins=[sdef]; }
+      else if(Array.isArray(sdef)){ pins=sdef; }
+      else if(sdef&&typeof sdef==="object"){
+        pins=Array.isArray(sdef.pins)?sdef.pins:(sdef.pins!=null?[sdef.pins]:[]);
+        mux =Array.isArray(sdef.mux )?sdef.mux :(sdef.mux !=null?[sdef.mux ]:[]);
+      }
+      const seen=new Set(),options=[];
+      pins.forEach((p,i)=>{
+        const pin=normalizePinName(p);
+        if(!pin){ if(p!=null&&String(p).length)normNotes.push(`${pname}/${sname}: dropped invalid pin "${p}"`); return; }
+        if(seen.has(pin)){normNotes.push(`${pname}/${sname}: removed duplicate ${pin}`);return;}
+        seen.add(pin);
+        const m=(mux[i]||mux[0]||DEFAULT_MUX[type]||"?").toString().toUpperCase();
+        options.push({pin,mux:m,bonded:IO_PIN_SET.has(pin)});
+      });
+      options.filter(o=>!o.bonded).forEach(o=>
+        normNotes.push(`${pname}/${sname}: ${o.pin} is not bonded on the 64-TQFP — option disabled`));
+      signals.push({name:sname,options});
+    }
+    const bondedCount=signals.reduce((a,s)=>a+s.options.filter(o=>o.bonded).length,0);
+    if(bondedCount===0) normNotes.push(`${pname}: no pins on this package (correct for 64-pin if PC/PD-only)`);
+    periphs.push({name:pname,type,signals,bondedCount});
+  }
+  const order={SERCOM:0,TCC:1,TC:2,ADC:3,DAC:4,OTHER:5};
+  periphs.sort((a,b)=>(order[a.type]-order[b.type])||a.name.localeCompare(b.name,undefined,{numeric:true}));
+  return periphs;
+}
+
+/* IOSET membership for a pin on a given peripheral signal → array of set numbers */
+function iosetsFor(periph,signal,pin){
+  const t=IOSETS[periph]; if(!t)return[];
+  const si=t.sig.indexOf(signal); if(si<0)return[];
+  const out=[];
+  t.sets.forEach((set,k)=>{ if(set[si]===pin) out.push(k+1); });
+  return out;
+}
+
+/* =====================================================================
+   State
+   ===================================================================== */
+const STORE_KEY="savitar-pinplanner-v2";
+let PERIPHS=normalizeDataset(EMBEDDED_DATASET);
+let state={
+  rotation:0,                       // 0|90|180|270 (clockwise)
+  assignments:{},                   // "SERCOM1.PAD0" -> {pin,mux}
+  modes:{},                         // "SERCOM1" -> "spi"|"uart"|"i2c"|"none"
+  modeCfg:{},                       // "SERCOM1" -> {dopo,dipo,txpo,rxpo,ss}
+  open:{},                          // peripheral fold-out state
+  customDataset:null                // raw dataset JSON if user loaded one
+};
+function storageGet(){ try{return JSON.parse(localStorage.getItem(STORE_KEY)||"null");}catch(e){return null;} }
+function storageSet(){ try{localStorage.setItem(STORE_KEY,JSON.stringify(state));}catch(e){/* sandboxed preview: ignore */} }
+(function restore(){
+  const s=storageGet(); if(!s)return;
+  Object.assign(state,s);
+  if(state.customDataset){ try{PERIPHS=normalizeDataset(state.customDataset);}catch(e){state.customDataset=null;} }
+  pruneAssignments();
+})();
+function pruneAssignments(){
+  const valid=new Set();
+  PERIPHS.forEach(p=>p.signals.forEach(s=>valid.add(p.name+"."+s.name)));
+  for(const k of Object.keys(state.assignments)) if(!valid.has(k)) delete state.assignments[k];
+}
+
+/* ---------- derived ---------- */
+function pinUsage(){
+  const u={};
+  for(const [key,a] of Object.entries(state.assignments)){
+    (u[a.pin]=u[a.pin]||[]).push({key,...a});
+  }
+  return u;
+}
+function conflicts(usage){
+  return Object.entries(usage).filter(([,l])=>l.length>1);
+}
+function periphByName(n){ return PERIPHS.find(p=>p.name===n); }
+function shortLabel(key){ // "SERCOM1.PAD0" -> "S1.P0", "TCC0.WO4"->"TCC0.4", "ADC0.AIN10"->"A0.10"
+  const [p,s]=key.split(".");
+  const t=detectType(p);
+  if(t==="SERCOM")return"S"+p.replace(/\D/g,"")+"."+s.replace("PAD","P");
+  if(t==="ADC")return"A"+p.replace(/\D/g,"")+"."+s.replace("AIN","");
+  if(t==="TCC"||t==="TC")return p+"."+s.replace("WO","W");
+  return key;
+}
+function roleFor(key){
+  const [pn,sn]=key.split(".");
+  if(detectType(pn)!=="SERCOM")return"";
+  const mode=state.modes[pn]||"none";
+  if(mode==="none")return"";
+  const roles=sercomRoles(mode,state.modeCfg[pn]||defaultCfg());
+  return roles[sn]||"";
+}
+function defaultCfg(){return{dopo:0,dipo:3,txpo:0,rxpo:1,ss:true};}
+
+/* IOSET status per peripheral with ≥2 assigned IOSET-relevant signals */
+function iosetStatus(){
+  const out=[];
+  for(const p of PERIPHS){
+    if(!IOSETS[p.name])continue;
+    const assigned=p.signals
+      .map(s=>({sig:s.name,a:state.assignments[p.name+"."+s.name]}))
+      .filter(x=>x.a);
+    if(assigned.length<2)continue;
+    let inter=null;
+    for(const {sig,a} of assigned){
+      const sets=new Set(iosetsFor(p.name,sig,a.pin));
+      inter=inter===null?sets:new Set([...inter].filter(x=>sets.has(x)));
+    }
+    out.push({name:p.name,n:assigned.length,sets:[...(inter||[])].sort((a,b)=>a-b)});
+  }
+  return out;
+}
+</script>
+<script>
+"use strict";
+/* =====================================================================
+   Rendering
+   ===================================================================== */
+const $=s=>document.querySelector(s);
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+/* ---------------- left pane: peripheral list ---------------- */
+function renderPeriphs(){
+  const usage=pinUsage();
+  const host=$("#periph-list"); host.innerHTML="";
+  $("#periph-count").textContent=PERIPHS.length+" loaded";
+  for(const p of PERIPHS){
+    const box=document.createElement("div");
+    box.className="periph"+(state.open[p.name]?" open":"");
+    const nAssigned=p.signals.filter(s=>state.assignments[p.name+"."+s.name]).length;
+    box.innerHTML=`
+      <header data-p="${esc(p.name)}">
+        <span class="dot" style="background:${TYPE_COLOR[p.type]}"></span>
+        <span class="pname">${esc(p.name)}</span>
+        <span class="pmeta">${nAssigned?nAssigned+" assigned":""}${p.bondedCount===0?"— not on 64-pin":""}</span>
+        <span class="chev">▶</span>
+      </header>
+      <div class="body"></div>`;
+    const body=box.querySelector(".body");
+
+    if(p.bondedCount===0){
+      body.innerHTML=`<div class="note">No pins of this instance are bonded out on the 64-TQFP package.
+        (Correct for ${esc(p.name)} on SAMD51J — its pins live on PC/PD ports of larger packages.)</div>`;
+    }else{
+      if(p.type==="SERCOM") body.appendChild(sercomModeBar(p));
+      const roles=p.type==="SERCOM"
+        ? sercomRoles(state.modes[p.name]||"none",state.modeCfg[p.name]||defaultCfg())
+        : null;
+      for(const s of p.signals){
+        body.appendChild(signalRow(p,s,roles,usage));
+      }
+      if(p.type==="SERCOM"&&(state.modes[p.name]||"none")==="i2c"){
+        const bad=["PAD0","PAD1"].map(sn=>state.assignments[p.name+"."+sn])
+          .filter(a=>a&&!I2C_PINS.has(a.pin));
+        if(bad.length){
+          const n=document.createElement("div");n.className="note";
+          n.innerHTML=`<span class="badge err">I²C</span> ${bad.map(a=>a.pin).join(", ")} ${bad.length>1?"are":"is"} not I²C-capable on this package (allowed: PA08/09, PA12/13, PA16/17, PA22/23).`;
+          body.appendChild(n);
+        }
+      }
+    }
+    host.appendChild(box);
+  }
+}
+function sercomModeBar(p){
+  const mode=state.modes[p.name]||"none";
+  const cfg=state.modeCfg[p.name]||defaultCfg();
+  const bar=document.createElement("div");bar.className="modebar";
+  let extra="";
+  if(mode==="spi"){
+    extra=`DOPO <select data-cfg="dopo"><option value="0"${cfg.dopo===0?" selected":""}>0 · MOSI=PAD0</option>
+           <option value="2"${cfg.dopo===2?" selected":""}>2 · MOSI=PAD3</option></select>
+           DIPO <select data-cfg="dipo">${[0,1,2,3].map(i=>`<option value="${i}"${cfg.dipo===i?" selected":""}>${i} · MISO=PAD${i}</option>`).join("")}</select>`;
+  }else if(mode==="uart"){
+    extra=`TXPO <select data-cfg="txpo">
+            <option value="0"${cfg.txpo===0?" selected":""}>0 · TX=PAD0</option>
+            <option value="2"${cfg.txpo===2?" selected":""}>2 · +RTS/CTS</option>
+            <option value="3"${cfg.txpo===3?" selected":""}>3 · RS485 TE</option></select>
+           RXPO <select data-cfg="rxpo">${[0,1,2,3].map(i=>`<option value="${i}"${cfg.rxpo===i?" selected":""}>${i} · RX=PAD${i}</option>`).join("")}</select>`;
+  }
+  bar.innerHTML=`Mode <select data-mode="${esc(p.name)}">${
+    Object.entries(SERCOM_MODES).map(([k,v])=>`<option value="${k}"${mode===k?" selected":""}>${v.label}</option>`).join("")
+  }</select> ${extra}`;
+  bar.querySelector("[data-mode]").addEventListener("change",e=>{
+    state.modes[p.name]=e.target.value; commit();
+  });
+  bar.querySelectorAll("[data-cfg]").forEach(sel=>sel.addEventListener("change",e=>{
+    const c=state.modeCfg[p.name]=state.modeCfg[p.name]||defaultCfg();
+    c[e.target.dataset.cfg]=parseInt(e.target.value,10); commit();
+  }));
+  return bar;
+}
+function signalRow(p,s,roles,usage){
+  const key=p.name+"."+s.name;
+  const cur=state.assignments[key];
+  const role=roles?roles[s.name]:null;
+  const modeActive=p.type==="SERCOM"&&(state.modes[p.name]||"none")!=="none";
+  const unused=modeActive&&!role;
+  const row=document.createElement("div");
+  row.className="sigrow"+(cur?" assigned":"")+(unused?" unused-row":"");
+  const opts=s.options.map(o=>{
+    const taken=(usage[o.pin]||[]).some(u=>u.key!==key);
+    const isets=iosetsFor(p.name,s.name,o.pin);
+    const lab=`${o.pin} · #${PIN_NUMBER[o.pin]||"—"} · mux ${o.mux}`+
+      (isets.length?` · IOSET ${isets.join("/")}`:"")+
+      (taken?" · in use":"")+(o.bonded?"":" · not bonded");
+    return `<option value="${o.pin}|${o.mux}"${cur&&cur.pin===o.pin?" selected":""}${o.bonded?"":" disabled"}>${lab}</option>`;
+  }).join("");
+  row.innerHTML=`
+    <div>
+      <span class="sname">${esc(s.name)}</span>
+      ${role?`<span class="role">${esc(role)}</span>`:(unused?`<span class="role unused">unused in mode</span>`:"")}
+    </div>
+    <select data-key="${esc(key)}">
+      <option value="">— unassigned —</option>${opts}
+    </select>`;
+  row.querySelector("select").addEventListener("change",e=>{
+    const v=e.target.value;
+    if(!v){ delete state.assignments[key]; }
+    else { const [pin,mux]=v.split("|"); state.assignments[key]={pin,mux}; }
+    commit();
+  });
+  return row;
+}
+
+/* ---------------- center: chip SVG ---------------- */
+const GEO={view:1090,body:560,pitch:34,lead:26,labelGap:10};
+function pinXY(idx){ /* idx 0..63, rotation 0; returns {x,y,side} side:0=L 1=B 2=R 3=T */
+  const c=GEO.view/2, half=GEO.body/2;
+  const start=-(15*GEO.pitch)/2;
+  const side=Math.floor(idx/16), k=idx%16, off=start+k*GEO.pitch;
+  if(side===0)return{x:c-half,y:c+off,side:0};        // left, top→bottom
+  if(side===1)return{x:c+off,y:c+half,side:1};        // bottom, left→right
+  if(side===2)return{x:c+half,y:c-off,side:2};        // right, bottom→top
+  return{x:c-off,y:c-half,side:3};                    // top, right→left
+}
+function rotPt(x,y,rot){
+  const c=GEO.view/2,dx=x-c,dy=y-c;
+  switch(rot){
+    case 90:  return{x:c-dy,y:c+dx};
+    case 180: return{x:c-dx,y:c-dy};
+    case 270: return{x:c+dy,y:c-dx};
+    default:  return{x,y};
+  }
+}
+function renderChip(){
+  const usage=pinUsage(), conf=new Set(conflicts(usage).map(([p])=>p));
+  const rot=state.rotation, c=GEO.view/2, half=GEO.body/2;
+  let g="";
+  /* courtyard + body + silkscreen */
+  g+=`<rect x="${c-half-46}" y="${c-half-46}" width="${GEO.body+92}" height="${GEO.body+92}"
+       fill="none" stroke="#2a323d" stroke-dasharray="5 5" rx="4"/>`;
+  g+=`<rect x="${c-half}" y="${c-half}" width="${GEO.body}" height="${GEO.body}"
+       fill="var(--chip-body)" stroke="var(--chip-edge)" stroke-width="2" rx="10"/>`;
+  /* pin-1 marker rotates with the package */
+  const p1=rotPt(c-half+30,c-half+30,rot);
+  g+=`<circle cx="${p1.x}" cy="${p1.y}" r="9" fill="#181d23" stroke="var(--copper)" stroke-width="2"/>`;
+  g+=`<text x="${c}" y="${c-12}" text-anchor="middle" class="silk" font-size="17">ATSAMD51J19A</text>`;
+  g+=`<text x="${c}" y="${c+12}" text-anchor="middle" class="silk" font-size="12" fill="#76808c">U1 · 64-TQFP · R${rot}°</text>`;
+  g+=`<text x="${c}" y="${c+34}" text-anchor="middle" class="silk" font-size="10" fill="#5d6873">EP = GND</text>`;
+
+  for(let i=0;i<64;i++){
+    const name=PACKAGE_PINS[i], io=IO_PIN_SET.has(name);
+    const base=pinXY(i), pt=rotPt(base.x,base.y,rot);
+    /* CW rotation by 90°: left edge becomes top edge.
+       side index mapping: 0(L)→3(T), 3(T)→2(R), 2(R)→1(B), 1(B)→0(L) */
+    const s=(base.side+3*(rot/90))%4;
+    const ux=[ -1,0,1,0 ][s], uy=[ 0,1,0,-1 ][s];   /* outward unit vector per side */
+    const lead=GEO.lead;
+    const lx=pt.x+ux*lead/2, ly=pt.y+uy*lead/2;
+    const a=usage[name]&&usage[name][0];
+    const assigned=!!a, isConf=conf.has(name);
+    const allKeys=(usage[name]||[]).map(u=>shortLabel(u.key));
+    const labelKeys=allKeys.length>2?allKeys.slice(0,2).join(",")+"+"+(allKeys.length-2):allKeys.join(",");
+    const color=assigned?(isConf?"#ff5e5e":TYPE_HEX[detectType(a.key.split(".")[0])]):null;
+
+    let cls="pin"+(io?" io":" power")+(assigned?" assigned":"")+(isConf?" conflict":"");
+    g+=`<g class="${cls}" data-pin="${name}" data-num="${i+1}">`;
+    /* lead */
+    if(s===0||s===2)
+      g+=`<rect class="pin-lead" x="${pt.x-(s===0?lead:0)}" y="${pt.y-5}" width="${lead}" height="10" rx="2"${color?` fill="${color}"`:""}/>`;
+    else
+      g+=`<rect class="pin-lead" x="${pt.x-5}" y="${pt.y-(s===3?lead:0)}" width="10" height="${lead}" rx="2"${color?` fill="${color}"`:""}/>`;
+    /* pin number just inside the body */
+    const nx=pt.x-ux*16, ny=pt.y-uy*16;
+    g+=`<text class="pin-num" x="${nx}" y="${ny+3}" text-anchor="middle">${i+1}</text>`;
+    /* label outside; horizontal sides get rotated text */
+    const tx=pt.x+ux*(lead+GEO.labelGap), ty=pt.y+uy*(lead+GEO.labelGap);
+    const label=esc(name)+(labelKeys?`  ${esc(labelKeys)}`:"");
+    let anchor,transform="";
+    if(s===0){anchor="end";}
+    else if(s===2){anchor="start";}
+    else if(s===1){anchor="end";transform=` transform="rotate(-90 ${tx} ${ty})"`;}
+    else {anchor="start";transform=` transform="rotate(-90 ${tx} ${ty})"`;}
+    g+=`<text class="pin-label${io?" io":""}" x="${tx}" y="${ty+4}" text-anchor="${anchor}"${transform}${assigned?` fill="${color}"`:""}>${label}</text>`;
+    /* hit area */
+    const hw=s===0||s===2?lead+150:14, hh=s===0||s===2?14:lead+150;
+    const hx=s===0?pt.x-hw:(s===2?pt.x:pt.x-hw/2);
+    const hy=s===3?pt.y-hh:(s===1?pt.y:pt.y-hh/2);
+    if(io)g+=`<rect class="pin-hit" x="${hx}" y="${hy}" width="${hw}" height="${hh}"/>`;
+    g+=`</g>`;
+  }
+  $("#svgwrap").innerHTML=
+    `<svg id="chipsvg" viewBox="0 0 ${GEO.view} ${GEO.view}" width="760" role="img" aria-label="ATSAMD51J19A package diagram">${g}</svg>`;
+  $("#rot-readout").textContent="R"+rot+"°";
+  document.querySelectorAll("#chipsvg .pin-hit").forEach(h=>{
+    h.addEventListener("click",e=>{
+      const gEl=e.target.closest("g.pin");
+      openPopover(gEl.dataset.pin,parseInt(gEl.dataset.num,10),e.clientX,e.clientY);
+      e.stopPropagation();
+    });
+  });
+}
+
+/* ---------------- pin popover ---------------- */
+function functionsForPin(pin){
+  const out=[];
+  for(const p of PERIPHS)for(const s of p.signals)for(const o of s.options){
+    if(o.pin===pin&&o.bonded)out.push({periph:p,signal:s,opt:o,key:p.name+"."+s.name});
+  }
+  return out;
+}
+function openPopover(pin,num,x,y){
+  const pop=$("#pop"), fns=functionsForPin(pin), usage=pinUsage();
+  const mine=(usage[pin]||[]);
+  pop.innerHTML=`
+    <header><span class="pn">${esc(pin)}</span><span class="pk">pin ${num} · ${HIGH_SINK.has(pin)?"high-sink · ":""}${I2C_PINS.has(pin)?"I²C-capable":""}</span></header>
+    <div class="fnlist">${
+      fns.length?fns.map(f=>{
+        const active=state.assignments[f.key]&&state.assignments[f.key].pin===pin;
+        const role=roleFor(f.key);
+        return `<button class="fn${active?" active":""}" data-key="${esc(f.key)}" data-pin="${pin}" data-mux="${f.opt.mux}">
+          <span class="dot" style="background:${TYPE_COLOR[f.periph.type]}"></span>
+          ${esc(f.key)}${role?` <span style="color:var(--copper)">${esc(role)}</span>`:""}
+          <span class="mx">mux ${f.opt.mux}${active?" ✓":""}</span></button>`;
+      }).join(""):`<div class="empty">No peripheral functions in the loaded dataset for this pin.</div>`
+    }</div>
+    ${mine.length?`<footer><button class="btn danger" data-clear="${pin}" style="width:100%">Clear ${mine.length} assignment${mine.length>1?"s":""} on ${esc(pin)}</button></footer>`:""}`;
+  pop.style.display="block";
+  const r=pop.getBoundingClientRect();
+  pop.style.left=Math.min(x+12,innerWidth-r.width-10)+"px";
+  pop.style.top =Math.min(y+12,innerHeight-r.height-10)+"px";
+  pop.querySelectorAll(".fn").forEach(b=>b.addEventListener("click",()=>{
+    const{key,pin,mux}=b.dataset;
+    if(state.assignments[key]&&state.assignments[key].pin===pin)delete state.assignments[key];
+    else state.assignments[key]={pin,mux};
+    closePopover();commit();
+  }));
+  const clr=pop.querySelector("[data-clear]");
+  if(clr)clr.addEventListener("click",()=>{
+    for(const u of mine)delete state.assignments[u.key];
+    closePopover();commit();
+  });
+}
+function closePopover(){$("#pop").style.display="none";}
+document.addEventListener("click",e=>{if(!e.target.closest("#pop")&&!e.target.closest(".pin-hit"))closePopover();});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape")closePopover();
+  if((e.key==="r"||e.key==="R")&&!e.target.matches("input,select")){
+    rotate(e.shiftKey?-90:90);
+  }
+});
+</script>
+<script>
+"use strict";
+/* ---------------- right pane: report ---------------- */
+function renderReport(){
+  const usage=pinUsage(), conf=conflicts(usage);
+  /* conflicts */
+  $("#conflict-panel").innerHTML=conf.length
+    ? conf.map(([pin,list])=>`<div class="conflict-item">${esc(pin)} (#${PIN_NUMBER[pin]}): ${
+        list.map(u=>esc(u.key)).join(" ↔ ")}</div>`).join("")
+    : `<div class="allclear">✓ no pin conflicts</div>`;
+  /* IOSET */
+  const ist=iosetStatus();
+  $("#ioset-list").innerHTML=ist.length
+    ? ist.map(s=>s.sets.length
+        ?`<div class="ioset-item good">${esc(s.name)}: ${s.n} signals · IOSET ${s.sets.join(" or ")} ✓</div>`
+        :`<div class="ioset-item bad">${esc(s.name)}: assigned pins span multiple IOSETs — signals of one instance cannot be mixed</div>`
+      ).join("")
+    : `<div class="smallnote" style="margin:0">Assign ≥2 signals of a SERCOM/TC/TCC to check.</div>`;
+  /* table */
+  const q=($("#tbl-search").value||"").toLowerCase();
+  const rows=Object.entries(state.assignments)
+    .map(([key,a])=>{
+      const[pn,sn]=key.split(".");
+      const isets=iosetsFor(pn,sn,a.pin);
+      return{key,pn,sn,pin:a.pin,mux:a.mux,num:PIN_NUMBER[a.pin]||0,role:roleFor(key),iosets:isets.join("/")};
+    })
+    .filter(r=>!q||[r.key,r.pin,r.role,r.mux,String(r.num)].join(" ").toLowerCase().includes(q))
+    .sort((a,b)=>a.num-b.num);
+  const tb=$("#assign-table tbody");
+  tb.innerHTML=rows.map(r=>`<tr>
+    <td style="color:${TYPE_HEX[detectType(r.pn)]}">${esc(r.key)}</td>
+    <td>${esc(r.role||"")}</td><td>${esc(r.pin)}</td><td>${r.num||"—"}</td>
+    <td>${esc(r.mux)}</td><td>${esc(r.iosets||"—")}</td>
+    <td><button class="x" data-del="${esc(r.key)}" title="unassign">✕</button></td></tr>`).join("");
+  tb.querySelectorAll("[data-del]").forEach(b=>b.addEventListener("click",()=>{
+    delete state.assignments[b.dataset.del];commit();
+  }));
+  $("#tbl-empty").style.display=Object.keys(state.assignments).length?"none":"block";
+  /* status bar */
+  $("#status-assigned").innerHTML=`ASSIGNED <span class="lit">${Object.keys(state.assignments).length}</span>`;
+  $("#status-conflicts").innerHTML=conf.length
+    ?`CONFLICTS <span class="lit" style="color:var(--conflict)">${conf.length}</span>`
+    :`CONFLICTS <span class="lit" style="color:var(--ok)">0</span>`;
+  /* dataset notes */
+  $("#dataset-notes").innerHTML=
+    (state.customDataset?`<div class="smallnote" style="color:var(--copper)">Custom dataset loaded (replaces embedded SAMD51A19J.json).</div>`:"")+
+    (normNotes.length
+      ?`<div class="smallnote">${normNotes.map(n=>esc(n)).join("<br>")}</div>`
+      :`<div class="smallnote">Dataset loaded clean — no fixes needed.</div>`);
+}
+function renderLegend(){
+  $("#legend").innerHTML=["SERCOM","TCC","TC","ADC"]
+    .map(t=>`<span><span class="dot" style="background:${TYPE_COLOR[t]}"></span>${t}</span>`)
+    .join("")+`<span><span class="dot" style="background:var(--conflict)"></span>conflict</span>`;
+}
+
+/* =====================================================================
+   Actions / IO
+   ===================================================================== */
+function commit(){ storageSet(); renderAll(); }
+function renderAll(){ renderPeriphs(); renderChip(); renderReport(); }
+function rotate(d){ state.rotation=((state.rotation+d)%360+360)%360; commit(); }
+function toast(msg){
+  const t=$("#toast"); t.textContent=msg; t.style.display="block";
+  clearTimeout(toast._h); toast._h=setTimeout(()=>t.style.display="none",2600);
+}
+function download(name,text,type){
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([text],{type:type||"text/plain"}));
+  a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),3000);
+}
+
+$("#btn-rot-cw").addEventListener("click",()=>rotate(90));
+$("#btn-rot-ccw").addEventListener("click",()=>rotate(-90));
+$("#tbl-search").addEventListener("input",renderReport);
+$("#periph-list").addEventListener("click",e=>{
+  const h=e.target.closest(".periph>header"); if(!h)return;
+  const n=h.dataset.p; state.open[n]=!state.open[n]; commit();
+});
+
+$("#btn-export-csv").addEventListener("click",()=>{
+  const rows=[["signal","role","pin","package_pin","mux","iosets","conflict"]];
+  const usage=pinUsage();
+  Object.entries(state.assignments)
+    .sort((a,b)=>(PIN_NUMBER[a[1].pin]||0)-(PIN_NUMBER[b[1].pin]||0))
+    .forEach(([key,a])=>{
+      const[pn,sn]=key.split(".");
+      rows.push([key,roleFor(key),a.pin,PIN_NUMBER[a.pin]||"",a.mux,
+        iosetsFor(pn,sn,a.pin).join("/"),(usage[a.pin]||[]).length>1?"YES":""]);
+    });
+  download("samd51j19a-pin-plan.csv",rows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n"),"text/csv");
+  toast("CSV exported");
+});
+$("#btn-export-json").addEventListener("click",()=>{
+  download("samd51j19a-pin-plan.json",JSON.stringify({
+    tool:"savitar-pin-planner",version:2,device:"ATSAMD51J19A-64TQFP",
+    rotation:state.rotation,assignments:state.assignments,
+    modes:state.modes,modeCfg:state.modeCfg,customDataset:state.customDataset
+  },null,2),"application/json");
+  toast("Plan saved");
+});
+$("#btn-import-json").addEventListener("click",()=>$("#file-plan").click());
+$("#file-plan").addEventListener("change",e=>{
+  const f=e.target.files[0]; if(!f)return;
+  f.text().then(t=>{
+    const d=JSON.parse(t);
+    if(!d||typeof d.assignments!=="object")throw new Error("not a plan file");
+    if(d.customDataset){state.customDataset=d.customDataset;PERIPHS=normalizeDataset(d.customDataset);}
+    state.assignments=d.assignments||{};
+    state.modes=d.modes||{}; state.modeCfg=d.modeCfg||{};
+    if(typeof d.rotation==="number")state.rotation=d.rotation;
+    pruneAssignments(); commit(); toast("Plan loaded");
+  }).catch(err=>toast("Load failed: "+err.message));
+  e.target.value="";
+});
+$("#btn-load-dataset").addEventListener("click",()=>$("#file-dataset").click());
+$("#file-dataset").addEventListener("change",e=>{
+  const f=e.target.files[0]; if(!f)return;
+  f.text().then(t=>{
+    const d=JSON.parse(t);
+    if(!d||typeof d!=="object"||Array.isArray(d))throw new Error("expected an object of peripherals");
+    state.customDataset=d;
+    PERIPHS=normalizeDataset(d);
+    pruneAssignments(); commit();
+    toast(`Dataset loaded: ${PERIPHS.length} peripherals`);
+  }).catch(err=>toast("Dataset load failed: "+err.message));
+  e.target.value="";
+});
+$("#btn-reset").addEventListener("click",()=>{
+  if(!confirm("Clear all assignments and SERCOM modes? (Dataset stays loaded.)"))return;
+  state.assignments={}; state.modes={}; state.modeCfg={}; commit(); toast("Cleared");
+});
+
+/* boot */
+renderLegend(); renderAll();
+</script>
+</body>
+</html>
