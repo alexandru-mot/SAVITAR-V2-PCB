@@ -3295,12 +3295,14 @@
 		)
 		(uuid "f0a74c14-de3a-45ef-8512-0da0b8a693bf")
 	)
-	(text "33Ω will give 24mA vs 47mA that will give 17mA to the emitter."
+	(text "33Ω will give 24mA vs 47Ω that will give 17mA to the emitter."
 		(exclude_from_sim no)
 		(at 57.658 159.258 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 1.35 1.35)
+				(thickness 0.27)
+				(bold yes)
 			)
 		)
 		(uuid "f5ededba-2d15-4f7e-bc3a-764fbce83c3c")

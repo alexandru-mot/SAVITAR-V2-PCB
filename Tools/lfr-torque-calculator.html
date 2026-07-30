@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LFR Torque &amp; Traction Calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDEFF1; --panel:#FFFFFF; --ink:#16191C; --graphite:#5A6470;
+  --rule:#C9CFD6; --rule-soft:#DFE4E9;
+  --blue:#1E5FA8; --blue-soft:#E4EDF7;
+  --tire:#F4571E; --tire-soft:#FDE8DF;
+  --slip:#C0342B; --ok:#2F7D4F;
+  --sans:'IBM Plex Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --cond:'Barlow Condensed','Arial Narrow',ui-sans-serif,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);padding:28px 20px 48px;
+}
+.wrap{max-width:1120px;margin:0 auto}
+
+.eyebrow{font-family:var(--mono);font-size:11px;color:var(--tire);letter-spacing:.14em;margin-bottom:6px}
+h1{font-family:var(--cond);font-size:46px;font-weight:700;letter-spacing:-.01em;line-height:.95;margin:0}
+.lede{font-size:13.5px;color:var(--graphite);max-width:640px;margin:10px 0 0;line-height:1.55}
+
+.grid{display:grid;grid-template-columns:minmax(280px,340px) 1fr;gap:26px;align-items:start;margin-top:28px}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+
+.panel{background:var(--panel);border:1px solid var(--rule);border-radius:4px}
+.inputs{padding:4px 20px 24px}
+
+.grouplabel{display:flex;align-items:center;gap:8px;margin:26px 0 14px}
+.grouplabel .n{font-family:var(--mono);font-size:10px;color:var(--tire);font-weight:600}
+.grouplabel .t{font-family:var(--cond);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.grouplabel .r{flex:1;height:1px;background:var(--rule-soft)}
+
+.field{margin-bottom:18px}
+.field .row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.field label{font-size:12px;font-weight:500;letter-spacing:.01em}
+.field .val{display:flex;align-items:baseline;gap:4px}
+.field input[type=number]{
+  width:72px;text-align:right;font-family:var(--mono);font-size:13px;font-weight:500;
+  color:var(--ink);background:var(--paper);border:1px solid var(--rule-soft);
+  border-radius:3px;padding:3px 6px;outline:none;
+}
+.field .unit{font-family:var(--mono);font-size:11px;color:var(--graphite);width:42px}
+.field input[type=range]{width:100%;accent-color:var(--blue);height:3px}
+.field .note{font-size:10.5px;color:var(--graphite);margin-top:4px;line-height:1.4}
+input:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+.card{padding:22px 30px 26px;margin-bottom:20px}
+.cardtitle{font-family:var(--cond);font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.cardsub{font-size:11.5px;color:var(--graphite);margin-bottom:44px}
+
+/* torque axis */
+.axis{position:relative;height:120px}
+.zone-grip{position:absolute;left:0;top:32px;height:20px;background:var(--blue-soft)}
+.zone-slip{position:absolute;right:0;top:32px;height:20px;background:var(--tire-soft);border-left:2px solid var(--tire)}
+.baseline{position:absolute;left:0;right:0;top:52px;height:1px;background:var(--ink)}
+.tick{position:absolute;top:52px}
+.tick .bar{width:1px;height:5px;background:var(--rule)}
+.tick .lab{font-family:var(--mono);font-size:9.5px;color:var(--graphite);transform:translateX(-50%);margin-top:2px}
+.marker{position:absolute;transform:translateX(-50%);text-align:center;width:110px}
+.marker .name{font-family:var(--cond);font-size:11px;letter-spacing:.07em;text-transform:uppercase;font-weight:600}
+.marker .num{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--ink)}
+.marker .stem{width:1px;height:12px;margin:3px auto 0}
+.marker.below .stem{margin:0 auto 3px}
+
+/* verdict */
+.verdict{border-radius:4px;padding:16px 20px;margin-bottom:20px;border:1px solid}
+.verdict.pass{background:#F1F8F3;border-color:var(--ok)}
+.verdict.fail{background:#FDF3F2;border-color:var(--slip)}
+.verdict h2{font-family:var(--cond);font-size:20px;font-weight:700;letter-spacing:.02em;margin:0 0 8px}
+.verdict.pass h2{color:var(--ok)} .verdict.fail h2{color:var(--slip)}
+.check{display:flex;gap:8px;font-size:12.5px;align-items:baseline;padding:2.5px 0}
+.check .flag{font-family:var(--mono);font-weight:600}
+.check.y .flag{color:var(--ok)} .check.n .flag{color:var(--slip)}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:700px){.cols{grid-template-columns:1fr}}
+.subcard{padding:18px 20px 20px}
+.subtitle{font-family:var(--cond);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+
+.bar{margin-bottom:10px}
+.bar .row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px}
+.bar .row span:last-child{font-family:var(--mono);font-weight:500}
+.bar .track{height:4px;background:var(--paper);border-radius:2px}
+.bar .fill{height:4px;border-radius:2px}
+
+.footnote{border-top:1px solid var(--rule-soft);margin-top:12px;padding-top:10px;font-size:11.5px;color:var(--graphite);line-height:1.5}
+
+.drow{display:flex;justify-content:space-between;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--rule-soft);font-size:12px}
+.drow .lab{color:var(--graphite)}
+.drow .num{font-family:var(--mono);font-weight:600;font-size:13px}
+.drow .unit{font-family:var(--mono);font-size:10px;color:var(--graphite);margin-left:4px}
+
+.method{margin-top:18px;font-size:11px;color:var(--graphite);line-height:1.6;border-top:1px solid var(--rule-soft);padding-top:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">SAVITAR · DRIVETRAIN</div>
+  <h1>Torque, traction and the slip ceiling</h1>
+  <p class="lede">Three limits decide whether a micro line follower reaches its target speed: what the tires can transmit, what the motor can produce, and how much of that the rotor eats accelerating itself.</p>
+
+  <div class="grid">
+    <div class="panel inputs" id="inputs"></div>
+
+    <div>
+      <div class="panel card">
+        <div class="cardtitle">Torque axis · per wheel</div>
+        <div class="cardsub">Logarithmic, mN·m. Shaded band above the slip line is unusable — commanding torque there just spins the tire.</div>
+        <div class="axis" id="axis"></div>
+      </div>
+
+      <div class="verdict" id="verdict"></div>
+
+      <div class="cols">
+        <div class="panel subcard">
+          <div class="subtitle">Where the torque goes</div>
+          <div id="breakdown"></div>
+          <div class="footnote" id="rotornote"></div>
+        </div>
+        <div class="panel subcard">
+          <div class="subtitle">Derived</div>
+          <div id="derived"></div>
+          <div class="footnote" style="border:none;padding-top:12px">Grip-limited acceleration is μ·g·f — independent of mass and wheel radius. A heavier robot needs more torque but gets proportionally more grip.</div>
+        </div>
+      </div>
+
+      <div class="method">
+        Wheel inertia modeled as a ring at 0.8·r. Rotor inertia reflected through the gearbox as I·N²·α and divided by efficiency. Stall torque is a theoretical extrapolation — sustained operation near it will overheat the windings. Rolling resistance, aerodynamic drag and weight transfer under acceleration are not modeled; on a lightweight chassis the first two are small, but weight transfer matters if your center of mass sits high or far from the axle.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const G = 9.80665;
+
+const S = {
+  mass:150, frac:80, nWheels:2,
+  wheelOD:26, wheelMass:10, mu:1.5,
+  targetRPM:1000, tAccel:0.3,
+  gearRatio:26, rotorInertia:0.05, stallTorque:10.6, noLoadRPM:2500, eff:75
+};
+
+const GROUPS = [
+  {n:"01", t:"Chassis", fields:[
+    {k:"mass",       label:"Robot mass",              unit:"g",   min:50,  max:600, step:5},
+    {k:"frac",       label:"Weight on drive wheels",  unit:"%",   min:40,  max:100, step:1, note:"Rest sits on the caster or skid."},
+    {k:"nWheels",    label:"Driven wheels",           unit:"—",   min:1,   max:4,   step:1},
+  ]},
+  {n:"02", t:"Wheel & surface", fields:[
+    {k:"wheelOD",    label:"Wheel outer diameter",    unit:"mm",  min:10,  max:60,  step:0.5, note:"JS2622 silicone: 26 mm."},
+    {k:"wheelMass",  label:"Wheel + tire mass (each)",unit:"g",   min:1,   max:40,  step:0.5},
+    {k:"mu",         label:"Friction coefficient μ",  unit:"—",   min:0.3, max:3,   step:0.05, note:"Silicone on smooth track: 1.2–2.5. Hard plastic: 0.4–0.8."},
+  ]},
+  {n:"03", t:"Target", fields:[
+    {k:"targetRPM",  label:"Wheel speed",             unit:"rpm", min:100, max:4000,step:25},
+    {k:"tAccel",     label:"Time to reach it",        unit:"s",   min:0.05,max:2,   step:0.01},
+  ]},
+  {n:"04", t:"Motor", fields:[
+    {k:"gearRatio",  label:"Gear ratio",              unit:":1",  min:1,   max:300, step:1},
+    {k:"rotorInertia",label:"Rotor inertia",          unit:"g·cm²",min:0.005,max:2, step:0.005, note:"Coreless 6 mm: ~0.02–0.1. Iron-core N20: ~0.2–0.6."},
+    {k:"stallTorque",label:"Stall torque at output",  unit:"mN·m",min:1,   max:400, step:0.5},
+    {k:"noLoadRPM",  label:"No-load output speed",    unit:"rpm", min:100, max:5000,step:25},
+    {k:"eff",        label:"Gearbox efficiency",      unit:"%",   min:40,  max:95,  step:1},
+  ]},
+];
+
+function buildInputs(){
+  const host = document.getElementById("inputs");
+  GROUPS.forEach(g=>{
+    const gl = document.createElement("div");
+    gl.className = "grouplabel";
+    gl.innerHTML = `<span class="n">${g.n}</span><span class="t">${g.t}</span><span class="r"></span>`;
+    host.appendChild(gl);
+
+    g.fields.forEach(f=>{
+      const d = document.createElement("div");
+      d.className = "field";
+      d.innerHTML = `
+        <div class="row">
+          <label for="${f.k}">${f.label}</label>
+          <div class="val">
+            <input type="number" id="${f.k}n" value="${S[f.k]}" step="${f.step}">
+            <span class="unit">${f.unit}</span>
+          </div>
+        </div>
+        <input type="range" id="${f.k}" min="${f.min}" max="${f.max}" step="${f.step}" value="${S[f.k]}">
+        ${f.note ? `<div class="note">${f.note}</div>` : ""}`;
+      host.appendChild(d);
+
+      const range = d.querySelector(`#${f.k}`);
+      const num   = d.querySelector(`#${f.k}n`);
+      range.addEventListener("input", e=>{ S[f.k]=parseFloat(e.target.value); num.value=e.target.value; render(); });
+      num.addEventListener("input", e=>{
+        const v = parseFloat(e.target.value);
+        if(!isNaN(v)){ S[f.k]=v; range.value=v; render(); }
+      });
+    });
+  });
+}
+
+function compute(){
+  const r = S.wheelOD/2000;
+  const m = S.mass/1000;
+  const f = S.frac/100;
+  const omega = S.targetRPM*2*Math.PI/60;
+  const v = omega*r;
+  const a = v/S.tAccel;
+  const alpha = a/r;
+
+  const aMax = S.mu*G*f;
+  const tMin = v/aMax;
+
+  const normalPerWheel = m*G*f/S.nWheels;
+  const tSlip = S.mu*normalPerWheel*r;
+
+  const tLin = m*a*r/S.nWheels;
+
+  const mw = S.wheelMass/1000;
+  const k = 0.8*r;
+  const tWheelRot = mw*k*k*alpha;
+
+  const iRotor = S.rotorInertia*1e-7;
+  const tRotor = iRotor*S.gearRatio*S.gearRatio*alpha/(S.eff/100);
+
+  const tNeed = tLin+tWheelRot+tRotor;
+  const stallSI = S.stallTorque/1000;
+
+  return {
+    v,a,aMax,tMin,
+    tSlip:tSlip*1000, tLin:tLin*1000, tWheelRot:tWheelRot*1000,
+    tRotor:tRotor*1000, tNeed:tNeed*1000, stall:S.stallTorque,
+    gripOK:tNeed<=tSlip, motorOK:tNeed<=stallSI,
+    speedOK:S.noLoadRPM>=S.targetRPM*1.25,
+    headroom:tSlip/tNeed,
+    rotorShare:tRotor/tNeed*100
+  };
+}
+
+function renderAxis(R){
+  const vals=[R.tNeed,R.tSlip,R.stall].filter(x=>x>0&&isFinite(x));
+  const lo=Math.pow(10,Math.floor(Math.log10(Math.min(...vals)*0.4)));
+  const hi=Math.pow(10,Math.ceil(Math.log10(Math.max(...vals)*2.2)));
+  const pos=x=>(Math.log10(Math.max(x,lo))-Math.log10(lo))/(Math.log10(hi)-Math.log10(lo))*100;
+
+  let ticks="";
+  for(let d=Math.log10(lo);d<=Math.log10(hi)+0.01;d++){
+    const t=Math.pow(10,d);
+    ticks+=`<div class="tick" style="left:${pos(t)}%"><div class="bar"></div><div class="lab">${t>=1?t:t.toFixed(1)}</div></div>`;
+  }
+
+  const mk=(x,color,name,value,above)=>{
+    const stem=`<div class="stem" style="background:${color}"></div>`;
+    const body=above
+      ? `<div class="name" style="color:${color}">${name}</div><div class="num">${value.toFixed(1)}</div>${stem}`
+      : `${stem}<div class="num">${value.toFixed(1)}</div><div class="name" style="color:${color}">${name}</div>`;
+    return `<div class="marker${above?"":" below"}" style="left:${pos(x)}%;top:${above?0:42}px">${body}</div>`;
+  };
+
+  document.getElementById("axis").innerHTML=`
+    <div class="zone-grip" style="width:${pos(R.tSlip)}%"></div>
+    <div class="zone-slip" style="left:${pos(R.tSlip)}%"></div>
+    <div class="baseline"></div>
+    ${ticks}
+    ${mk(R.tNeed,"#1E5FA8","Need",R.tNeed,true)}
+    ${mk(R.tSlip,"#F4571E","Slip limit",R.tSlip,false)}
+    ${mk(R.stall,"#5A6470","Motor stall",R.stall,true)}`;
+}
+
+function render(){
+  const R=compute();
+  renderAxis(R);
+
+  const pass=R.gripOK&&R.motorOK&&R.speedOK;
+  const checks=[
+    [R.gripOK,  `Tires transmit the torque — need ${R.tNeed.toFixed(1)}, grip allows ${R.tSlip.toFixed(1)} mN·m`],
+    [R.motorOK, `Motor produces the torque — need ${R.tNeed.toFixed(1)}, stall ${R.stall.toFixed(1)} mN·m`],
+    [R.speedOK, `Gearing reaches the speed — need ${S.targetRPM}, no-load ${S.noLoadRPM} rpm (25% margin)`],
+  ];
+  document.getElementById("verdict").className="verdict "+(pass?"pass":"fail");
+  document.getElementById("verdict").innerHTML=
+    `<h2>${pass?"Configuration holds":"Configuration fails"}</h2>`+
+    checks.map(([ok,txt])=>`<div class="check ${ok?"y":"n"}"><span class="flag">${ok?"OK":"——"}</span><span>${txt}</span></div>`).join("");
+
+  const parts=[
+    ["Accelerating the robot",R.tLin,"#1E5FA8"],
+    ["Spinning up the wheels",R.tWheelRot,"#5A6470"],
+    ["Spinning up the rotor",R.tRotor,"#F4571E"],
+  ];
+  document.getElementById("breakdown").innerHTML=parts.map(([l,v,c])=>`
+    <div class="bar">
+      <div class="row"><span>${l}</span><span>${v.toFixed(2)}</span></div>
+      <div class="track"><div class="fill" style="width:${Math.min(v/R.tNeed*100,100)}%;background:${c}"></div></div>
+    </div>`).join("");
+
+  document.getElementById("rotornote").innerHTML=
+    `Rotor accounts for <strong style="color:${R.rotorShare>40?"#C0342B":"#16191C"}">${R.rotorShare.toFixed(0)}%</strong> of demand. This term scales with gear ratio squared — halving the ratio cuts it fourfold.`;
+
+  const derived=[
+    ["Target linear speed",R.v.toFixed(2),"m/s"],
+    ["Required acceleration",R.a.toFixed(1),"m/s²"],
+    ["Grip-limited acceleration",R.aMax.toFixed(1),"m/s²"],
+    ["Fastest possible 0 → target",R.tMin.toFixed(3),"s"],
+    ["Traction headroom",R.headroom.toFixed(2),"×"],
+  ];
+  document.getElementById("derived").innerHTML=derived.map(([l,v,u])=>
+    `<div class="drow"><span class="lab">${l}</span><span><span class="num">${v}</span><span class="unit">${u}</span></span></div>`).join("");
+}
+
+buildInputs();
+render();
+</script>
+</body>
+</html>

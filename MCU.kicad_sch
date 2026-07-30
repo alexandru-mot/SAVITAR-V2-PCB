@@ -8347,7 +8347,7 @@
 		)
 		(uuid "547d661b-3b44-4f0e-9dbe-e20a6cdc6c07")
 	)
-	(text "Checklist\n- No need for RTC so no OSC on either MCU\n- SAMD51\n- Automatic reset is done over Native USB"
+	(text "Checklist\n- No need for RTC so no OSC on either MCU\n- Automatic reset is done over Native USB\n- Pheripheral multiplexer on SAMD51\n- Ditch current sensing?\n"
 		(exclude_from_sim no)
 		(at 100.584 92.964 0)
 		(effects

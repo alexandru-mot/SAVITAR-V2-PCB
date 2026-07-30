@@ -70,3 +70,5 @@ SAVITAR_V2-backups/
 
 # VS Code Local History extension data (separate embedded git repo)
 .history/
+# KiCad lock files
+*.lck

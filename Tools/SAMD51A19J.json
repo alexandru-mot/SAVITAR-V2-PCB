@@ -1,0 +1,124 @@
+{
+  "SERCOM0": {
+    "pads": {
+      "PAD0": {"pins": ["PA08", "PA04"], "mux": ["C", "D"]},
+      "PAD1": {"pins": ["PA09", "PA05"], "mux": ["C", "D"]},
+      "PAD2": {"pins": ["PA10", "PA06"], "mux": ["C", "D"]},
+      "PAD3": {"pins": ["PA11", "PA07"], "mux": ["C", "D"]}
+    }
+  },
+  "SERCOM1": {
+    "pads": {
+      "PAD0": {"pins": ["PA16", "PA00"], "mux": ["C", "D"]},
+      "PAD1": {"pins": ["PA17", "PA01"], "mux": ["C", "D"]},
+      "PAD2": {"pins": ["PA18", "PA30"], "mux": ["C", "D"]},
+      "PAD3": {"pins": ["PA19", "PA31"], "mux": ["C", "D"]}
+    }
+  },
+  "SERCOM2": {
+    "pads": {
+      "PAD0": {"pins": ["PA12", "PA09"], "mux": ["C", "D"]},
+      "PAD1": {"pins": ["PA13", "PA08"], "mux": ["C", "D"]},
+      "PAD2": {"pins": ["PA14", "PA10"], "mux": ["C", "D"]},
+      "PAD3": {"pins": ["PA15", "PA11"], "mux": ["C", "D"]}
+    }
+  },
+  "SERCOM3": {
+    "pads": {
+      "PAD0": {"pins": ["PA22", "PA17"], "mux": ["C", "D"]},
+      "PAD1": {"pins": ["PA23", "PA16"], "mux": ["C", "D"]},
+      "PAD2": {"pins": ["PA24", "PA18"], "mux": ["C", "D"]},
+      "PAD3": {"pins": ["PA25", "PA19"], "mux": ["C", "D"]}
+    }
+  },
+  "SERCOM4": {
+    "pads": {
+      "PAD0": {"pins": ["PB12", "PB08", "PA13"], "mux": ["C", "D", "D"]},
+      "PAD1": {"pins": ["PB13", "PB09", "PA12"], "mux": ["C", "D", "D"]},
+      "PAD2": {"pins": ["PB14", "PB10", "PA14"], "mux": ["C", "D", "D"]},
+      "PAD3": {"pins": ["PB15", "PB11", "PA15"], "mux": ["C", "D", "D"]}
+    }
+  },
+  "SERCOM5": {
+    "pads": {
+      "PAD0": {"pins": ["PB16", "PA23", "PB31", "PB02"], "mux": ["C", "D", "D", "D"]},
+      "PAD1": {"pins": ["PB17", "PA22", "PB30", "PB03"], "mux": ["C", "D", "D", "D"]},
+      "PAD2": {"pins": ["PA20", "PA24", "PB22", "PB00"], "mux": ["C", "D", "D", "D"]},
+      "PAD3": {"pins": ["PA21", "PA25", "PB23", "PB01"], "mux": ["C", "D", "D", "D"]}
+    }
+  },
+  "SERCOM6": {
+    "pads": {
+      "PAD0": {"pins": [], "mux": []},
+      "PAD1": {"pins": [], "mux": []},
+      "PAD2": {"pins": [], "mux": []},
+      "PAD3": {"pins": [], "mux": []}
+    }
+  },
+  "SERCOM7": {
+    "pads": {
+      "PAD0": {"pins": "PB30", "mux": "C"},
+      "PAD1": {"pins": "PB31", "mux": "C"},
+      "PAD2": {"pins": "PA30", "mux": "C"},
+      "PAD3": {"pins": "PA31", "mux": "C"}
+    }
+  },
+  "ADC0": {
+    "pads": {
+      "AIN0": "PA02",
+      "AIN1": "PA03",
+      "AIN2": "PB08",
+      "AIN3": "PB09",
+      "AIN4": "PA04",
+      "AIN5": "PA05",
+      "AIN6": "PA06",
+      "AIN7": "PA07",
+      "AIN8": "PA08",
+      "AIN9": "PA09",
+      "AIN10": "PA010",
+      "AIN11": "PA011",
+      "AIN12": "PB00",
+      "AIN13": "PB01",
+      "AIN14": "PB02",
+      "AIN15": "PB03"
+    }
+  },
+  "ADC1": {
+    "pads": {
+      "AIN0": "PB08",
+      "AIN1": "PB09",
+      "AIN2": "PA08",
+      "AIN3": "PA09",
+      "AIN6": "PB04",
+      "AIN7": "PB05",
+      "AIN8": "PB06",
+      "AIN9": "PB07"
+    }
+  },
+  "TCC0": {
+    "pads": {
+      "WO0": {"pins": ["PA08", "PB12"], "mux": ["F", "G"]},
+      "WO1": {"pins": ["PA09", "PB13"], "mux": ["F", "G"]},
+      "WO2": {"pins": ["PA10", "PB14"], "mux": ["F", "G"]},
+      "WO3": {"pins": ["PA11", "PB15"], "mux": ["F", "G"]},
+      "WO4": {"pins": ["PB10", "PA16"], "mux": ["F", "G"]},
+      "WO5": {"pins": ["PB11", "PA17"], "mux": ["F", "G"]},
+      "WO6": {"pins": "PA12", "mux": "F"}, 
+      "WO7": {"pins": "PA13", "mux": "F"}
+    }
+  },
+  "TCC1": {
+    "pads": {
+      "WO0": {"pins": "PA16", "mux": "F"},
+      "WO1": {"pins": "PA17", "mux": "F"},
+      "WO2": {"pins": "PA18", "mux": "F"},
+      "WO3": {"pins": "PA19", "mux": "F"},
+      "WO4": {"pins": "PA20", "mux": "F"},
+      "WO5": {"pins": "PB21", "mux": "F"},
+      "WO6": {"pins": "PA22", "mux": "F"},
+      "WO7": {"pins": "PA23", "mux": "F"}
+    }
+  }
+}
+
+  

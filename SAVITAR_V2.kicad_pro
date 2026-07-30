@@ -833,7 +833,7 @@
         "uuid": "f6d97783-3721-4b78-8f0f-ed81f34e7161"
       }
     ],
-    "used_designators": "#PWR127,TP1-2,SWD_IO1-2,R44,SWD5",
+    "used_designators": "",
     "variants": [
       {
         "name": "SENSOR_ARRAY"
