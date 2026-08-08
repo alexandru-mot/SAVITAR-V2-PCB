@@ -2066,6 +2066,567 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "EasyEDA:FPC-05F-22PH20"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "FPC"
+				(at 0 36.83 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "FPC-05F-22PH20"
+				(at 0 -36.83 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "EasyEDA:FPC-SMD_22P-P0.50_FPC-05F-22PH20"
+				(at 0 -39.37 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/C2856804.pdf"
+				(at 0 -41.91 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "XUNPU(讯普)"
+				(at 0 -44.45 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "MPN" "FPC-05F-22PH20"
+				(at 0 -46.99 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC Part" "C2856804"
+				(at 0 -49.53 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "FFC/FPC Connectors"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "FPC-05F-22PH20_0_1"
+				(rectangle
+					(start -2.54 29.21)
+					(end 5.08 -29.21)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -1.27 27.94)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 26.67 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 24.13 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 21.59 0)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 19.05 0)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 16.51 0)
+					(length 2.54)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 13.97 0)
+					(length 2.54)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 11.43 0)
+					(length 2.54)
+					(name "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 8.89 0)
+					(length 2.54)
+					(name "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 6.35 0)
+					(length 2.54)
+					(name "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 3.81 0)
+					(length 2.54)
+					(name "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 1.27 0)
+					(length 2.54)
+					(name "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -1.27 0)
+					(length 2.54)
+					(name "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -3.81 0)
+					(length 2.54)
+					(name "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -6.35 0)
+					(length 2.54)
+					(name "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -8.89 0)
+					(length 2.54)
+					(name "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -11.43 0)
+					(length 2.54)
+					(name "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -13.97 0)
+					(length 2.54)
+					(name "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -16.51 0)
+					(length 2.54)
+					(name "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -19.05 0)
+					(length 2.54)
+					(name "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -21.59 0)
+					(length 2.54)
+					(name "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -24.13 0)
+					(length 2.54)
+					(name "21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -26.67 0)
+					(length 2.54)
+					(name "22"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "22"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -31.75 90)
+					(length 2.54)
+					(name "23"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "23"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 31.75 270)
+					(length 2.54)
+					(name "24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "MCU_Microchip_SAMD:ATSAMD51J19A-A"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -6504,348 +7065,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "SAVITAR:FH34SRJ-8S-0.5SH_50_"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 19.05 7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Value" "FH34SRJ-8S-0.5SH_50_"
-				(at 19.05 5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Footprint" "FH34SRJ8S05SH50"
-				(at 19.05 -94.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Datasheet" "https://www.hirose.com/en/product/document?clcode=CL0580-1231-8-50&productname=FH34SRJ-8S-0.5SH(50)&series=FH34SRJ&documenttype=2DDrawing&lang=en&documentid=0001483059"
-				(at 19.05 -194.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Description" "FFC & FPC Connectors 8P SMT HORIZ ZIF AU 1MM HGHT .5MM PITCH"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Height" "1.75"
-				(at 19.05 -394.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Manufacturer_Name" "Hirose"
-				(at 19.05 -494.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Manufacturer_Part_Number" "FH34SRJ-8S-0.5SH(50)"
-				(at 19.05 -594.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Mouser Part Number" "798-FH34SRJ8S05SH50"
-				(at 19.05 -694.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Hirose-Connector/FH34SRJ-8S-0.5SH50?qs=vnk2wBG9e16kawieRwL2EA%3D%3D"
-				(at 19.05 -794.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Arrow Part Number" ""
-				(at 19.05 -894.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(property "Arrow Price/Stock" ""
-				(at 19.05 -994.92 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left top)
-				)
-			)
-			(symbol "FH34SRJ-8S-0.5SH_50__1_1"
-				(rectangle
-					(start 5.08 2.54)
-					(end 17.78 -20.32)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin passive line
-					(at 22.86 -17.78 180)
-					(length 5.08)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 22.86 -15.24 180)
-					(length 5.08)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 22.86 -12.7 180)
-					(length 5.08)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 22.86 -10.16 180)
-					(length 5.08)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 22.86 -7.62 180)
-					(length 5.08)
-					(name "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 22.86 -5.08 180)
-					(length 5.08)
-					(name "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 22.86 -2.54 180)
-					(length 5.08)
-					(name "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 22.86 0 180)
-					(length 5.08)
-					(name "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 0 0)
-					(length 5.08)
-					(name "MP1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -2.54 0)
-					(length 5.08)
-					(name "MP2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "SAVITAR:MT2492"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -7930,7 +8149,7 @@
 	)
 	(text "ESP32-C3"
 		(exclude_from_sim no)
-		(at 332.994 94.996 0)
+		(at 293.624 94.996 0)
 		(effects
 			(font
 				(size 3.81 3.81)
@@ -7976,7 +8195,7 @@
 	)
 	(text "TX Peak 350mA @ 20dBm transmission"
 		(exclude_from_sim no)
-		(at 334.264 195.326 0)
+		(at 294.894 195.326 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7998,7 +8217,7 @@
 	)
 	(text "STRAPPING PINS:\nGPIO2\nGPIO8\nGPIO9"
 		(exclude_from_sim no)
-		(at 258.318 125.984 0)
+		(at 203.962 125.73 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8155,7 +8374,7 @@
 		(uuid "f8ae0458-7ba6-4f5c-a161-7d6f56126be3")
 	)
 	(junction
-		(at 349.25 184.15)
+		(at 309.88 184.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "04fe45ec-e6aa-44b7-9f03-0d7ea5fee9f6")
@@ -8173,31 +8392,31 @@
 		(uuid "0b52b514-14c0-406a-88ca-cf3ec82cd0e5")
 	)
 	(junction
-		(at 396.24 229.87)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0c81dc59-cf36-42d4-be10-b1386871c451")
-	)
-	(junction
 		(at 132.08 101.6)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0cfb295d-3c48-460c-86d5-ecbaaf839c2b")
 	)
 	(junction
-		(at 349.25 153.67)
+		(at 309.88 153.67)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1393a9d1-8bde-4ac4-a187-016dafc745c8")
 	)
 	(junction
-		(at 349.25 163.83)
+		(at 309.88 163.83)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "17a5d236-d8f9-4a5e-98f9-676ef3a9ffd7")
 	)
 	(junction
-		(at 265.43 100.33)
+		(at 157.48 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1db19351-8870-4635-a097-908393ec093f")
+	)
+	(junction
+		(at 226.06 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1ef75512-3492-41a7-860b-5a9691cf0eca")
@@ -8227,37 +8446,37 @@
 		(uuid "3315ef5b-a3c7-48c2-80ec-925cee415277")
 	)
 	(junction
-		(at 349.25 176.53)
+		(at 309.88 176.53)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "33a6d34d-dbd7-47de-b427-1a2283812d8c")
 	)
 	(junction
-		(at 300.99 107.95)
+		(at 261.62 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3fb5c241-7d24-485a-b85e-c6f68c7aed31")
 	)
 	(junction
-		(at 349.25 151.13)
+		(at 309.88 151.13)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "41ef3180-3faa-4fc5-ab78-ef0e54ad5e79")
 	)
 	(junction
-		(at 349.25 166.37)
+		(at 309.88 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4212f99e-4631-4ebc-8e7a-ecb60f807819")
 	)
 	(junction
-		(at 349.25 179.07)
+		(at 309.88 179.07)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "43ca9163-b2e5-4ce5-b131-e65a4065b910")
 	)
 	(junction
-		(at 316.23 110.49)
+		(at 276.86 110.49)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "49a4300e-3f1f-400a-9e3a-3f1dbd049be5")
@@ -8287,31 +8506,31 @@
 		(uuid "5455cd44-9e19-421b-b03a-db5a22d35a1d")
 	)
 	(junction
-		(at 349.25 161.29)
+		(at 309.88 161.29)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "54df8b86-60b3-49c5-b557-d33133eec1ed")
 	)
 	(junction
-		(at 349.25 168.91)
+		(at 309.88 168.91)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5599b04e-52d3-4cf1-b2fc-cb3e9887841d")
 	)
 	(junction
-		(at 349.25 133.35)
+		(at 309.88 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "57e72187-0ce0-4b67-942b-7f8247525df0")
 	)
 	(junction
-		(at 349.25 140.97)
+		(at 309.88 140.97)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "58b68cc1-d36a-4e98-bfc7-aa1a5e013217")
 	)
 	(junction
-		(at 283.21 100.33)
+		(at 243.84 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5b8abd45-52a5-48db-ad11-994acf1d75c0")
@@ -8347,13 +8566,13 @@
 		(uuid "665dd873-028f-43e8-b4a1-e4cd94fb2ed4")
 	)
 	(junction
-		(at 349.25 171.45)
+		(at 309.88 171.45)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "67b07bda-3b92-460b-8b33-3020e7d4aae6")
 	)
 	(junction
-		(at 349.25 156.21)
+		(at 309.88 156.21)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6865c38e-bca5-4e68-ac5c-64aa710cae61")
@@ -8371,7 +8590,7 @@
 		(uuid "6e0df6cc-4c54-4219-a031-1fe8e237c78e")
 	)
 	(junction
-		(at 349.25 146.05)
+		(at 309.88 146.05)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6fcdbb55-4836-4b85-8b34-9704867db6bf")
@@ -8425,7 +8644,7 @@
 		(uuid "8988b468-9a89-49e5-b564-61f38a6a5887")
 	)
 	(junction
-		(at 349.25 123.19)
+		(at 309.88 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "92d492ff-162f-48bd-9e31-1a51d46ca7b7")
@@ -8449,7 +8668,7 @@
 		(uuid "99cd7167-6003-4fa7-9d59-21197dab1246")
 	)
 	(junction
-		(at 349.25 148.59)
+		(at 309.88 148.59)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9c557554-f323-481f-a994-5fe84e4e2710")
@@ -8473,7 +8692,7 @@
 		(uuid "a2b36dbc-5705-4297-bf49-3c8a42b7a76a")
 	)
 	(junction
-		(at 349.25 135.89)
+		(at 309.88 135.89)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a972ff73-4121-468e-b24b-d520d59829ec")
@@ -8491,13 +8710,13 @@
 		(uuid "b076c07b-c846-4b0e-a8b6-13a0f37c7ed5")
 	)
 	(junction
-		(at 300.99 100.33)
+		(at 261.62 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b211e95b-c31a-40ce-bd45-7d4a84655e35")
 	)
 	(junction
-		(at 293.37 128.27)
+		(at 254 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b62d6691-3951-4a83-b403-28400b2c3769")
@@ -8509,7 +8728,7 @@
 		(uuid "b701227e-b872-46ac-a12b-eb3d715fdea0")
 	)
 	(junction
-		(at 349.25 173.99)
+		(at 309.88 173.99)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b74b3e1b-005c-4ccb-a6d1-c8792858600d")
@@ -8521,7 +8740,7 @@
 		(uuid "b8bbd47d-5c69-4e4d-a44b-9ec80bffa5e7")
 	)
 	(junction
-		(at 349.25 138.43)
+		(at 309.88 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b91be595-7f6e-4399-992e-aa347eb97ca7")
@@ -8551,13 +8770,13 @@
 		(uuid "c8606763-f391-451f-ab6b-e3ee608ebf51")
 	)
 	(junction
-		(at 283.21 107.95)
+		(at 243.84 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c9a40716-3862-4d01-aa6e-6cccf189c004")
 	)
 	(junction
-		(at 349.25 125.73)
+		(at 309.88 125.73)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ca027b51-9641-444a-978f-ace53fd45633")
@@ -8575,7 +8794,7 @@
 		(uuid "cbb6f484-562e-41bd-aaf9-ed057fdadd88")
 	)
 	(junction
-		(at 349.25 143.51)
+		(at 309.88 143.51)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ccbb3fe5-1bb3-42fe-86de-ed92615fb222")
@@ -8587,7 +8806,7 @@
 		(uuid "d39ef491-8645-4a30-bf70-1a2cf92e76ca")
 	)
 	(junction
-		(at 349.25 181.61)
+		(at 309.88 181.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d4177ba6-8d25-49fe-8878-30b44c2f4b8d")
@@ -8605,7 +8824,7 @@
 		(uuid "d5e30f80-bafc-49b4-891b-537d93ac1afa")
 	)
 	(junction
-		(at 265.43 107.95)
+		(at 226.06 107.95)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "da174755-405b-4672-9f76-c8b5cc428a49")
@@ -8629,7 +8848,7 @@
 		(uuid "ea7b7805-d5b1-4df2-824c-cce303142018")
 	)
 	(junction
-		(at 349.25 158.75)
+		(at 309.88 158.75)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ed4d611e-d0f9-4d3c-9dae-2424f7ad2e39")
@@ -8641,7 +8860,7 @@
 		(uuid "eda7c02b-f961-48bb-8886-5385558882e4")
 	)
 	(junction
-		(at 349.25 130.81)
+		(at 309.88 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "eec2db6e-a0d1-42e6-a94e-903417009371")
@@ -8653,7 +8872,7 @@
 		(uuid "ef758b74-1ebe-456f-9031-4a012b5188d5")
 	)
 	(junction
-		(at 349.25 128.27)
+		(at 309.88 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fa7c4642-3a2b-4be6-9690-451d5fb65917")
@@ -8671,11 +8890,11 @@
 		(uuid "fd7f099d-2a96-4ec0-99db-3c6e1b0119a2")
 	)
 	(no_connect
-		(at 316.23 133.35)
+		(at 276.86 133.35)
 		(uuid "04a36dd5-c22a-40c6-bc29-7a69f30cfa83")
 	)
 	(no_connect
-		(at 316.23 140.97)
+		(at 276.86 140.97)
 		(uuid "1136aec0-7259-48f8-ae6d-99d00e183e39")
 	)
 	(no_connect
@@ -8715,7 +8934,7 @@
 		(uuid "355ea5cf-263b-4e76-9ecb-7e5ae68e79f2")
 	)
 	(no_connect
-		(at 316.23 168.91)
+		(at 276.86 168.91)
 		(uuid "37a3d472-b085-4b38-9c73-75da69afc7fc")
 	)
 	(no_connect
@@ -8735,7 +8954,7 @@
 		(uuid "4f500260-3ba7-4a0b-9fd9-f24b1ada0b29")
 	)
 	(no_connect
-		(at 316.23 181.61)
+		(at 276.86 181.61)
 		(uuid "4f50e9c3-ea48-443e-8275-c748eabe4ac6")
 	)
 	(no_connect
@@ -8747,11 +8966,11 @@
 		(uuid "4fa52d65-8215-48a3-917b-b0914269301e")
 	)
 	(no_connect
-		(at 349.25 118.11)
+		(at 309.88 118.11)
 		(uuid "5ae04b06-4303-42f6-a456-fc50afa5b4c2")
 	)
 	(no_connect
-		(at 316.23 158.75)
+		(at 276.86 158.75)
 		(uuid "5d619208-74b8-4d1f-b65a-135b68a6638e")
 	)
 	(no_connect
@@ -8763,11 +8982,11 @@
 		(uuid "5e43870a-9e8f-4008-a44d-2e2f45fcbb39")
 	)
 	(no_connect
-		(at 316.23 151.13)
+		(at 276.86 151.13)
 		(uuid "6187cdd8-7915-4e54-a91e-562f14a1ec21")
 	)
 	(no_connect
-		(at 316.23 118.11)
+		(at 276.86 118.11)
 		(uuid "645236bc-66cd-48a3-bf27-76e873fde356")
 	)
 	(no_connect
@@ -8775,7 +8994,7 @@
 		(uuid "65488983-a09e-4a76-a048-1107e4dd3c42")
 	)
 	(no_connect
-		(at 316.23 125.73)
+		(at 276.86 125.73)
 		(uuid "66f70926-7615-49d7-aa23-fd8c3c4cf011")
 	)
 	(no_connect
@@ -8791,7 +9010,7 @@
 		(uuid "6bfd4971-037d-4f91-9249-30ce613875cb")
 	)
 	(no_connect
-		(at 316.23 161.29)
+		(at 276.86 161.29)
 		(uuid "6e4b307f-99cc-4aaf-b4b1-65e76d2d33ad")
 	)
 	(no_connect
@@ -8819,11 +9038,11 @@
 		(uuid "8394498e-5e9e-45f0-bc01-4d6d2c40268b")
 	)
 	(no_connect
-		(at 349.25 110.49)
+		(at 309.88 110.49)
 		(uuid "85d923b4-cba3-4e58-aed8-e2a76bdc48b4")
 	)
 	(no_connect
-		(at 316.23 123.19)
+		(at 276.86 123.19)
 		(uuid "8c243d1d-e0ff-4e1a-aae9-9d0e7d999dfb")
 	)
 	(no_connect
@@ -8835,7 +9054,7 @@
 		(uuid "90c3b0cf-6020-450d-a1d8-4cc82ca2d4c0")
 	)
 	(no_connect
-		(at 316.23 156.21)
+		(at 276.86 156.21)
 		(uuid "9439150a-2a7f-46b3-bbc8-6102ca4abf26")
 	)
 	(no_connect
@@ -8855,7 +9074,7 @@
 		(uuid "9d7d48c0-cb6a-4225-898c-e7ce119635b4")
 	)
 	(no_connect
-		(at 349.25 115.57)
+		(at 309.88 115.57)
 		(uuid "9e749cf5-992e-4a61-bd26-5bde01da7893")
 	)
 	(no_connect
@@ -8863,7 +9082,7 @@
 		(uuid "a0769ee2-a2f9-4f8a-a49c-f6bbaf321680")
 	)
 	(no_connect
-		(at 316.23 130.81)
+		(at 276.86 130.81)
 		(uuid "a481a281-db59-4582-8d3c-32cd694b62cd")
 	)
 	(no_connect
@@ -8871,11 +9090,11 @@
 		(uuid "a692d828-9dde-433c-80c6-2ae29019d368")
 	)
 	(no_connect
-		(at 316.23 148.59)
+		(at 276.86 148.59)
 		(uuid "b017c717-a47c-4ca4-a137-d455b75f455a")
 	)
 	(no_connect
-		(at 316.23 171.45)
+		(at 276.86 171.45)
 		(uuid "b84fb1c1-4652-4329-9f50-89a9bec986ec")
 	)
 	(no_connect
@@ -8895,7 +9114,7 @@
 		(uuid "c9121c69-8be4-4779-9bd1-aee6f1979939")
 	)
 	(no_connect
-		(at 316.23 146.05)
+		(at 276.86 146.05)
 		(uuid "cb7bb872-c2ab-494a-aa40-f014d283fba6")
 	)
 	(no_connect
@@ -8931,7 +9150,7 @@
 		(uuid "dc4e6bff-862c-416c-acc4-56437c89093f")
 	)
 	(no_connect
-		(at 316.23 153.67)
+		(at 276.86 153.67)
 		(uuid "dcd328bb-9211-4254-a866-41dacde5dfe4")
 	)
 	(no_connect
@@ -8947,7 +9166,7 @@
 		(uuid "e11ce5f5-0655-4ae5-a46b-377e0268a003")
 	)
 	(no_connect
-		(at 349.25 113.03)
+		(at 309.88 113.03)
 		(uuid "e3d0205f-9763-4558-a3d9-121c9a1b6e92")
 	)
 	(no_connect
@@ -8955,7 +9174,7 @@
 		(uuid "e51ae7cc-75db-4459-99d7-246c1426bb62")
 	)
 	(no_connect
-		(at 316.23 138.43)
+		(at 276.86 138.43)
 		(uuid "e88c132c-4f8d-4a54-bf38-242f7e5dab6f")
 	)
 	(no_connect
@@ -8963,7 +9182,7 @@
 		(uuid "ec6f47ed-080f-4a5a-ac57-82b1965c6e8d")
 	)
 	(no_connect
-		(at 316.23 179.07)
+		(at 276.86 179.07)
 		(uuid "f309fc33-a377-4ba1-9424-ed065bc3a72b")
 	)
 	(no_connect
@@ -9008,7 +9227,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 181.61) (xy 349.25 184.15)
+			(xy 309.88 181.61) (xy 309.88 184.15)
 		)
 		(stroke
 			(width 0)
@@ -9038,6 +9257,16 @@
 	)
 	(wire
 		(pts
+			(xy 364.49 200.66) (xy 375.92 200.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06043652-0c12-4b9a-b5eb-a9046d236d74")
+	)
+	(wire
+		(pts
 			(xy 129.54 101.6) (xy 132.08 101.6)
 		)
 		(stroke
@@ -9055,6 +9284,16 @@
 			(type default)
 		)
 		(uuid "079ca026-6d4e-4521-a98a-52e93b24d86a")
+	)
+	(wire
+		(pts
+			(xy 364.49 210.82) (xy 375.92 210.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09d7ee76-3596-4177-94e3-236410c96562")
 	)
 	(wire
 		(pts
@@ -9128,7 +9367,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 153.67) (xy 349.25 156.21)
+			(xy 309.88 153.67) (xy 309.88 156.21)
 		)
 		(stroke
 			(width 0)
@@ -9145,6 +9384,16 @@
 			(type default)
 		)
 		(uuid "1455fd3f-0682-4c28-babc-61c4836aa457")
+	)
+	(wire
+		(pts
+			(xy 364.49 220.98) (xy 375.92 220.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1482affe-738c-4fd5-a139-3428ad4cf949")
 	)
 	(wire
 		(pts
@@ -9188,13 +9437,23 @@
 	)
 	(wire
 		(pts
-			(xy 300.99 100.33) (xy 314.96 100.33)
+			(xy 261.62 100.33) (xy 275.59 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "1a7007cb-4a1c-474e-ba1d-e95efdb927e7")
+	)
+	(wire
+		(pts
+			(xy 364.49 213.36) (xy 375.92 213.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1aba602d-9617-435e-8947-0c565985d60c")
 	)
 	(wire
 		(pts
@@ -9208,7 +9467,7 @@
 	)
 	(wire
 		(pts
-			(xy 287.02 186.69) (xy 297.18 186.69)
+			(xy 247.65 186.69) (xy 257.81 186.69)
 		)
 		(stroke
 			(width 0)
@@ -9218,7 +9477,7 @@
 	)
 	(wire
 		(pts
-			(xy 306.07 163.83) (xy 316.23 163.83)
+			(xy 266.7 163.83) (xy 276.86 163.83)
 		)
 		(stroke
 			(width 0)
@@ -9238,7 +9497,7 @@
 	)
 	(wire
 		(pts
-			(xy 287.02 173.99) (xy 316.23 173.99)
+			(xy 247.65 173.99) (xy 276.86 173.99)
 		)
 		(stroke
 			(width 0)
@@ -9248,7 +9507,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 173.99) (xy 281.94 173.99)
+			(xy 233.68 173.99) (xy 242.57 173.99)
 		)
 		(stroke
 			(width 0)
@@ -9288,7 +9547,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 138.43) (xy 349.25 140.97)
+			(xy 309.88 138.43) (xy 309.88 140.97)
 		)
 		(stroke
 			(width 0)
@@ -9305,6 +9564,16 @@
 			(type default)
 		)
 		(uuid "2915b8df-3ea4-4b68-92e4-f64aca5ec597")
+	)
+	(wire
+		(pts
+			(xy 364.49 205.74) (xy 375.92 205.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29ac1519-ab2c-4c98-84f7-cf7bd6fd71a8")
 	)
 	(wire
 		(pts
@@ -9338,6 +9607,16 @@
 	)
 	(wire
 		(pts
+			(xy 364.49 187.96) (xy 375.92 187.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bfb4baa-9d50-4b67-8a87-0dc8a7255352")
+	)
+	(wire
+		(pts
 			(xy 50.8 201.93) (xy 43.18 201.93)
 		)
 		(stroke
@@ -9358,7 +9637,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 120.65) (xy 349.25 123.19)
+			(xy 309.88 120.65) (xy 309.88 123.19)
 		)
 		(stroke
 			(width 0)
@@ -9378,7 +9657,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 123.19) (xy 349.25 125.73)
+			(xy 309.88 123.19) (xy 309.88 125.73)
 		)
 		(stroke
 			(width 0)
@@ -9428,6 +9707,26 @@
 	)
 	(wire
 		(pts
+			(xy 364.49 203.2) (xy 375.92 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3632fa94-2a68-47a2-b8e0-cef1026530c8")
+	)
+	(wire
+		(pts
+			(xy 364.49 185.42) (xy 375.92 185.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "38dd02fe-a320-4045-a0a3-cd7686823d64")
+	)
+	(wire
+		(pts
 			(xy 384.81 52.07) (xy 384.81 49.53)
 		)
 		(stroke
@@ -9458,17 +9757,7 @@
 	)
 	(wire
 		(pts
-			(xy 396.24 227.33) (xy 396.24 229.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "41f13d52-198d-4007-b056-a5b6ba222f37")
-	)
-	(wire
-		(pts
-			(xy 283.21 199.39) (xy 273.05 199.39)
+			(xy 254 198.12) (xy 243.84 198.12)
 		)
 		(stroke
 			(width 0)
@@ -9538,7 +9827,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 128.27) (xy 349.25 130.81)
+			(xy 309.88 128.27) (xy 309.88 130.81)
 		)
 		(stroke
 			(width 0)
@@ -9578,13 +9867,23 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 140.97) (xy 349.25 143.51)
+			(xy 309.88 140.97) (xy 309.88 143.51)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "4b31c7a8-c361-4e00-b6af-c54598d34af1")
+	)
+	(wire
+		(pts
+			(xy 364.49 180.34) (xy 375.92 180.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ca70d56-c928-4b55-8ab9-3f23eb639acf")
 	)
 	(wire
 		(pts
@@ -9618,7 +9917,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 168.91) (xy 349.25 171.45)
+			(xy 309.88 168.91) (xy 309.88 171.45)
 		)
 		(stroke
 			(width 0)
@@ -9648,7 +9947,7 @@
 	)
 	(wire
 		(pts
-			(xy 313.69 135.89) (xy 316.23 135.89)
+			(xy 274.32 135.89) (xy 276.86 135.89)
 		)
 		(stroke
 			(width 0)
@@ -9668,7 +9967,7 @@
 	)
 	(wire
 		(pts
-			(xy 302.26 184.15) (xy 304.8 184.15)
+			(xy 262.89 184.15) (xy 265.43 184.15)
 		)
 		(stroke
 			(width 0)
@@ -9678,7 +9977,7 @@
 	)
 	(polyline
 		(pts
-			(xy 299.974 207.264) (xy 407.924 207.264)
+			(xy 299.974 207.264) (xy 354.33 207.01)
 		)
 		(stroke
 			(width 0.381)
@@ -9688,7 +9987,7 @@
 	)
 	(wire
 		(pts
-			(xy 287.02 184.15) (xy 297.18 184.15)
+			(xy 247.65 184.15) (xy 257.81 184.15)
 		)
 		(stroke
 			(width 0)
@@ -9698,7 +9997,7 @@
 	)
 	(wire
 		(pts
-			(xy 309.88 184.15) (xy 316.23 184.15)
+			(xy 270.51 184.15) (xy 276.86 184.15)
 		)
 		(stroke
 			(width 0)
@@ -9768,6 +10067,16 @@
 	)
 	(wire
 		(pts
+			(xy 360.68 228.6) (xy 375.92 228.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5cb93a5e-ce9c-4b42-9596-222b6d74c580")
+	)
+	(wire
+		(pts
 			(xy -88.9 127) (xy -72.39 127)
 		)
 		(stroke
@@ -9808,13 +10117,23 @@
 	)
 	(wire
 		(pts
-			(xy 358.14 234.95) (xy 373.38 234.95)
+			(xy 364.49 223.52) (xy 375.92 223.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6311f37f-8170-4d24-9349-fe0ef22a2005")
+		(uuid "63902444-9440-4351-8d17-c6f912196336")
+	)
+	(wire
+		(pts
+			(xy 364.49 218.44) (xy 375.92 218.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63a973e3-a192-46f6-9ce6-5fe345b08515")
 	)
 	(wire
 		(pts
@@ -9825,6 +10144,16 @@
 			(type default)
 		)
 		(uuid "64bfca77-e21a-4e5b-a33d-f42e4c956f53")
+	)
+	(wire
+		(pts
+			(xy 146.05 95.25) (xy 157.48 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65aa6b15-e3b9-4227-9e99-698e86085e57")
 	)
 	(wire
 		(pts
@@ -9888,6 +10217,16 @@
 	)
 	(wire
 		(pts
+			(xy 364.49 182.88) (xy 375.92 182.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6894abe8-86c0-4001-810c-9ddb1546812b")
+	)
+	(wire
+		(pts
 			(xy 292.1 39.37) (xy 295.91 39.37)
 		)
 		(stroke
@@ -9938,7 +10277,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 156.21) (xy 349.25 158.75)
+			(xy 309.88 156.21) (xy 309.88 158.75)
 		)
 		(stroke
 			(width 0)
@@ -9958,7 +10297,7 @@
 	)
 	(wire
 		(pts
-			(xy 316.23 115.57) (xy 314.96 115.57)
+			(xy 276.86 115.57) (xy 275.59 115.57)
 		)
 		(stroke
 			(width 0)
@@ -9988,7 +10327,27 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 148.59) (xy 349.25 151.13)
+			(xy 384.81 237.49) (xy 384.81 236.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "72a43131-9edb-4c63-bf14-5c675f2acb7e")
+	)
+	(wire
+		(pts
+			(xy 364.49 193.04) (xy 375.92 193.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "72fb7d6c-23e3-4e21-9625-560f5e9986ab")
+	)
+	(wire
+		(pts
+			(xy 309.88 148.59) (xy 309.88 151.13)
 		)
 		(stroke
 			(width 0)
@@ -10018,6 +10377,16 @@
 	)
 	(wire
 		(pts
+			(xy 364.49 190.5) (xy 375.92 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a75343b-847a-412e-8d63-1752e48af6dc")
+	)
+	(wire
+		(pts
 			(xy 95.25 92.71) (xy 113.03 92.71)
 		)
 		(stroke
@@ -10035,6 +10404,16 @@
 			(type default)
 		)
 		(uuid "7bf20fab-77ab-484e-93b1-e5195fc2f06a")
+	)
+	(wire
+		(pts
+			(xy 364.49 208.28) (xy 375.92 208.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c6b67d4-c9aa-45ee-a587-f68ba5580314")
 	)
 	(wire
 		(pts
@@ -10088,7 +10467,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 173.99) (xy 349.25 176.53)
+			(xy 309.88 173.99) (xy 309.88 176.53)
 		)
 		(stroke
 			(width 0)
@@ -10128,17 +10507,7 @@
 	)
 	(wire
 		(pts
-			(xy 373.38 242.57) (xy 358.14 242.57)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "81e49a2b-16da-4be1-9202-f6aa071f27de")
-	)
-	(wire
-		(pts
-			(xy 283.21 107.95) (xy 300.99 107.95)
+			(xy 243.84 107.95) (xy 261.62 107.95)
 		)
 		(stroke
 			(width 0)
@@ -10148,7 +10517,7 @@
 	)
 	(wire
 		(pts
-			(xy 309.88 186.69) (xy 316.23 186.69)
+			(xy 270.51 186.69) (xy 276.86 186.69)
 		)
 		(stroke
 			(width 0)
@@ -10178,7 +10547,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 133.35) (xy 349.25 135.89)
+			(xy 309.88 133.35) (xy 309.88 135.89)
 		)
 		(stroke
 			(width 0)
@@ -10208,7 +10577,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 161.29) (xy 349.25 163.83)
+			(xy 309.88 161.29) (xy 309.88 163.83)
 		)
 		(stroke
 			(width 0)
@@ -10218,17 +10587,7 @@
 	)
 	(wire
 		(pts
-			(xy 351.79 229.87) (xy 373.38 229.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8c043c4f-9513-4b75-9e3b-7a07b721ac55")
-	)
-	(wire
-		(pts
-			(xy 302.26 186.69) (xy 304.8 186.69)
+			(xy 262.89 186.69) (xy 265.43 186.69)
 		)
 		(stroke
 			(width 0)
@@ -10268,7 +10627,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 143.51) (xy 349.25 146.05)
+			(xy 309.88 143.51) (xy 309.88 146.05)
 		)
 		(stroke
 			(width 0)
@@ -10338,6 +10697,16 @@
 	)
 	(wire
 		(pts
+			(xy 364.49 198.12) (xy 375.92 198.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96188011-d451-4ebe-a4b3-e64800b90e1a")
+	)
+	(wire
+		(pts
 			(xy 240.03 245.11) (xy 240.03 240.03)
 		)
 		(stroke
@@ -10348,7 +10717,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 135.89) (xy 349.25 138.43)
+			(xy 309.88 135.89) (xy 309.88 138.43)
 		)
 		(stroke
 			(width 0)
@@ -10365,16 +10734,6 @@
 			(type default)
 		)
 		(uuid "97bf5023-f1e4-4d0f-a54b-dc5817f9198a")
-	)
-	(wire
-		(pts
-			(xy 373.38 232.41) (xy 358.14 232.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "97fed6e7-9eb9-4f36-b621-8e74a2148917")
 	)
 	(wire
 		(pts
@@ -10398,7 +10757,7 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 115.57) (xy 314.96 100.33)
+			(xy 275.59 115.57) (xy 275.59 100.33)
 		)
 		(stroke
 			(width 0)
@@ -10448,13 +10807,13 @@
 	)
 	(wire
 		(pts
-			(xy 373.38 237.49) (xy 358.14 237.49)
+			(xy 364.49 215.9) (xy 375.92 215.9)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "9e28d163-515f-40a7-82b3-0a31245982d1")
+		(uuid "9f89ff3d-fa7b-4be5-a949-e479f3c40184")
 	)
 	(wire
 		(pts
@@ -10468,7 +10827,7 @@
 	)
 	(wire
 		(pts
-			(xy 287.02 176.53) (xy 316.23 176.53)
+			(xy 247.65 176.53) (xy 276.86 176.53)
 		)
 		(stroke
 			(width 0)
@@ -10528,7 +10887,7 @@
 	)
 	(wire
 		(pts
-			(xy 306.07 120.65) (xy 316.23 120.65)
+			(xy 266.7 120.65) (xy 276.86 120.65)
 		)
 		(stroke
 			(width 0)
@@ -10546,6 +10905,16 @@
 		)
 		(uuid "a65cb969-555d-4b67-9679-9ba7fdf3cabb")
 	)
+	(polyline
+		(pts
+			(xy 354.33 206.502) (xy 354.33 83.82)
+		)
+		(stroke
+			(width 0.381)
+			(type dash)
+		)
+		(uuid "a7654efc-c50f-4354-91ac-711ce30b04e1")
+	)
 	(wire
 		(pts
 			(xy 241.3 259.08) (xy 259.08 259.08)
@@ -10558,13 +10927,23 @@
 	)
 	(wire
 		(pts
-			(xy 283.21 100.33) (xy 300.99 100.33)
+			(xy 243.84 100.33) (xy 261.62 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "a83c3486-0f01-4270-86d1-09fd00970c8f")
+	)
+	(wire
+		(pts
+			(xy 364.49 195.58) (xy 375.92 195.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa4b2834-d596-4af4-aea8-4214cc7f68ef")
 	)
 	(wire
 		(pts
@@ -10578,33 +10957,13 @@
 	)
 	(wire
 		(pts
-			(xy 373.38 227.33) (xy 351.79 227.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ab825387-dfbb-4d7a-83fd-18a724ae3e66")
-	)
-	(wire
-		(pts
-			(xy 265.43 107.95) (xy 283.21 107.95)
+			(xy 226.06 107.95) (xy 243.84 107.95)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "ab9b3912-8fbd-4607-85ba-4368a89c9b62")
-	)
-	(wire
-		(pts
-			(xy 373.38 245.11) (xy 358.14 245.11)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ac40ffae-57d6-4a57-a4f6-344a7b6ca40a")
 	)
 	(wire
 		(pts
@@ -10628,7 +10987,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 130.81) (xy 349.25 133.35)
+			(xy 309.88 130.81) (xy 309.88 133.35)
 		)
 		(stroke
 			(width 0)
@@ -10668,7 +11027,7 @@
 	)
 	(wire
 		(pts
-			(xy 316.23 107.95) (xy 316.23 110.49)
+			(xy 276.86 107.95) (xy 276.86 110.49)
 		)
 		(stroke
 			(width 0)
@@ -10708,7 +11067,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 146.05) (xy 349.25 148.59)
+			(xy 309.88 146.05) (xy 309.88 148.59)
 		)
 		(stroke
 			(width 0)
@@ -10718,13 +11077,23 @@
 	)
 	(wire
 		(pts
-			(xy 283.21 196.85) (xy 273.05 196.85)
+			(xy 254 195.58) (xy 243.84 195.58)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "b58e344b-fea1-4506-9bc1-f208c042465d")
+	)
+	(wire
+		(pts
+			(xy 360.68 231.14) (xy 375.92 231.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6357297-c2b3-41d1-88f6-a5aea6b7f1fc")
 	)
 	(wire
 		(pts
@@ -10738,7 +11107,7 @@
 	)
 	(wire
 		(pts
-			(xy 293.37 128.27) (xy 316.23 128.27)
+			(xy 254 128.27) (xy 276.86 128.27)
 		)
 		(stroke
 			(width 0)
@@ -10748,23 +11117,13 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 151.13) (xy 349.25 153.67)
+			(xy 309.88 151.13) (xy 309.88 153.67)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "b841d2d1-46b9-4b6f-a05c-a3639eb9b6e3")
-	)
-	(wire
-		(pts
-			(xy 146.05 95.25) (xy 161.29 95.25)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b9458351-8602-431c-b9ac-09395d1d2eb2")
 	)
 	(wire
 		(pts
@@ -10788,7 +11147,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 166.37) (xy 349.25 168.91)
+			(xy 309.88 166.37) (xy 309.88 168.91)
 		)
 		(stroke
 			(width 0)
@@ -10828,6 +11187,16 @@
 	)
 	(wire
 		(pts
+			(xy 364.49 226.06) (xy 375.92 226.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c14b8f0a-e467-4b2a-97b8-96b4bbfc404e")
+	)
+	(wire
+		(pts
 			(xy -88.9 121.92) (xy -72.39 121.92)
 		)
 		(stroke
@@ -10838,7 +11207,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 163.83) (xy 349.25 166.37)
+			(xy 309.88 163.83) (xy 309.88 166.37)
 		)
 		(stroke
 			(width 0)
@@ -10848,7 +11217,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 125.73) (xy 349.25 128.27)
+			(xy 309.88 125.73) (xy 309.88 128.27)
 		)
 		(stroke
 			(width 0)
@@ -10858,7 +11227,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 176.53) (xy 349.25 179.07)
+			(xy 309.88 176.53) (xy 309.88 179.07)
 		)
 		(stroke
 			(width 0)
@@ -10928,7 +11297,7 @@
 	)
 	(wire
 		(pts
-			(xy 316.23 110.49) (xy 316.23 113.03)
+			(xy 276.86 110.49) (xy 276.86 113.03)
 		)
 		(stroke
 			(width 0)
@@ -10938,17 +11307,7 @@
 	)
 	(wire
 		(pts
-			(xy 373.38 240.03) (xy 358.14 240.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cc0a1bdd-052a-43de-94f4-58b684d922cf")
-	)
-	(wire
-		(pts
-			(xy 349.25 158.75) (xy 349.25 161.29)
+			(xy 309.88 158.75) (xy 309.88 161.29)
 		)
 		(stroke
 			(width 0)
@@ -10978,7 +11337,17 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 100.33) (xy 283.21 100.33)
+			(xy 157.48 95.25) (xy 161.29 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf281a3e-2df6-4bd4-83e6-1e9703ac8320")
+	)
+	(wire
+		(pts
+			(xy 226.06 100.33) (xy 243.84 100.33)
 		)
 		(stroke
 			(width 0)
@@ -11038,7 +11407,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 179.07) (xy 349.25 181.61)
+			(xy 309.88 179.07) (xy 309.88 181.61)
 		)
 		(stroke
 			(width 0)
@@ -11198,13 +11567,23 @@
 	)
 	(wire
 		(pts
-			(xy 297.18 166.37) (xy 316.23 166.37)
+			(xy 257.81 166.37) (xy 276.86 166.37)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "e9600a9a-51e0-406a-b071-4a264be77a10")
+	)
+	(wire
+		(pts
+			(xy 364.49 177.8) (xy 375.92 177.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea131cd6-df68-41d2-bb98-3c533399b797")
 	)
 	(wire
 		(pts
@@ -11218,7 +11597,7 @@
 	)
 	(wire
 		(pts
-			(xy 273.05 176.53) (xy 281.94 176.53)
+			(xy 233.68 176.53) (xy 242.57 176.53)
 		)
 		(stroke
 			(width 0)
@@ -11238,7 +11617,7 @@
 	)
 	(wire
 		(pts
-			(xy 300.99 107.95) (xy 316.23 107.95)
+			(xy 261.62 107.95) (xy 276.86 107.95)
 		)
 		(stroke
 			(width 0)
@@ -11248,7 +11627,7 @@
 	)
 	(wire
 		(pts
-			(xy 313.69 143.51) (xy 316.23 143.51)
+			(xy 274.32 143.51) (xy 276.86 143.51)
 		)
 		(stroke
 			(width 0)
@@ -11278,7 +11657,7 @@
 	)
 	(wire
 		(pts
-			(xy 349.25 171.45) (xy 349.25 173.99)
+			(xy 309.88 171.45) (xy 309.88 173.99)
 		)
 		(stroke
 			(width 0)
@@ -11345,6 +11724,16 @@
 			(type default)
 		)
 		(uuid "fe081e71-bf33-48d8-99dc-65179312925f")
+	)
+	(wire
+		(pts
+			(xy 389.89 172.72) (xy 384.81 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe38383f-4d0a-4a22-aa12-0f2a72bdf81f")
 	)
 	(polyline
 		(pts
@@ -11480,6 +11869,16 @@
 		)
 		(uuid "04dcf57f-fd23-4aec-9f4c-16ba733f71b4")
 	)
+	(label "A2"
+		(at 364.49 180.34 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "04f4e441-1da1-46ce-ad30-b74ae36e309d")
+	)
 	(label "MOT_A.PH{slash}IN2"
 		(at 16.51 242.57 0)
 		(effects
@@ -11510,6 +11909,36 @@
 		)
 		(uuid "0a22285c-d14a-4b1d-86b3-6382dac9d70f")
 	)
+	(label "S7"
+		(at 364.49 208.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0e12db27-c4a4-4590-9b3f-36d0400386a6")
+	)
+	(label "S10"
+		(at 364.49 200.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0f99b799-d042-4c7d-91ee-dc49e3d330ee")
+	)
+	(label "S15"
+		(at 364.49 187.96 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0fd42804-f0d2-470a-a67c-b9370e2452b2")
+	)
 	(label "MOT_B.EN{slash}IN1"
 		(at -88.9 129.54 0)
 		(effects
@@ -11519,16 +11948,6 @@
 			(justify left bottom)
 		)
 		(uuid "0ffb2603-5d0e-4377-bf11-e16d3d74548e")
-	)
-	(label "SEN_S2"
-		(at 358.14 240.03 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "106142e3-186b-4df8-9a54-bfc05d64affb")
 	)
 	(label "MOT_B2"
 		(at 269.24 228.6 0)
@@ -11541,7 +11960,7 @@
 		(uuid "123f9262-fdce-4c03-837b-83ede46a0ca7")
 	)
 	(label "ESP_D+"
-		(at 273.05 176.53 0)
+		(at 233.68 176.53 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11560,15 +11979,25 @@
 		)
 		(uuid "13744965-2816-4189-8872-09b7bf0a0df5")
 	)
-	(label "SEN_S0"
-		(at 358.14 245.11 0)
+	(label "S12"
+		(at 364.49 195.58 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "17b22d5e-e29e-42ff-ab19-eb3c47d0f586")
+		(uuid "1c5f4d7b-b35b-47d5-ad2b-89db2d4f0d71")
+	)
+	(label "EN"
+		(at 364.49 177.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "22ad826a-a23a-431e-b8ab-0e3b2b6e07b7")
 	)
 	(label "SENSE_IN_A1"
 		(at 36.83 257.81 0)
@@ -11660,6 +12089,26 @@
 		)
 		(uuid "36ba1b4b-64b1-43f7-bcbc-9c8dca623771")
 	)
+	(label "S1"
+		(at 364.49 223.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "39e8a0f0-a3e7-4902-ac7f-8bbab65d0058")
+	)
+	(label "S11"
+		(at 364.49 198.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3a6ab7b7-12b1-4fe8-865e-71dd0925577e")
+	)
 	(label "SEN_MUX1"
 		(at -20.32 124.46 180)
 		(effects
@@ -11700,15 +12149,25 @@
 		)
 		(uuid "4a1a68bf-7d84-4807-96da-cf5bd30f4789")
 	)
-	(label "SEN_S1"
-		(at 358.14 242.57 0)
+	(label "S8"
+		(at 364.49 205.74 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "4b1878e1-8e6c-4b0c-b5e2-04f0a6460d56")
+		(uuid "4b031578-79a6-4f96-8947-06fd4032c0c2")
+	)
+	(label "S3"
+		(at 364.49 218.44 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4bd81afa-ed13-4ddf-b3cc-c4f045079bad")
 	)
 	(label "SEN_MUX2"
 		(at -20.32 121.92 180)
@@ -11719,6 +12178,16 @@
 			(justify right bottom)
 		)
 		(uuid "4dfc9172-4983-4c61-90f9-b6e68f55fc9b")
+	)
+	(label "S0"
+		(at 364.49 226.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "50bcb386-1627-4785-b602-4876892c8e9b")
 	)
 	(label "MOT_A2"
 		(at 92.71 255.27 180)
@@ -11749,6 +12218,16 @@
 			(justify right bottom)
 		)
 		(uuid "54929e6a-3f58-4099-a7ed-c29341a3ccf2")
+	)
+	(label "S13"
+		(at 364.49 193.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "54d43861-145a-4abc-9c2f-e289e0274913")
 	)
 	(label "MOT_A.~{SLEEP}"
 		(at -88.9 121.92 0)
@@ -11791,17 +12270,6 @@
 		)
 		(uuid "64a4aa07-3d2e-4d55-9f6f-838bb1627bc9")
 	)
-	(label "SEN_EN"
-		(at 358.14 232.41 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.1588)
-			)
-			(justify left bottom)
-		)
-		(uuid "692282b6-b860-4fc9-961e-51705a2b3574")
-	)
 	(label "MOT_B.PH{slash}IN2"
 		(at -88.9 132.08 0)
 		(effects
@@ -11821,6 +12289,26 @@
 			(justify left bottom)
 		)
 		(uuid "711ba5e6-8c3c-4cad-b2ba-408744033f21")
+	)
+	(label "S5"
+		(at 364.49 213.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "78632c60-4271-4d13-a052-04ddc2c66cbb")
+	)
+	(label "A1"
+		(at 364.49 182.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7e291732-4e3e-46e3-8c09-ca99b5b09690")
 	)
 	(label "MOT_A1"
 		(at 269.24 220.98 0)
@@ -11873,7 +12361,7 @@
 		(uuid "93c6263e-314d-4219-8b0b-e696c0122756")
 	)
 	(label "ESP_D-"
-		(at 273.05 173.99 0)
+		(at 233.68 173.99 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11892,8 +12380,18 @@
 		)
 		(uuid "99955d68-c87f-4f5d-9e7e-5bc103648d3b")
 	)
+	(label "S9"
+		(at 364.49 203.2 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9dfc00aa-a2ac-4bd6-be4e-9f2553d50665")
+	)
 	(label "ESP_BOOT"
-		(at 283.21 196.85 180)
+		(at 254 195.58 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -11933,7 +12431,7 @@
 		(uuid "a66b19ff-8049-4b27-a670-0b0c473e0c75")
 	)
 	(label "SAMD_RX1"
-		(at 287.02 186.69 0)
+		(at 247.65 186.69 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12012,6 +12510,16 @@
 		)
 		(uuid "c7967db6-1820-4e19-ae0e-ad143ea8a470")
 	)
+	(label "S6"
+		(at 364.49 210.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c85dfa5f-ff63-46a1-9512-66aee18ae4f7")
+	)
 	(label "STATUS_LED"
 		(at -20.32 142.24 180)
 		(effects
@@ -12032,6 +12540,26 @@
 		)
 		(uuid "cf2b0c86-0501-4680-a2e5-9a88ec244d49")
 	)
+	(label "A0"
+		(at 364.49 185.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d27dc834-61fa-4aa6-86f8-1913156b7c3b")
+	)
+	(label "S4"
+		(at 364.49 215.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d4bdb2b9-10d9-4807-b162-b9eb292cd44b")
+	)
 	(label "BAT_LEVEL"
 		(at -20.32 139.7 180)
 		(effects
@@ -12041,6 +12569,16 @@
 			(justify right bottom)
 		)
 		(uuid "d9dbefba-c90c-44e7-a3a4-d1e7f356e51d")
+	)
+	(label "S14"
+		(at 364.49 190.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "dc136bb9-d732-4fc5-a2f8-ad73aa0d960d")
 	)
 	(label "SEN_S2"
 		(at -20.32 132.08 180)
@@ -12053,7 +12591,7 @@
 		(uuid "ddaad3f7-8698-4522-b1b4-baf3948e2245")
 	)
 	(label "ESP_BOOT"
-		(at 306.07 166.37 0)
+		(at 266.7 166.37 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12073,7 +12611,7 @@
 		(uuid "e62a27a7-a242-4db4-ad9d-ed0a1213b0d1")
 	)
 	(label "SAMD_TX1"
-		(at 287.02 184.15 0)
+		(at 247.65 184.15 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12152,28 +12690,18 @@
 		)
 		(uuid "f7f4948c-5ca1-4ebb-b414-dbdaa46e6b6b")
 	)
-	(label "SEN_MUX2"
-		(at 358.14 234.95 0)
+	(label "S2"
+		(at 364.49 220.98 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
 		)
-		(uuid "f9bf5af9-a0aa-400c-895f-2a43dc22839c")
-	)
-	(label "SEN_MUX1"
-		(at 358.14 237.49 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "faefff52-4fa0-40cd-adb3-ae5c6e2cc714")
+		(uuid "f8b3916b-1333-4950-bb4c-32c4047bd480")
 	)
 	(label "ESP_EN"
-		(at 307.34 128.27 0)
+		(at 267.97 128.27 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -12258,7 +12786,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "022a78a0-c5c5-42e7-bcdd-faf9c4d6559e")
-		(property "Reference" "#PWR073"
+		(property "Reference" "#PWR060"
 			(at 346.71 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -12325,7 +12853,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR073")
+					(reference "#PWR060")
 					(unit 1)
 				)
 			)
@@ -12343,7 +12871,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "024a9b89-b752-4687-8640-9ff306327f0b")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR020"
 			(at 101.6 50.8 0)
 			(hide yes)
 			(show_name no)
@@ -12404,7 +12932,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR018")
+					(reference "#PWR020")
 					(unit 1)
 				)
 			)
@@ -12513,7 +13041,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "05b24145-8981-4da6-a7c8-cd82bb12bafe")
-		(property "Reference" "C30"
+		(property "Reference" "C19"
 			(at 283.21 29.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12583,7 +13111,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C30")
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -12591,7 +13119,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 306.07 160.02 0)
+		(at 266.7 160.02 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -12601,8 +13129,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "074fd576-cf9b-4bbb-ab45-9d34889f3976")
-		(property "Reference" "R27"
-			(at 308.61 158.7499 0)
+		(property "Reference" "R24"
+			(at 269.24 158.7499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12613,7 +13141,7 @@
 			)
 		)
 		(property "Value" "10kΩ"
-			(at 308.61 161.2899 0)
+			(at 269.24 161.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -12624,7 +13152,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 307.086 160.274 90)
+			(at 267.716 160.274 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12635,7 +13163,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 306.07 160.02 0)
+			(at 266.7 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12646,7 +13174,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 306.07 160.02 0)
+			(at 266.7 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12671,7 +13199,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R27")
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -12786,7 +13314,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "08b87139-cae1-4de9-a1de-73be01631665")
-		(property "Reference" "TPA6"
+		(property "Reference" "TPA1"
 			(at 285.75 220.9799 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12854,7 +13382,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "TPA6")
+					(reference "TPA1")
 					(unit 1)
 				)
 			)
@@ -12872,7 +13400,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "09666304-5e21-4ee7-874a-78ff178dc618")
-		(property "Reference" "#PWR051"
+		(property "Reference" "#PWR038"
 			(at 224.79 248.92 0)
 			(hide yes)
 			(show_name no)
@@ -12939,7 +13467,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR051")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -12957,7 +13485,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0e52018e-b41e-4284-adec-3bd8b60b4b5d")
-		(property "Reference" "#PWR061"
+		(property "Reference" "#PWR051"
 			(at 295.91 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -13024,7 +13552,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR061")
+					(reference "#PWR051")
 					(unit 1)
 				)
 			)
@@ -13041,7 +13569,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0e73c9f5-586a-43c2-8b9b-61d83ef39329")
-		(property "Reference" "SWD_PWR"
+		(property "Reference" "SWD_PWR1"
 			(at 38.608 201.93 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13103,7 +13631,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "SWD_PWR")
+					(reference "SWD_PWR1")
 					(unit 1)
 				)
 			)
@@ -13120,7 +13648,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0ecb629c-e9ff-46ce-914d-e6f5afbe58a6")
-		(property "Reference" "C24"
+		(property "Reference" "C10"
 			(at 184.15 151.13 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13182,7 +13710,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C24")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -13200,7 +13728,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0f8985fb-50e7-400f-8ebb-ad7e21fdb49b")
-		(property "Reference" "C16"
+		(property "Reference" "C5"
 			(at 116.84 95.2499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13264,7 +13792,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C16")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -13272,7 +13800,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 299.72 186.69 90)
+		(at 260.35 186.69 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13281,8 +13809,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "12d2bd33-ed33-4130-9da7-3c95dae052a3")
-		(property "Reference" "R26"
-			(at 299.72 189.23 90)
+		(property "Reference" "R22"
+			(at 260.35 189.23 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13292,7 +13820,7 @@
 			)
 		)
 		(property "Value" "470Ω"
-			(at 299.72 191.77 90)
+			(at 260.35 191.77 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13302,7 +13830,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 299.72 186.69 0)
+			(at 260.35 186.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13313,7 +13841,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 299.72 186.69 0)
+			(at 260.35 186.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13324,7 +13852,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 299.72 186.69 0)
+			(at 260.35 186.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13349,7 +13877,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R26")
+					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -13366,7 +13894,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "13bb06d5-139e-41b4-9edc-b4fa319a1113")
-		(property "Reference" "SWD_IO"
+		(property "Reference" "SWD_IO1"
 			(at 38.608 194.31 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13428,7 +13956,189 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "SWD_IO")
+					(reference "SWD_IO1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "EasyEDA:FPC-05F-22PH20")
+		(at 381 204.47 0)
+		(mirror x)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "167bbca7-f85e-4594-b03c-85a36042b12c")
+		(property "Reference" "FPC2"
+			(at 387.35 205.7401 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "FPC-05F-22PH20"
+			(at 387.35 203.2001 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "EasyEDA:FPC-SMD_22P-P0.50_FPC-05F-22PH20"
+			(at 381 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C2856804.pdf"
+			(at 381 162.56 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 381 204.47 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "XUNPU(讯普)"
+			(at 381 160.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "MPN" "FPC-05F-22PH20"
+			(at 381 157.48 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC Part" "C2856804"
+			(at 381 154.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ddb0c3dc-e267-478a-b05e-4aff1d107921")
+		)
+		(pin "2"
+			(uuid "c8dba7f4-5dc9-4fbc-b3cf-00fe56e9e674")
+		)
+		(pin "3"
+			(uuid "24ee24f2-ca79-4e26-b035-9b8b14d04493")
+		)
+		(pin "4"
+			(uuid "831bb7a1-6cb5-48b7-adc2-d8bcf80441f1")
+		)
+		(pin "5"
+			(uuid "d1a2da57-9565-4912-b6e4-185aee8eebab")
+		)
+		(pin "6"
+			(uuid "fa31e099-68e4-4b41-9624-5ad6a440eac9")
+		)
+		(pin "7"
+			(uuid "8b4e1e10-dcb9-44e2-aec6-5cf94e62376a")
+		)
+		(pin "8"
+			(uuid "871d2bad-b1e8-49c9-9ddf-43e981d2d6f5")
+		)
+		(pin "9"
+			(uuid "71d3927c-cbe6-427b-bd0b-bbd30df6a206")
+		)
+		(pin "10"
+			(uuid "bd8e2fea-e2ff-4c8a-9ed3-47c61f90ee3e")
+		)
+		(pin "11"
+			(uuid "488d78af-20bc-46ed-836b-5519b1efb2b5")
+		)
+		(pin "13"
+			(uuid "ea9d4ee0-1762-40b2-baab-1d4076d1bd44")
+		)
+		(pin "12"
+			(uuid "d83c7483-a3e9-4043-87c7-3fe386dbec42")
+		)
+		(pin "14"
+			(uuid "2dcbed44-b588-4dfb-aa27-e88983b50fa9")
+		)
+		(pin "15"
+			(uuid "02cf8e09-792d-4974-a328-27e54012e346")
+		)
+		(pin "16"
+			(uuid "1e777cd5-5670-4519-b99e-fa6203b984c7")
+		)
+		(pin "17"
+			(uuid "37a272d0-bc3e-4cbe-aa72-4f714a872c58")
+		)
+		(pin "18"
+			(uuid "d99789dc-9bbb-4280-9e3b-e5632f09597f")
+		)
+		(pin "19"
+			(uuid "3f0837de-78c9-4ee7-804c-c0938f7f2478")
+		)
+		(pin "20"
+			(uuid "e5e4efb7-6aa8-4e62-8ef1-5438498c5fd6")
+		)
+		(pin "21"
+			(uuid "a4081725-1395-4388-b3d1-c3ab4fb19a48")
+		)
+		(pin "22"
+			(uuid "412fa77f-0ed8-430a-9248-0975041217cd")
+		)
+		(pin "23"
+			(uuid "4e13ae3c-cdc7-4fac-9725-5f7b1ea8ca65")
+		)
+		(pin "24"
+			(uuid "c402b2ac-c909-40e6-9d2d-8c3705f47434")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
+					(reference "FPC2")
 					(unit 1)
 				)
 			)
@@ -13436,7 +14146,7 @@
 	)
 	(symbol
 		(lib_id "SAVITAR:ESP32-C3-MINI-1-H4X")
-		(at 316.23 110.49 0)
+		(at 276.86 110.49 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13446,8 +14156,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "16dec70c-2d71-4d0e-9c9a-6b2894835ccc")
-		(property "Reference" "U4"
-			(at 332.74 102.87 0)
+		(property "Reference" "U3"
+			(at 293.37 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13457,7 +14167,7 @@
 			)
 		)
 		(property "Value" "ESP32-C3-MINI-1-H4X"
-			(at 332.74 105.41 0)
+			(at 293.37 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13467,7 +14177,7 @@
 			)
 		)
 		(property "Footprint" "SAVITAR:ESP32C3MINI1H4X"
-			(at 345.44 205.41 0)
+			(at 306.07 205.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13479,7 +14189,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.mouser.com/catalog/specsheets/Espressif_Systems_esp32-c3-mini-1_datasheet_en.pdf"
-			(at 345.44 305.41 0)
+			(at 306.07 305.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13491,7 +14201,7 @@
 			)
 		)
 		(property "Description" "Bluetooth, WiFi 802.11b/g/n, Bluetooth v5.0 Transceiver Module 2.412GHz ~ 2.484GHz PCB Trace Surface Mount"
-			(at 316.23 110.49 0)
+			(at 276.86 110.49 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13502,7 +14212,7 @@
 			)
 		)
 		(property "Height" "2.55"
-			(at 345.44 505.41 0)
+			(at 306.07 505.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13514,7 +14224,7 @@
 			)
 		)
 		(property "Manufacturer_Name" "Espressif Systems"
-			(at 345.44 605.41 0)
+			(at 306.07 605.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13526,7 +14236,7 @@
 			)
 		)
 		(property "Manufacturer_Part_Number" "ESP32-C3-MINI-1-H4X"
-			(at 345.44 705.41 0)
+			(at 306.07 705.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13538,7 +14248,7 @@
 			)
 		)
 		(property "Mouser Part Number" "356-ESP32C3MINI1H4X"
-			(at 345.44 805.41 0)
+			(at 306.07 805.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13550,7 +14260,7 @@
 			)
 		)
 		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Espressif-Systems/ESP32-C3-MINI-1-H4X?qs=olJun0bQHM%252Bm8wbucOd%2FlA%3D%3D"
-			(at 345.44 905.41 0)
+			(at 306.07 905.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13562,7 +14272,7 @@
 			)
 		)
 		(property "Arrow Part Number" ""
-			(at 345.44 1005.41 0)
+			(at 306.07 1005.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13574,7 +14284,7 @@
 			)
 		)
 		(property "Arrow Price/Stock" ""
-			(at 345.44 1105.41 0)
+			(at 306.07 1105.41 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13777,7 +14487,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "U4")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -13785,7 +14495,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 273.05 196.85 90)
+		(at 243.84 195.58 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13795,7 +14505,7 @@
 		(dnp no)
 		(uuid "181df396-ec0c-4296-b8c5-d14f0de286eb")
 		(property "Reference" "ESP_JMP1"
-			(at 263.906 196.596 90)
+			(at 234.696 195.326 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13805,7 +14515,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 269.748 194.31 90)
+			(at 240.538 193.04 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13816,7 +14526,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 273.05 191.77 0)
+			(at 243.84 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13827,7 +14537,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 273.05 191.77 0)
+			(at 243.84 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13838,7 +14548,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 273.05 196.85 0)
+			(at 243.84 195.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13958,7 +14668,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1b1cb793-7f28-4b62-8a6a-caf021ac441d")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR041"
 			(at 227.33 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -14019,7 +14729,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR054")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -14027,7 +14737,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 307.34 186.69 90)
+		(at 267.97 186.69 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14036,8 +14746,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1d903820-2ffc-4390-a7d9-f0b643cb8c60")
-		(property "Reference" "R29"
-			(at 307.34 189.484 90)
+		(property "Reference" "R26"
+			(at 267.97 189.484 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14047,7 +14757,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 307.34 192.024 90)
+			(at 267.97 192.024 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14057,7 +14767,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 307.34 186.69 0)
+			(at 267.97 186.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14068,7 +14778,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 307.34 186.69 0)
+			(at 267.97 186.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14079,7 +14789,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 307.34 186.69 0)
+			(at 267.97 186.69 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14104,7 +14814,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R29")
+					(reference "R26")
 					(unit 1)
 				)
 			)
@@ -14207,7 +14917,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1fb915ec-1072-44f7-999e-b81eb9f26c71")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR07"
 			(at 46.99 234.95 0)
 			(hide yes)
 			(show_name no)
@@ -14273,7 +14983,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR016")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -14291,7 +15001,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "240ea30d-1dd7-4a22-af6c-f08dad1aa743")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR011"
 			(at 68.58 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -14358,7 +15068,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR021")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -14376,7 +15086,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "24310352-6b44-488d-b71b-7769125f26ec")
-		(property "Reference" "C48"
+		(property "Reference" "C6"
 			(at 124.46 259.7149 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14440,7 +15150,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C48")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -14457,7 +15167,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "25b99676-08f3-4345-8da4-41e3ef7e10fb")
-		(property "Reference" "C23"
+		(property "Reference" "C9"
 			(at 185.928 138.43 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14521,7 +15231,164 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C23")
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 232.41 26.67 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "28589828-69e9-4258-ab1b-e64d31618639")
+		(property "Reference" "#PWR0112"
+			(at 232.41 33.02 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 232.41 31.75 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 232.41 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 232.41 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "494e3234-404c-43bd-9521-0a75206f67af")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
+					(reference "#PWR0112")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 232.41 26.67 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "28a5e4e2-5c31-4553-9ffe-ecb41c13e709")
+		(property "Reference" "TP2"
+			(at 226.06 26.67 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 230.3779 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 232.41 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 232.41 26.67 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "2ba0b6b8-c8f6-413b-9400-0c29b1076ad9")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
+					(reference "TP2")
 					(unit 1)
 				)
 			)
@@ -14539,7 +15406,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "28e067e0-aac8-45ca-a278-a618976bf69a")
-		(property "Reference" "R17"
+		(property "Reference" "R13"
 			(at 229.87 45.7199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14603,7 +15470,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R17")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -14709,7 +15576,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "2c761d8d-afd0-4e7d-9f1c-55581be346c6")
-		(property "Reference" "R4"
+		(property "Reference" "R7"
 			(at 97.79 50.8 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14771,7 +15638,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R4")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -14874,7 +15741,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "35d442a2-7d73-41ad-beda-7240463162d8")
-		(property "Reference" "R16"
+		(property "Reference" "R12"
 			(at 227.33 233.6799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14944,7 +15811,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R16")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -14961,7 +15828,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3628462a-a1cf-4c24-8520-0e4c61c66bd7")
-		(property "Reference" "SWD_RST"
+		(property "Reference" "SWD_RST1"
 			(at 38.608 191.77 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15023,7 +15890,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "SWD_RST")
+					(reference "SWD_RST1")
 					(unit 1)
 				)
 			)
@@ -15040,7 +15907,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "36484c7e-d06f-413f-8e34-19f962feeb52")
-		(property "Reference" "#PWR039"
+		(property "Reference" "#PWR019"
 			(at 96.52 194.31 0)
 			(hide yes)
 			(show_name no)
@@ -15101,7 +15968,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR039")
+					(reference "#PWR019")
 					(unit 1)
 				)
 			)
@@ -15109,7 +15976,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 293.37 120.65 0)
+		(at 254 120.65 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15118,8 +15985,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3904d849-06ad-4009-9e40-5ea91e60867d")
-		(property "Reference" "#PWR068"
-			(at 293.37 124.46 0)
+		(property "Reference" "#PWR049"
+			(at 254 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15130,7 +15997,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 293.37 116.586 0)
+			(at 254 116.586 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15140,7 +16007,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 293.37 120.65 0)
+			(at 254 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15151,7 +16018,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 293.37 120.65 0)
+			(at 254 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15162,7 +16029,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 293.37 120.65 0)
+			(at 254 120.65 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15184,7 +16051,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR068")
+					(reference "#PWR049")
 					(unit 1)
 				)
 			)
@@ -15192,7 +16059,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 283.21 199.39 0)
+		(at 254 198.12 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15202,8 +16069,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "39fdbb87-b47c-4605-b26b-bb39a618f4cf")
-		(property "Reference" "#PWR067"
-			(at 283.21 205.74 0)
+		(property "Reference" "#PWR048"
+			(at 254 204.47 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15214,7 +16081,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 283.21 204.47 0)
+			(at 254 203.2 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15225,7 +16092,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 283.21 199.39 0)
+			(at 254 198.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15236,7 +16103,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 283.21 199.39 0)
+			(at 254 198.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15247,7 +16114,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 283.21 199.39 0)
+			(at 254 198.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15269,7 +16136,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR067")
+					(reference "#PWR048")
 					(unit 1)
 				)
 			)
@@ -15287,7 +16154,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "3d8f480c-1077-4e29-b567-6b56701104a5")
-		(property "Reference" "R6"
+		(property "Reference" "R4"
 			(at 90.17 175.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15351,7 +16218,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R6")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -15369,7 +16236,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4131ca80-abd1-40db-8ed4-857464943239")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR010"
 			(at 64.77 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -15430,7 +16297,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR06")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -15448,7 +16315,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "41765229-4768-4374-9fc7-00a0eb414a71")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR040"
 			(at 227.33 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -15514,7 +16381,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR053")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
@@ -15532,7 +16399,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "42eda32f-5fe9-4067-95dc-7154c83d324d")
-		(property "Reference" "R5"
+		(property "Reference" "R3"
 			(at 88.9 233.6799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15602,7 +16469,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R5")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -15620,7 +16487,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "43321d99-621b-4da4-aa2a-fb9245bf6bf0")
-		(property "Reference" "#PWR048"
+		(property "Reference" "#PWR029"
 			(at 175.26 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -15680,7 +16547,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR048")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -15688,7 +16555,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 265.43 107.95 0)
+		(at 226.06 107.95 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15698,8 +16565,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "436639eb-747e-4b30-8d39-b4763ffc7b13")
-		(property "Reference" "#PWR063"
-			(at 265.43 114.3 0)
+		(property "Reference" "#PWR047"
+			(at 226.06 114.3 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15710,7 +16577,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 265.43 113.03 0)
+			(at 226.06 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15721,7 +16588,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 265.43 107.95 0)
+			(at 226.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15732,7 +16599,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 265.43 107.95 0)
+			(at 226.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15743,7 +16610,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 265.43 107.95 0)
+			(at 226.06 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15765,7 +16632,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR063")
+					(reference "#PWR047")
 					(unit 1)
 				)
 			)
@@ -15852,7 +16719,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 299.72 184.15 90)
+		(at 260.35 184.15 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15861,8 +16728,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "46c63ad9-bbf8-4aed-b25a-5617494ad094")
-		(property "Reference" "R25"
-			(at 299.72 179.07 90)
+		(property "Reference" "R21"
+			(at 260.35 179.07 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15872,7 +16739,7 @@
 			)
 		)
 		(property "Value" "470Ω"
-			(at 299.72 181.61 90)
+			(at 260.35 181.61 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15882,7 +16749,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 299.72 184.15 0)
+			(at 260.35 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15893,7 +16760,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 299.72 184.15 0)
+			(at 260.35 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15904,7 +16771,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 299.72 184.15 0)
+			(at 260.35 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15929,7 +16796,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R25")
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -16071,7 +16938,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "473ad3a5-1cbc-41f8-9bf4-2aa333fb6d2e")
-		(property "Reference" "C33"
+		(property "Reference" "C22"
 			(at 304.292 41.91 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16135,7 +17002,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C33")
+					(reference "C22")
 					(unit 1)
 				)
 			)
@@ -16153,7 +17020,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "480256cc-fda8-4823-8ba9-20ef0a3374d1")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR018"
 			(at 92.71 176.53 0)
 			(hide yes)
 			(show_name no)
@@ -16213,7 +17080,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR035")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -16230,7 +17097,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "481c3324-ae02-49ce-8052-1fb7c52dd62b")
-		(property "Reference" "R11"
+		(property "Reference" "R5"
 			(at 99.06 193.0399 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16294,7 +17161,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R11")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -16302,7 +17169,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 306.07 156.21 0)
+		(at 266.7 156.21 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -16311,8 +17178,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "488ef56a-0fca-403b-97a1-30dbf9c2b9a6")
-		(property "Reference" "#PWR071"
-			(at 306.07 160.02 0)
+		(property "Reference" "#PWR054"
+			(at 266.7 160.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16323,7 +17190,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 306.07 152.146 0)
+			(at 266.7 152.146 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16333,7 +17200,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 306.07 156.21 0)
+			(at 266.7 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16344,7 +17211,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 306.07 156.21 0)
+			(at 266.7 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16355,7 +17222,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 306.07 156.21 0)
+			(at 266.7 156.21 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16371,7 +17238,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR071")
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
@@ -16389,7 +17256,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "4d521476-3693-4d96-9d5c-b9ed1d726abb")
-		(property "Reference" "C34"
+		(property "Reference" "C24"
 			(at 306.07 55.8799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16459,7 +17326,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C34")
+					(reference "C24")
 					(unit 1)
 				)
 			)
@@ -16477,7 +17344,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4d5e7858-49ce-4ac5-a24a-e59b347590fa")
-		(property "Reference" "#PWR043"
+		(property "Reference" "#PWR032"
 			(at 185.42 234.95 0)
 			(hide yes)
 			(show_name no)
@@ -16543,7 +17410,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR043")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -16551,7 +17418,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 265.43 100.33 0)
+		(at 226.06 100.33 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -16560,8 +17427,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "526683e7-70e5-474d-8673-9178f07ac565")
-		(property "Reference" "#PWR062"
-			(at 265.43 104.14 0)
+		(property "Reference" "#PWR046"
+			(at 226.06 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16572,7 +17439,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 265.43 96.012 0)
+			(at 226.06 96.012 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -16582,7 +17449,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 265.43 100.33 0)
+			(at 226.06 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16593,7 +17460,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 265.43 100.33 0)
+			(at 226.06 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16604,7 +17471,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 265.43 100.33 0)
+			(at 226.06 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16626,7 +17493,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR062")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -16644,7 +17511,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "54f43ab3-bcff-4b7d-b336-08aeae627b34")
-		(property "Reference" "#PWR081"
+		(property "Reference" "#PWR066"
 			(at 384.81 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -16711,7 +17578,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR081")
+					(reference "#PWR066")
 					(unit 1)
 				)
 			)
@@ -16729,7 +17596,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "56b62b5f-9809-45cd-9ae3-21f7e7bfd9ae")
-		(property "Reference" "#PWR026"
+		(property "Reference" "#PWR016"
 			(at 86.36 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -16796,7 +17663,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR026")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -16814,7 +17681,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "56d83f8a-f341-4c28-8e63-7c9f8dd42f21")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR033"
 			(at 193.04 250.19 0)
 			(hide yes)
 			(show_name no)
@@ -16881,7 +17748,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR044")
+					(reference "#PWR033")
 					(unit 1)
 				)
 			)
@@ -16899,7 +17766,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "58b1612a-4abf-48c9-86ee-c62121628dbe")
-		(property "Reference" "C14"
+		(property "Reference" "C1"
 			(at 99.06 95.2499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16963,7 +17830,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C14")
+					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -17060,7 +17927,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5e3d57c2-8918-4d7e-b6c5-5616fe5811fc")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR034"
 			(at 191.77 128.27 0)
 			(hide yes)
 			(show_name no)
@@ -17121,7 +17988,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR057")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -17139,7 +18006,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5f1da449-8a16-461d-8ec9-79827518a9b4")
-		(property "Reference" "#PWR078"
+		(property "Reference" "#PWR064"
 			(at 368.3 58.42 0)
 			(hide yes)
 			(show_name no)
@@ -17206,7 +18073,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR078")
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -17223,7 +18090,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5f98a122-3b4d-4f79-a68a-842d857210ff")
-		(property "Reference" "C37"
+		(property "Reference" "C25"
 			(at 332.232 44.45 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17293,7 +18160,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C37")
+					(reference "C25")
 					(unit 1)
 				)
 			)
@@ -17310,7 +18177,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5fbc381f-dedf-4d4a-bd42-2984aaa7d3b3")
-		(property "Reference" "R14"
+		(property "Reference" "R10"
 			(at 195.58 42.926 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17372,7 +18239,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R14")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -17607,7 +18474,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "64db6de4-a987-4ebb-be3a-6a43905a33d1")
-		(property "Reference" "C19"
+		(property "Reference" "C15"
 			(at 247.65 242.5699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17677,7 +18544,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C19")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -17695,7 +18562,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6504aa04-0a06-4101-8881-ccf55512d0f8")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR024"
 			(at 120.65 261.62 0)
 			(hide yes)
 			(show_name no)
@@ -17761,7 +18628,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR031")
+					(reference "#PWR024")
 					(unit 1)
 				)
 			)
@@ -17779,7 +18646,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "65b07638-867b-46b2-a296-7bc05831ebef")
-		(property "Reference" "#PWR041"
+		(property "Reference" "#PWR028"
 			(at 173.99 266.7 0)
 			(hide yes)
 			(show_name no)
@@ -17846,7 +18713,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR041")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -17864,7 +18731,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "68abff7b-4f0b-4bbb-a219-2f830f979bff")
-		(property "Reference" "#PWR047"
+		(property "Reference" "#PWR035"
 			(at 207.01 276.86 0)
 			(hide yes)
 			(show_name no)
@@ -17931,7 +18798,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR047")
+					(reference "#PWR035")
 					(unit 1)
 				)
 			)
@@ -18250,7 +19117,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "69615a78-0250-4a5c-a84f-084eb687471a")
-		(property "Reference" "U5"
+		(property "Reference" "U4"
 			(at 368.3 35.56 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18328,7 +19195,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "U5")
+					(reference "U4")
 					(unit 1)
 				)
 			)
@@ -18346,7 +19213,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6a921bf1-df81-422e-9a62-5dad9bf41559")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR031"
 			(at 176.53 261.62 0)
 			(hide yes)
 			(show_name no)
@@ -18413,7 +19280,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR042")
+					(reference "#PWR031")
 					(unit 1)
 				)
 			)
@@ -18431,7 +19298,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6b9bdba7-48d6-45b7-b283-f9412fb561ac")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR014"
 			(at 86.36 234.95 0)
 			(hide yes)
 			(show_name no)
@@ -18497,7 +19364,85 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR024")
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VBUS")
+		(at 232.41 24.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6da43677-69ef-452d-b918-cd49b87bf5cc")
+		(property "Reference" "#PWR0111"
+			(at 232.41 27.94 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VBAT"
+			(at 232.41 19.05 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 232.41 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VBUS\""
+			(at 232.41 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "009a549c-2447-48b2-aed1-57b04b9e44dd")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
+					(reference "#PWR0111")
 					(unit 1)
 				)
 			)
@@ -18515,7 +19460,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ec4b54d-98cd-4e33-93be-487cf569c93d")
-		(property "Reference" "U3"
+		(property "Reference" "U2"
 			(at 131.6833 193.04 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18766,93 +19711,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 396.24 229.87 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "70a6e0ac-1ac0-4976-a47f-f30a08710909")
-		(property "Reference" "#PWR082"
-			(at 396.24 236.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 396.24 234.95 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 396.24 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 396.24 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 396.24 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "df6edca2-a053-479c-9abb-7e90c38eb49e")
-		)
-		(instances
-			(project "MCU"
-				(path "/b713d384-4380-4aef-98de-8773eb5f4cc6"
-					(reference "#PWR052")
-					(unit 1)
-				)
-			)
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR082")
+					(reference "U2")
 					(unit 1)
 				)
 			)
@@ -18869,7 +19728,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "71a0433f-c348-4e61-82ef-4db95b1bb32b")
-		(property "Reference" "C17"
+		(property "Reference" "C13"
 			(at 240.792 252.73 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18939,7 +19798,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C17")
+					(reference "C13")
 					(unit 1)
 				)
 			)
@@ -18957,7 +19816,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "729b9421-063a-4ff0-b17d-e9392999c8f2")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR06"
 			(at 34.29 262.89 0)
 			(hide yes)
 			(show_name no)
@@ -19024,7 +19883,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR012")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -19041,7 +19900,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "734a49fa-7cc1-489a-a879-5f86439c11db")
-		(property "Reference" "SWD_CLK"
+		(property "Reference" "SWD_CLK1"
 			(at 38.608 196.85 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19103,7 +19962,87 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "SWD_CLK")
+					(reference "SWD_CLK1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 360.68 231.14 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "77dfd98f-69f6-4fd3-a165-e867f9531990")
+		(property "Reference" "#PWR0139"
+			(at 360.68 237.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 360.68 236.22 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 360.68 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 360.68 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 360.68 231.14 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "36374c92-cdc5-4d79-b971-716d5ea32ddd")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
+					(reference "#PWR0139")
 					(unit 1)
 				)
 			)
@@ -19121,7 +20060,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7a690d4b-9b04-4010-add4-fc54a2dbd4ee")
-		(property "Reference" "C5"
+		(property "Reference" "C2"
 			(at 102.87 252.7299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19191,7 +20130,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C5")
+					(reference "C2")
 					(unit 1)
 				)
 			)
@@ -19199,7 +20138,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 313.69 143.51 0)
+		(at 274.32 143.51 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -19209,8 +20148,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7b94716f-be62-4b1e-8bb3-ee0942da63dc")
-		(property "Reference" "#PWR075"
-			(at 313.69 149.86 0)
+		(property "Reference" "#PWR058"
+			(at 274.32 149.86 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19221,7 +20160,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 313.69 148.59 0)
+			(at 274.32 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19232,7 +20171,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 313.69 143.51 0)
+			(at 274.32 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19243,7 +20182,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 313.69 143.51 0)
+			(at 274.32 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19254,7 +20193,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 313.69 143.51 0)
+			(at 274.32 143.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19276,7 +20215,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR075")
+					(reference "#PWR058")
 					(unit 1)
 				)
 			)
@@ -19379,7 +20318,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7dbc76eb-163c-49d4-9f57-20994c426a2b")
-		(property "Reference" "#PWR060"
+		(property "Reference" "#PWR044"
 			(at 259.08 273.05 0)
 			(hide yes)
 			(show_name no)
@@ -19446,7 +20385,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR060")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -19542,7 +20481,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7fb24929-a720-4f8c-a709-43195a2682fc")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR043"
 			(at 259.08 262.89 0)
 			(hide yes)
 			(show_name no)
@@ -19608,7 +20547,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR059")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -19626,7 +20565,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "84784900-1ab1-495a-961e-928069fde0c8")
-		(property "Reference" "TPA7"
+		(property "Reference" "TPA2"
 			(at 285.75 223.5199 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19694,7 +20633,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "TPA7")
+					(reference "TPA2")
 					(unit 1)
 				)
 			)
@@ -19702,7 +20641,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 300.99 104.14 0)
+		(at 261.62 104.14 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -19712,8 +20651,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "84d545be-e7c6-446e-94e6-bf404a22ed22")
-		(property "Reference" "C38"
-			(at 304.8 102.8699 0)
+		(property "Reference" "C23"
+			(at 265.43 102.8699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19724,7 +20663,7 @@
 			)
 		)
 		(property "Value" "22uF/16V"
-			(at 304.8 105.4099 0)
+			(at 265.43 105.4099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19735,7 +20674,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 301.9552 107.95 0)
+			(at 262.5852 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19746,7 +20685,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 300.99 104.14 0)
+			(at 261.62 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19757,7 +20696,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 300.99 104.14 0)
+			(at 261.62 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19782,7 +20721,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C38")
+					(reference "C23")
 					(unit 1)
 				)
 			)
@@ -19800,7 +20739,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "85fc7521-022e-4d11-a547-df71008af065")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR021"
 			(at 110.49 52.07 0)
 			(hide yes)
 			(show_name no)
@@ -19860,7 +20799,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR022")
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
@@ -19868,7 +20807,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 293.37 124.46 0)
+		(at 254 124.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -19878,8 +20817,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "865880cb-9153-4b57-84d9-89948e91e6aa")
-		(property "Reference" "R23"
-			(at 295.91 123.1899 0)
+		(property "Reference" "R17"
+			(at 256.54 123.1899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19890,7 +20829,7 @@
 			)
 		)
 		(property "Value" "10kΩ(1%)"
-			(at 295.91 125.7299 0)
+			(at 256.54 125.7299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19901,7 +20840,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 294.386 124.714 90)
+			(at 255.016 124.714 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19912,7 +20851,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 293.37 124.46 0)
+			(at 254 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19923,7 +20862,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 293.37 124.46 0)
+			(at 254 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19948,7 +20887,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R23")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -19966,7 +20905,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "870a08f9-e18a-4a27-bf6f-b17d44bb6a91")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR015"
 			(at 86.36 248.92 0)
 			(hide yes)
 			(show_name no)
@@ -20033,7 +20972,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR025")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -20051,7 +20990,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8896930b-b03a-41b8-b1b4-e20b4b962135")
-		(property "Reference" "#PWR0126"
+		(property "Reference" "#PWR027"
 			(at 146.05 109.22 0)
 			(hide yes)
 			(show_name no)
@@ -20112,86 +21051,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR0126")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 351.79 229.87 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "89b2590d-884d-4e9e-af62-5f15ec204c98")
-		(property "Reference" "#PWR077"
-			(at 351.79 236.22 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 351.79 234.95 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 351.79 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 351.79 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 351.79 229.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "99f15e28-2aaa-4947-844d-21a89c9d10b0")
-		)
-		(instances
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR077")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -20209,7 +21069,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8a9bbc89-351c-4b88-aa88-48aa7ee5da83")
-		(property "Reference" "C39"
+		(property "Reference" "C26"
 			(at 350.52 44.4499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20279,7 +21139,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C39")
+					(reference "C26")
 					(unit 1)
 				)
 			)
@@ -20297,7 +21157,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8c709bd2-0838-4470-95d0-db1cbce103e3")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR025"
 			(at 120.65 271.78 0)
 			(hide yes)
 			(show_name no)
@@ -20364,7 +21224,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR032")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -20382,7 +21242,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8c9ae4c6-b4fb-40b5-901d-5b93d502e778")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR017"
 			(at 91.44 99.06 0)
 			(hide yes)
 			(show_name no)
@@ -20443,7 +21303,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR038")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -20633,203 +21493,6 @@
 		)
 	)
 	(symbol
-		(lib_id "SAVITAR:FH34SRJ-8S-0.5SH_50_")
-		(at 396.24 227.33 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "90b34078-e8f0-496d-be67-0c49ffe3c1af")
-		(property "Reference" "J1"
-			(at 384.81 219.71 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "FH34SRJ-8S-0.5SH_50_"
-			(at 384.81 222.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "SAVITAR:FH34SRJ8S05SH50"
-			(at 377.19 322.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Datasheet" "https://www.hirose.com/en/product/document?clcode=CL0580-1231-8-50&productname=FH34SRJ-8S-0.5SH(50)&series=FH34SRJ&documenttype=2DDrawing&lang=en&documentid=0001483059"
-			(at 377.19 422.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Description" "FFC & FPC Connectors 8P SMT HORIZ ZIF AU 1MM HGHT .5MM PITCH"
-			(at 396.24 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Height" "1.75"
-			(at 377.19 622.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Name" "Hirose"
-			(at 377.19 722.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Manufacturer_Part_Number" "FH34SRJ-8S-0.5SH(50)"
-			(at 377.19 822.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Part Number" "798-FH34SRJ8S05SH50"
-			(at 377.19 922.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Mouser Price/Stock" "https://www.mouser.co.uk/ProductDetail/Hirose-Connector/FH34SRJ-8S-0.5SH50?qs=vnk2wBG9e16kawieRwL2EA%3D%3D"
-			(at 377.19 1022.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Part Number" ""
-			(at 377.19 1122.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(property "Arrow Price/Stock" ""
-			(at 377.19 1222.25 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(pin "3"
-			(uuid "27f40835-2014-4a31-a8f2-e8574e53a351")
-		)
-		(pin "4"
-			(uuid "fe911ee1-f40f-49df-a659-b8fbe7426331")
-		)
-		(pin "6"
-			(uuid "6f82cad2-df6c-47f6-aba6-ff613969a2e6")
-		)
-		(pin "8"
-			(uuid "8bd46813-bd6b-424b-93ff-adc00b0c4df1")
-		)
-		(pin "1"
-			(uuid "75f50fe0-40a8-4ffe-89f8-e22bd9f1f2b5")
-		)
-		(pin "9"
-			(uuid "fdf2b292-53aa-43df-8257-1d49ac106d49")
-		)
-		(pin "5"
-			(uuid "319bdde8-40ef-4554-8b2f-33ac69b18c47")
-		)
-		(pin "2"
-			(uuid "6b87af6e-44f4-4819-8473-ff22e9088f7a")
-		)
-		(pin "7"
-			(uuid "101cb4d0-67c8-47b8-8c68-be645d7d4f6b")
-		)
-		(pin "10"
-			(uuid "be2f2f6e-c6a6-494d-86f8-e9c50f6dc0cc")
-		)
-		(instances
-			(project "MCU"
-				(path "/b713d384-4380-4aef-98de-8773eb5f4cc6"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "J1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
 		(at 241.3 262.89 180)
 		(unit 1)
@@ -20840,7 +21503,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "913dd80c-2531-4f2b-bffc-e6cb2531b40f")
-		(property "Reference" "C18"
+		(property "Reference" "C14"
 			(at 245.11 261.6199 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20910,7 +21573,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C18")
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -20928,7 +21591,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "918aeb8e-b9a7-4990-92fe-68ae4602c44f")
-		(property "Reference" "C20"
+		(property "Reference" "C16"
 			(at 251.46 49.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -20998,7 +21661,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C20")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -21006,7 +21669,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 306.07 113.03 0)
+		(at 266.7 113.03 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -21015,8 +21678,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "95b0298f-7c74-4d35-91c3-cac8440dc226")
-		(property "Reference" "#PWR0127"
-			(at 306.07 116.84 0)
+		(property "Reference" "#PWR053"
+			(at 266.7 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21027,7 +21690,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 306.07 109.22 0)
+			(at 266.7 109.22 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21037,7 +21700,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 306.07 113.03 0)
+			(at 266.7 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21048,7 +21711,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 306.07 113.03 0)
+			(at 266.7 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21059,7 +21722,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 306.07 113.03 0)
+			(at 266.7 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21075,7 +21738,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR0127")
+					(reference "#PWR053")
 					(unit 1)
 				)
 			)
@@ -21092,7 +21755,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "95c7bcde-affd-4ec3-b3cc-9bfa309cbe87")
-		(property "Reference" "C25"
+		(property "Reference" "C11"
 			(at 184.15 163.576 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21154,7 +21817,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C25")
+					(reference "C11")
 					(unit 1)
 				)
 			)
@@ -21162,7 +21825,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 293.37 135.89 0)
+		(at 254 135.89 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -21172,8 +21835,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "95e5610d-0b49-4555-a6b0-e5f2b46c17f4")
-		(property "Reference" "#PWR069"
-			(at 293.37 142.24 0)
+		(property "Reference" "#PWR050"
+			(at 254 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21184,7 +21847,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 293.37 140.97 0)
+			(at 254 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21195,7 +21858,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 293.37 135.89 0)
+			(at 254 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21206,7 +21869,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 293.37 135.89 0)
+			(at 254 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21217,7 +21880,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 293.37 135.89 0)
+			(at 254 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21239,7 +21902,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR069")
+					(reference "#PWR050")
 					(unit 1)
 				)
 			)
@@ -21256,7 +21919,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "96f345f1-b711-491d-b64e-47a7b4f78c42")
-		(property "Reference" "SWD_GND"
+		(property "Reference" "SWD_GND1"
 			(at 38.608 199.39 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21318,7 +21981,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "SWD_GND")
+					(reference "SWD_GND1")
 					(unit 1)
 				)
 			)
@@ -21336,7 +21999,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "987bca0d-b62e-4329-a0fc-85a773a3afed")
-		(property "Reference" "#PWR052"
+		(property "Reference" "#PWR039"
 			(at 224.79 264.16 0)
 			(hide yes)
 			(show_name no)
@@ -21403,7 +22066,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR052")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -21420,7 +22083,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "98c2ba1a-28e5-477b-88dc-ad1493dde95f")
-		(property "Reference" "C27"
+		(property "Reference" "C12"
 			(at 184.15 167.894 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21482,7 +22145,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C27")
+					(reference "C12")
 					(unit 1)
 				)
 			)
@@ -21500,7 +22163,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "99aa8437-13c9-4ef8-b4ae-48be38dac3dc")
-		(property "Reference" "R19"
+		(property "Reference" "R18"
 			(at 293.37 41.9099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21564,7 +22227,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R19")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -21582,7 +22245,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9a49ccbf-4d4c-4314-8fb2-22fb993d5af7")
-		(property "Reference" "#PWR049"
+		(property "Reference" "#PWR036"
 			(at 212.09 63.5 0)
 			(hide yes)
 			(show_name no)
@@ -21643,7 +22306,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR049")
+					(reference "#PWR036")
 					(unit 1)
 				)
 			)
@@ -21661,7 +22324,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9a4da012-4853-4484-977e-17f0fe9ede33")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR08"
 			(at 54.61 250.19 0)
 			(hide yes)
 			(show_name no)
@@ -21728,7 +22391,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR017")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -21736,7 +22399,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 307.34 184.15 90)
+		(at 267.97 184.15 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -21745,8 +22408,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "9b7c7dc3-c37e-4c31-b95b-1c5a0516c87b")
-		(property "Reference" "R28"
-			(at 307.34 179.07 90)
+		(property "Reference" "R25"
+			(at 267.97 179.07 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21756,7 +22419,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 307.34 181.61 90)
+			(at 267.97 181.61 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21766,7 +22429,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 307.34 184.15 0)
+			(at 267.97 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21777,7 +22440,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 307.34 184.15 0)
+			(at 267.97 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21788,7 +22451,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 307.34 184.15 0)
+			(at 267.97 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21813,7 +22476,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R28")
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -21907,7 +22570,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 306.07 116.84 0)
+		(at 266.7 116.84 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -21917,8 +22580,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a1b85e4c-740d-44e9-ad5c-a6d044b2f5d8")
-		(property "Reference" "R44"
-			(at 308.61 115.5699 0)
+		(property "Reference" "R23"
+			(at 269.24 115.5699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21929,7 +22592,7 @@
 			)
 		)
 		(property "Value" "10kΩ"
-			(at 308.61 118.1099 0)
+			(at 269.24 118.1099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -21940,7 +22603,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 307.086 117.094 90)
+			(at 267.716 117.094 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21951,7 +22614,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 306.07 116.84 0)
+			(at 266.7 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21962,7 +22625,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 306.07 116.84 0)
+			(at 266.7 116.84 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -21981,7 +22644,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R44")
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -21999,7 +22662,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a27bc1ac-a7c6-44f2-a6e3-ea3d61ae20ff")
-		(property "Reference" "#PWR066"
+		(property "Reference" "#PWR056"
 			(at 309.88 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -22066,7 +22729,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR066")
+					(reference "#PWR056")
 					(unit 1)
 				)
 			)
@@ -22084,7 +22747,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a2899d85-3e07-4f49-9b61-43aa83795d2e")
-		(property "Reference" "R3"
+		(property "Reference" "R6"
 			(at 97.79 35.56 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22146,7 +22809,87 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R3")
+					(reference "R6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 384.81 237.49 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a3bfd67f-0f87-4ef1-9de1-187343748f8b")
+		(property "Reference" "#PWR0137"
+			(at 384.81 243.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 384.81 242.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 384.81 237.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 384.81 237.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 384.81 237.49 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "7ad56b67-f781-4452-90d9-5b8ce29e778c")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
+					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
@@ -22164,7 +22907,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a3c36a8a-eadd-469b-ac9e-e9f3d1af2aff")
-		(property "Reference" "#PWR080"
+		(property "Reference" "#PWR065"
 			(at 384.81 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -22230,7 +22973,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR080")
+					(reference "#PWR065")
 					(unit 1)
 				)
 			)
@@ -22248,7 +22991,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a6c77795-6f3a-4f1e-a4d5-d673368624a3")
-		(property "Reference" "C7"
+		(property "Reference" "C4"
 			(at 109.22 242.5699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22318,7 +23061,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C7")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -22346,7 +23089,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "50mΩ 2A"
+		(property "Value" "380mΩ 500mA"
 			(at 161.29 99.822 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22379,7 +23122,7 @@
 				)
 			)
 		)
-		(property "Description" "120Ω@100MHz 1 Line Ferrite Bead 0603 2A 50mΩ"
+		(property "Description" "600Ω@100MHz 1 Line Ferrite Bead 0603 500mA 380mΩ"
 			(at 165.1 95.25 0)
 			(hide yes)
 			(show_name no)
@@ -22417,7 +23160,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "abba80c8-b592-4928-92a3-4d6596d2df30")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR045"
 			(at 265.43 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -22484,7 +23227,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR058")
+					(reference "#PWR045")
 					(unit 1)
 				)
 			)
@@ -22501,7 +23244,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "acc47d3e-49e8-4d8b-8e73-0379dab82107")
-		(property "Reference" "C22"
+		(property "Reference" "C8"
 			(at 185.928 125.476 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22565,7 +23308,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C22")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -22668,7 +23411,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b0d306e2-9aae-4138-a458-00d9973cbd09")
-		(property "Reference" "#PWR065"
+		(property "Reference" "#PWR055"
 			(at 309.88 43.18 0)
 			(hide yes)
 			(show_name no)
@@ -22728,7 +23471,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR065")
+					(reference "#PWR055")
 					(unit 1)
 				)
 			)
@@ -22821,7 +23564,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 265.43 104.14 180)
+		(at 226.06 104.14 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -22830,8 +23573,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b19cf472-ec5d-4928-bffb-fc8d61e3344f")
-		(property "Reference" "C32"
-			(at 268.732 102.87 0)
+		(property "Reference" "C18"
+			(at 229.362 102.87 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22842,7 +23585,7 @@
 			)
 		)
 		(property "Value" "100nF/50V"
-			(at 268.732 105.41 0)
+			(at 229.362 105.41 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -22853,7 +23596,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 264.4648 100.33 0)
+			(at 225.0948 100.33 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22864,7 +23607,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 265.43 104.14 0)
+			(at 226.06 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22875,7 +23618,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 265.43 104.14 0)
+			(at 226.06 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22900,7 +23643,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C32")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -22918,7 +23661,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b6c0422c-c984-4493-a422-f9a378582e6d")
-		(property "Reference" "C40"
+		(property "Reference" "C27"
 			(at 388.62 44.4499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -22988,7 +23731,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C40")
+					(reference "C27")
 					(unit 1)
 				)
 			)
@@ -22996,7 +23739,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 297.18 158.75 0)
+		(at 257.81 158.75 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -23005,8 +23748,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b718953a-f1d2-4d9e-b79a-aca1ec30d98a")
-		(property "Reference" "#PWR070"
-			(at 297.18 162.56 0)
+		(property "Reference" "#PWR052"
+			(at 257.81 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23017,7 +23760,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 297.18 154.686 0)
+			(at 257.81 154.686 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23027,7 +23770,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 297.18 158.75 0)
+			(at 257.81 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23038,7 +23781,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 297.18 158.75 0)
+			(at 257.81 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23049,7 +23792,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 297.18 158.75 0)
+			(at 257.81 158.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23071,7 +23814,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR070")
+					(reference "#PWR052")
 					(unit 1)
 				)
 			)
@@ -23079,7 +23822,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 293.37 132.08 180)
+		(at 254 132.08 180)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -23088,8 +23831,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "b7b82d7f-599c-4ad9-81d5-52c16ec0494a")
-		(property "Reference" "C36"
-			(at 296.672 130.81 0)
+		(property "Reference" "C21"
+			(at 257.302 130.81 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23100,7 +23843,7 @@
 			)
 		)
 		(property "Value" "1uF/16V"
-			(at 296.672 133.35 0)
+			(at 257.302 133.35 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23111,7 +23854,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 292.4048 128.27 0)
+			(at 253.0348 128.27 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23122,7 +23865,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 293.37 132.08 0)
+			(at 254 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23133,7 +23876,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 293.37 132.08 0)
+			(at 254 132.08 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23158,7 +23901,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C36")
+					(reference "C21")
 					(unit 1)
 				)
 			)
@@ -23341,7 +24084,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 283.21 104.14 0)
+		(at 243.84 104.14 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -23351,8 +24094,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bcc6c6bd-de9b-42b2-bbc4-2606c3536ada")
-		(property "Reference" "C35"
-			(at 287.02 102.8699 0)
+		(property "Reference" "C20"
+			(at 247.65 102.8699 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23363,7 +24106,7 @@
 			)
 		)
 		(property "Value" "22uF/16V"
-			(at 287.02 105.4099 0)
+			(at 247.65 105.4099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -23374,7 +24117,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
-			(at 284.1752 107.95 0)
+			(at 244.8052 107.95 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23385,7 +24128,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 283.21 104.14 0)
+			(at 243.84 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23396,7 +24139,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 283.21 104.14 0)
+			(at 243.84 104.14 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23415,7 +24158,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C35")
+					(reference "C20")
 					(unit 1)
 				)
 			)
@@ -23433,7 +24176,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bd1b5ba5-3c2f-4273-bc8b-45494883bfd1")
-		(property "Reference" "#PWR056"
+		(property "Reference" "#PWR030"
 			(at 175.26 125.73 0)
 			(hide yes)
 			(show_name no)
@@ -23493,7 +24236,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR056")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -23511,7 +24254,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bfa7d2ad-3e36-4f4e-aadb-ae8158db0e37")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR042"
 			(at 247.65 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -23578,7 +24321,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR055")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
@@ -23586,7 +24329,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 313.69 135.89 0)
+		(at 274.32 135.89 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -23596,8 +24339,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c69d8ba0-3f8b-4211-b845-083349923fcb")
-		(property "Reference" "#PWR074"
-			(at 313.69 142.24 0)
+		(property "Reference" "#PWR057"
+			(at 274.32 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23608,7 +24351,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 313.69 140.97 0)
+			(at 274.32 140.97 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23619,7 +24362,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 313.69 135.89 0)
+			(at 274.32 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23630,7 +24373,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 313.69 135.89 0)
+			(at 274.32 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23641,7 +24384,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 313.69 135.89 0)
+			(at 274.32 135.89 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23663,7 +24406,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR074")
+					(reference "#PWR057")
 					(unit 1)
 				)
 			)
@@ -23681,7 +24424,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c6bd99dc-5f09-4f77-a999-cf27db62534f")
-		(property "Reference" "#PWR072"
+		(property "Reference" "#PWR059"
 			(at 346.71 45.72 0)
 			(hide yes)
 			(show_name no)
@@ -23741,7 +24484,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR072")
+					(reference "#PWR059")
 					(unit 1)
 				)
 			)
@@ -23975,7 +24718,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c861435a-2cda-45fb-b844-21626d475b77")
-		(property "Reference" "R15"
+		(property "Reference" "R11"
 			(at 195.58 54.356 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24037,7 +24780,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R15")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -24045,7 +24788,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 273.05 199.39 90)
+		(at 243.84 198.12 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -24055,7 +24798,7 @@
 		(dnp no)
 		(uuid "c8fd1f8d-43f4-47b6-9f43-70a48864a628")
 		(property "Reference" "ESP_JMP2"
-			(at 263.652 199.39 90)
+			(at 234.442 198.12 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24065,7 +24808,7 @@
 			)
 		)
 		(property "Value" "TestPoint"
-			(at 269.748 196.85 90)
+			(at 240.538 195.58 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24076,7 +24819,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 273.05 194.31 0)
+			(at 243.84 193.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24087,7 +24830,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 273.05 194.31 0)
+			(at 243.84 193.04 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24098,7 +24841,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 273.05 199.39 0)
+			(at 243.84 198.12 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24122,7 +24865,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 284.48 173.99 90)
+		(at 245.11 173.99 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -24131,8 +24874,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cb4727f4-89f4-4634-8265-5ad841eeb49d")
-		(property "Reference" "R21"
-			(at 284.48 168.91 90)
+		(property "Reference" "R15"
+			(at 245.11 168.91 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24142,7 +24885,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 284.48 171.45 90)
+			(at 245.11 171.45 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24152,7 +24895,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 284.48 173.99 0)
+			(at 245.11 173.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24163,7 +24906,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 284.48 173.99 0)
+			(at 245.11 173.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24174,7 +24917,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 284.48 173.99 0)
+			(at 245.11 173.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24193,7 +24936,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R21")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -24211,7 +24954,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "ce7dc9a4-aeee-4be0-913e-8cbf844b00c8")
-		(property "Reference" "C49"
+		(property "Reference" "C7"
 			(at 149.352 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24275,7 +25018,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C49")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -24293,7 +25036,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cf10093d-dc07-489c-85a7-2bd0e4f75c59")
-		(property "Reference" "#PWR045"
+		(property "Reference" "#PWR023"
 			(at 118.11 203.2 0)
 			(hide yes)
 			(show_name no)
@@ -24354,7 +25097,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR045")
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -24372,7 +25115,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d4947840-4d3e-4700-8699-61a9d2ffe52f")
-		(property "Reference" "R18"
+		(property "Reference" "R14"
 			(at 229.87 55.8799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24436,7 +25179,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R18")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -24530,6 +25273,84 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
+		(at 157.48 95.25 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d87f4b29-9b80-4ff6-aa88-b31314a87403")
+		(property "Reference" "#PWR0130"
+			(at 157.48 99.06 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCCANA"
+			(at 157.48 90.17 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 157.48 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 157.48 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 157.48 95.25 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c60a71af-dc78-4938-a570-77f156c481b5")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
+					(reference "#PWR0130")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
 		(at 132.08 101.6 0)
 		(unit 1)
 		(body_style 1)
@@ -24540,7 +25361,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "db68d316-0245-44e8-986b-7e3ed86fbbdb")
-		(property "Reference" "#PWR046"
+		(property "Reference" "#PWR026"
 			(at 132.08 105.41 0)
 			(hide yes)
 			(show_name no)
@@ -24600,7 +25421,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR046")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -24618,7 +25439,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "de680491-7ed0-4c8f-b04c-ececd3b7a377")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR09"
 			(at 57.15 81.28 0)
 			(hide yes)
 			(show_name no)
@@ -24679,7 +25500,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR05")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -24687,7 +25508,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 284.48 176.53 90)
+		(at 245.11 176.53 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -24696,8 +25517,8 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "de72f2a9-9277-417d-9e90-127becc5345f")
-		(property "Reference" "R22"
-			(at 284.48 178.562 90)
+		(property "Reference" "R16"
+			(at 245.11 178.562 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24707,7 +25528,7 @@
 			)
 		)
 		(property "Value" "0Ω"
-			(at 284.48 181.102 90)
+			(at 245.11 181.102 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -24717,7 +25538,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 284.48 176.53 0)
+			(at 245.11 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24728,7 +25549,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 284.48 176.53 0)
+			(at 245.11 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24739,7 +25560,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 284.48 176.53 0)
+			(at 245.11 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24758,7 +25579,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R22")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -24776,7 +25597,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e3efe5b5-a66f-43f4-a060-81b0139330ff")
-		(property "Reference" "R13"
+		(property "Reference" "R9"
 			(at 187.96 233.6799 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -24846,7 +25667,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R13")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -24864,7 +25685,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e3f00876-6efe-483f-a772-b9e0e91b0227")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR022"
 			(at 110.49 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -24925,7 +25746,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR023")
+					(reference "#PWR022")
 					(unit 1)
 				)
 			)
@@ -24943,7 +25764,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e643d234-28c6-4165-a82f-ca4f34468a5c")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR012"
 			(at 76.2 204.47 0)
 			(hide yes)
 			(show_name no)
@@ -25004,7 +25825,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR033")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -25022,7 +25843,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e71cb2a4-e0fb-4b66-a2da-0b4bf3724757")
-		(property "Reference" "#PWR050"
+		(property "Reference" "#PWR037"
 			(at 224.79 234.95 0)
 			(hide yes)
 			(show_name no)
@@ -25088,7 +25909,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR050")
+					(reference "#PWR037")
 					(unit 1)
 				)
 			)
@@ -25193,7 +26014,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "e97e0472-9b85-43f5-95cf-3e93481882cf")
-		(property "Reference" "C6"
+		(property "Reference" "C3"
 			(at 106.68 260.3499 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25263,7 +26084,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C6")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -25271,7 +26092,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 297.18 162.56 0)
+		(at 257.81 162.56 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -25281,8 +26102,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ef52bafb-413b-4aca-9eb6-3857cdc88c63")
-		(property "Reference" "R24"
-			(at 299.72 161.2899 0)
+		(property "Reference" "R20"
+			(at 260.35 161.2899 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -25293,7 +26114,7 @@
 			)
 		)
 		(property "Value" "10kΩ"
-			(at 299.72 163.8299 0)
+			(at 260.35 163.8299 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -25304,7 +26125,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
-			(at 298.196 162.814 90)
+			(at 258.826 162.814 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25315,7 +26136,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 297.18 162.56 0)
+			(at 257.81 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25326,7 +26147,7 @@
 			)
 		)
 		(property "Description" "Resistor, US symbol"
-			(at 297.18 162.56 0)
+			(at 257.81 162.56 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25351,7 +26172,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R24")
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -25369,7 +26190,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f19b1bd6-8ed2-4145-9937-5543cc49ce5b")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR05"
 			(at 29.21 266.7 0)
 			(hide yes)
 			(show_name no)
@@ -25436,7 +26257,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR09")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -25454,7 +26275,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f20ecec0-74c1-4c96-993d-cca2385a09f8")
-		(property "Reference" "R20"
+		(property "Reference" "R19"
 			(at 293.37 49.5299 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25524,7 +26345,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R20")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -25542,7 +26363,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f2cbb4bc-eb38-4d0e-9a83-5ed2268c09f6")
-		(property "Reference" "C47"
+		(property "Reference" "C17"
 			(at 262.89 260.9849 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25606,7 +26427,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "C47")
+					(reference "C17")
 					(unit 1)
 				)
 			)
@@ -25624,7 +26445,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f3eb2d71-094d-47cc-83c1-ebc5519b1b49")
-		(property "Reference" "R12"
+		(property "Reference" "R8"
 			(at 171.45 255.2699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25694,7 +26515,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "R12")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -25702,7 +26523,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 349.25 184.15 0)
+		(at 309.88 184.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -25712,8 +26533,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f50552db-87d9-4139-8792-d42198e4c780")
-		(property "Reference" "#PWR079"
-			(at 349.25 190.5 0)
+		(property "Reference" "#PWR061"
+			(at 309.88 190.5 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25724,7 +26545,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 349.25 189.23 0)
+			(at 309.88 189.23 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25735,7 +26556,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 349.25 184.15 0)
+			(at 309.88 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25746,7 +26567,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 349.25 184.15 0)
+			(at 309.88 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25757,7 +26578,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 349.25 184.15 0)
+			(at 309.88 184.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -25779,91 +26600,7 @@
 			)
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR079")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VCC")
-		(at 351.79 227.33 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f85c670d-a19b-4c39-bf4f-045e6643f2ed")
-		(property "Reference" "#PWR076"
-			(at 351.79 231.14 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 351.79 222.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 351.79 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 351.79 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 351.79 227.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "9444a69a-d06f-48cd-a49b-0576222ace0f")
-		)
-		(instances
-			(project "MCU"
-				(path "/b713d384-4380-4aef-98de-8773eb5f4cc6"
-					(reference "#PWR050")
-					(unit 1)
-				)
-			)
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR076")
+					(reference "#PWR061")
 					(unit 1)
 				)
 			)
@@ -25881,7 +26618,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f90bc528-9aa6-4cbf-aeb5-792d9671e369")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR013"
 			(at 83.82 40.64 0)
 			(hide yes)
 			(show_name no)
@@ -25941,7 +26678,242 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
-					(reference "#PWR015")
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 360.68 228.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fc18221f-9d57-493a-aa34-5d221b7b4735")
+		(property "Reference" "#PWR0138"
+			(at 360.68 232.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 360.68 224.536 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 360.68 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 360.68 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 360.68 228.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "169dff99-d392-4fb9-847c-88ddbc8ccb70")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
+					(reference "#PWR0138")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 389.89 172.72 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fc9c9e1a-e50d-431a-b605-0b3af4b98b6e")
+		(property "Reference" "#PWR0136"
+			(at 389.89 179.07 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 389.89 177.8 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 389.89 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 389.89 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 389.89 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b12a0f08-673c-4abb-8c9e-2abf169066ae")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
+					(reference "#PWR0136")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 232.41 24.13 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "fe8a8be2-bec2-4160-8d5d-c87e6059880a")
+		(property "Reference" "TP1"
+			(at 226.06 24.13 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 230.3779 21.59 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D2.0mm_Drill1.0mm"
+			(at 232.41 19.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 19.05 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 232.41 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "333e40c9-870d-48ba-af0f-951625261072")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/c16c02dc-523d-461d-bb67-ac432d665908"
+					(reference "TP1")
 					(unit 1)
 				)
 			)

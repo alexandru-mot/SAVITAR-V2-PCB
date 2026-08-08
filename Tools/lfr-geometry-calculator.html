@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAVITAR — LFR geometry &amp; reaction-time calculator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Design tokens — instrument / technical-drawing direction
+   ============================================================ */
+:root{
+  --paper:#EEF1F4;          /* plotter paper */
+  --sheet:#FBFCFD;          /* drawing sheet */
+  --ink:#0F171E;            /* drawing ink */
+  --ink-2:#41525F;          /* secondary ink */
+  --ink-3:#75858F;          /* tertiary / captions */
+  --rule:#C6CFD6;           /* hairline */
+  --rule-2:#DDE3E8;
+  --signal:#0A6C8A;         /* measured value / dimension lines */
+  --signal-bg:#E2EEF3;
+  --warn:#9A5B08;
+  --warn-bg:#FAEEDA;
+  --bad:#96261F;
+  --bad-bg:#F8E7E5;
+  --good:#1F6B4A;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --cond:"IBM Plex Sans Condensed","IBM Plex Sans",-apple-system,"Segoe UI Semibold",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#0D1317; --sheet:#141C22; --ink:#E4EAEE; --ink-2:#A7B5BE; --ink-3:#78888F;
+    --rule:#2C3A44; --rule-2:#212D35;
+    --signal:#4FB6D4; --signal-bg:#11333F;
+    --warn:#D79A3C; --warn-bg:#33260F;
+    --bad:#E07A72; --bad-bg:#391A18;
+    --good:#5FBE90;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:14px; line-height:1.55;
+}
+h1,h2,h3{margin:0; font-family:var(--cond); font-weight:600; letter-spacing:.005em}
+a{color:var(--signal)}
+
+/* ---------- shell ---------- */
+.wrap{max-width:1440px; margin:0 auto; padding:0 20px 72px}
+
+header.masthead{
+  border-bottom:1px solid var(--ink); padding:22px 0 14px; margin-bottom:20px;
+  display:flex; flex-wrap:wrap; gap:16px; align-items:flex-end; justify-content:space-between;
+}
+.masthead h1{font-size:26px; line-height:1.1; letter-spacing:-.01em}
+.masthead .sub{font-family:var(--mono); font-size:11px; color:var(--ink-3); text-transform:uppercase; letter-spacing:.09em; margin-top:6px}
+.toolbar{display:flex; flex-wrap:wrap; gap:6px}
+
+button{
+  font-family:var(--cond); font-size:12.5px; font-weight:600; letter-spacing:.02em;
+  background:var(--sheet); color:var(--ink); border:1px solid var(--rule);
+  padding:7px 11px; border-radius:2px; cursor:pointer; line-height:1.2;
+}
+button:hover{border-color:var(--ink-2)}
+button:focus-visible,input:focus-visible,select:focus-visible,.tip:focus-visible{outline:2px solid var(--signal); outline-offset:2px}
+button.primary{background:var(--signal); border-color:var(--signal); color:#fff}
+@media (prefers-color-scheme:dark){button.primary{color:#08181E}}
+button.on{background:var(--signal-bg); border-color:var(--signal); color:var(--signal)}
+
+/* ---------- layout ---------- */
+.grid{display:grid; grid-template-columns:340px minmax(0,1fr); gap:20px; align-items:start}
+@media (max-width:1020px){ .grid{grid-template-columns:1fr} .col-draw{order:-1} }
+
+.panel{background:var(--sheet); border:1px solid var(--rule); border-radius:2px}
+.panel + .panel{margin-top:16px}
+.panel > h2{
+  font-family:var(--mono); font-size:10.5px; font-weight:600; text-transform:uppercase; letter-spacing:.13em;
+  color:var(--ink-3); padding:10px 14px; border-bottom:1px solid var(--rule-2);
+  display:flex; justify-content:space-between; align-items:center; gap:8px;
+}
+.panel > h2 .badge{font-family:var(--mono); font-size:10px; letter-spacing:.06em; color:var(--signal); background:var(--signal-bg); padding:2px 6px; border-radius:2px}
+.pad{padding:12px 14px}
+
+/* ---------- fields ---------- */
+.field{padding:9px 14px; border-bottom:1px solid var(--rule-2)}
+.field:last-child{border-bottom:0}
+.field > label,.flabel{
+  display:flex; align-items:center; gap:6px; justify-content:space-between;
+  font-family:var(--cond); font-size:13px; font-weight:600; color:var(--ink-2); margin-bottom:6px;
+}
+.dimtag{
+  font-family:var(--mono); font-size:9.5px; font-weight:600; color:var(--signal);
+  border:1px solid var(--signal); border-radius:50%; width:16px; height:16px;
+  display:inline-flex; align-items:center; justify-content:center; flex:none;
+}
+.lbl-left{display:flex; align-items:center; gap:7px; min-width:0}
+.lbl-left span.txt{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.ctl{display:flex; align-items:center; gap:8px}
+.ctl input[type=range]{flex:1; min-width:0; accent-color:var(--signal); height:20px}
+.ctl input[type=number],.ctl select,select.full,input.full{
+  font-family:var(--mono); font-size:13px; background:var(--paper); color:var(--ink);
+  border:1px solid var(--rule); border-radius:2px; padding:5px 6px;
+}
+.ctl input[type=number]{width:72px; text-align:right}
+select.full,input.full{width:100%}
+.unit{font-family:var(--mono); font-size:11px; color:var(--ink-3); width:34px; flex:none}
+.seg{display:flex; gap:0; border:1px solid var(--rule); border-radius:2px; overflow:hidden}
+.seg button{border:0; border-right:1px solid var(--rule); border-radius:0; flex:1; padding:6px 4px}
+.seg button:last-child{border-right:0}
+.hint{font-size:11.5px; color:var(--ink-3); margin-top:5px; line-height:1.45}
+
+/* tooltip */
+.tip{
+  font-family:var(--mono); font-size:10px; font-weight:600; color:var(--ink-3);
+  border:1px solid var(--rule); border-radius:50%; width:15px; height:15px; flex:none;
+  display:inline-flex; align-items:center; justify-content:center; cursor:help; position:relative;
+}
+.tip:hover,.tip:focus{color:var(--signal); border-color:var(--signal)}
+.tip::after{
+  content:attr(data-tip); position:absolute; left:50%; top:calc(100% + 7px); transform:translateX(-50%);
+  width:238px; background:var(--ink); color:var(--paper); font-family:var(--sans); font-weight:400;
+  font-size:11.5px; line-height:1.45; padding:8px 10px; border-radius:2px; text-align:left;
+  opacity:0; visibility:hidden; z-index:40; pointer-events:none;
+}
+.tip:hover::after,.tip:focus::after{opacity:1; visibility:visible}
+.field:nth-last-child(-n+3) .tip::after{top:auto; bottom:calc(100% + 7px)}
+
+/* ---------- readouts ---------- */
+.reads{display:grid; grid-template-columns:repeat(auto-fit,minmax(148px,1fr)); gap:1px; background:var(--rule-2)}
+.read{background:var(--sheet); padding:11px 13px}
+.read .k{font-family:var(--mono); font-size:9.5px; text-transform:uppercase; letter-spacing:.09em; color:var(--ink-3); display:flex; align-items:center; gap:5px}
+.read .v{font-family:var(--mono); font-size:23px; font-weight:500; letter-spacing:-.02em; margin-top:3px; font-variant-numeric:tabular-nums}
+.read .v small{font-size:11.5px; font-weight:400; color:var(--ink-3); margin-left:3px; letter-spacing:0}
+.read.hero{grid-column:1/-1}
+.read.hero .v{font-size:44px}
+.read.tone-warn .v{color:var(--warn)} .read.tone-bad .v{color:var(--bad)} .read.tone-good .v{color:var(--good)}
+.read.tone-warn{background:var(--warn-bg)} .read.tone-bad{background:var(--bad-bg)}
+@media (prefers-reduced-motion:no-preference){ .read .v{transition:color .18s} }
+
+.note{
+  font-size:12.5px; color:var(--ink-2); padding:10px 14px; border-top:1px solid var(--rule-2);
+  background:var(--paper); line-height:1.5;
+}
+.note strong{font-weight:600; color:var(--ink)}
+.flag{display:flex; gap:8px; padding:9px 14px; font-size:12.5px; line-height:1.45; border-top:1px solid var(--rule-2)}
+.flag .mk{font-family:var(--mono); font-weight:600; flex:none}
+.flag.warn{background:var(--warn-bg); color:var(--warn)}
+.flag.bad{background:var(--bad-bg); color:var(--bad)}
+.flag.ok{color:var(--good)}
+
+/* ---------- drawing ---------- */
+.sheet{background:var(--sheet); padding:6px 4px 2px}
+svg.dwg{width:100%; height:auto; display:block}
+.dwg text{font-family:var(--mono)}
+
+/* ---------- tables ---------- */
+.tblwrap{overflow-x:auto}
+table{border-collapse:collapse; width:100%; font-size:12.5px}
+th,td{padding:7px 9px; text-align:right; border-bottom:1px solid var(--rule-2); white-space:nowrap}
+th{
+  font-family:var(--mono); font-size:9.5px; font-weight:600; text-transform:uppercase; letter-spacing:.07em;
+  color:var(--ink-3); text-align:right; border-bottom:1px solid var(--rule); vertical-align:bottom;
+}
+th:first-child,td:first-child{text-align:left; font-family:var(--cond); font-weight:600}
+td{font-family:var(--mono); font-variant-numeric:tabular-nums}
+tr.base td{background:var(--signal-bg)}
+tr.base td:first-child{color:var(--signal)}
+td.w{color:var(--warn); font-weight:600} td.b{color:var(--bad); font-weight:600}
+tbody tr:hover td{background:var(--rule-2)}
+tbody tr.base:hover td{background:var(--signal-bg)}
+
+/* verification */
+.vrow{display:grid; grid-template-columns:1fr auto auto 58px; gap:10px; align-items:baseline;
+  padding:8px 14px; border-bottom:1px solid var(--rule-2); font-size:12.5px}
+.vrow:last-child{border-bottom:0}
+.vrow .name{font-family:var(--sans)}
+.vrow .num{font-family:var(--mono); font-variant-numeric:tabular-nums; color:var(--ink-2)}
+.vrow .res{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.08em; text-align:right}
+.vrow .res.p{color:var(--good)} .vrow .res.f{color:var(--bad)}
+@media (max-width:600px){ .vrow{grid-template-columns:1fr auto; row-gap:2px} .vrow .res{grid-column:2} }
+
+details.doc{border-top:1px solid var(--rule-2)}
+details.doc summary{
+  padding:10px 14px; cursor:pointer; font-family:var(--cond); font-weight:600; font-size:13px; color:var(--ink-2);
+}
+details.doc summary:hover{color:var(--ink)}
+details.doc .pad{padding-top:2px}
+details.doc p{margin:0 0 9px}
+details.doc code{font-family:var(--mono); font-size:12px; background:var(--paper); padding:1px 4px; border-radius:2px}
+.eq{font-family:var(--mono); font-size:12.5px; background:var(--paper); border-left:2px solid var(--signal);
+  padding:7px 10px; margin:0 0 9px; overflow-x:auto}
+ul.tight{margin:0 0 9px; padding-left:18px} ul.tight li{margin-bottom:3px}
+
+.row2{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px}
+@media (max-width:900px){ .row2{grid-template-columns:1fr} }
+.toast{
+  position:fixed; left:50%; bottom:22px; transform:translateX(-50%);
+  background:var(--ink); color:var(--paper); font-family:var(--mono); font-size:12px;
+  padding:9px 14px; border-radius:2px; opacity:0; pointer-events:none; z-index:99;
+}
+.toast.show{opacity:1}
+@media (prefers-reduced-motion:no-preference){ .toast{transition:opacity .2s} }
+.legend{display:flex; flex-wrap:wrap; gap:14px; padding:8px 14px; border-top:1px solid var(--rule-2);
+  font-family:var(--mono); font-size:10.5px; color:var(--ink-3)}
+.legend i{display:inline-block; width:16px; height:0; border-top:2px solid; margin-right:5px; vertical-align:middle}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="masthead">
+  <div>
+    <h1>Line-follower geometry &amp; reaction time</h1>
+    <div class="sub">SAVITAR · JS2622 Ø26.5 wheels · Pololu 26:1 6D×16L · QRE1113</div>
+  </div>
+  <div class="toolbar">
+    <button id="btnSave">Save config</button>
+    <button id="btnLoad">Load config</button>
+    <button id="btnJSON">Export JSON</button>
+    <button id="btnCSV">Export CSV</button>
+    <button id="btnReset">Reset to defaults</button>
+  </div>
+</header>
+
+<div class="grid">
+
+  <!-- ================= INPUTS ================= -->
+  <div class="col-in">
+
+    <section class="panel">
+      <h2>Speed &amp; drivetrain</h2>
+      <div class="field">
+        <label for="speed"><span class="lbl-left"><span class="txt">Robot speed</span>
+          <span class="tip" tabindex="0" data-tip="Forward ground speed at the wheel contact patch. Everything downstream scales from this.">?</span></span>
+          <span id="speedAlt" class="unit" style="width:auto"></span></label>
+        <div class="ctl">
+          <input type="range" id="speed_r" min="0.1" max="5" step="0.05" aria-label="Robot speed slider">
+          <input type="number" id="speed" min="0.1" max="5" step="0.01" aria-label="Robot speed">
+          <select id="speedUnit" aria-label="Speed unit" style="width:62px;font-size:11px;padding:4px">
+            <option value="ms">m/s</option><option value="kmh">km/h</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="motorRPM"><span class="lbl-left"><span class="txt">No-load speed @ pack voltage</span>
+          <span class="tip" tabindex="0" data-tip="TME lists 2500 rpm nominal gearbox output. Scaled linearly with voltage this gives roughly 3300 rpm on a charged 2S pack.">?</span></span></label>
+        <div class="ctl">
+          <input type="range" id="motorRPM_r" min="200" max="6000" step="50" aria-label="No-load speed slider">
+          <input type="number" id="motorRPM" min="1" max="60000" step="10" aria-label="No-load speed">
+          <span class="unit">rpm</span>
+        </div>
+        <div class="ctl" style="margin-top:7px">
+          <select id="rpmRef" class="full" aria-label="Speed measured at">
+            <option value="output">measured at gearbox output shaft</option>
+            <option value="motor">measured at bare motor shaft</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="gearRatio"><span class="lbl-left"><span class="txt">Gear ratio</span>
+          <span class="tip" tabindex="0" data-tip="Only applied when the rpm figure above is measured at the bare motor shaft.">?</span></span></label>
+        <div class="ctl"><input type="number" id="gearRatio" class="full" min="1" max="1000" step="0.1" aria-label="Gear ratio"><span class="unit">: 1</span></div>
+      </div>
+      <div class="field">
+        <label for="wheelDia"><span class="lbl-left"><span class="dimtag">D</span><span class="txt">Wheel diameter</span>
+          <span class="tip" tabindex="0" data-tip="Loaded diameter of the JS2622 silicone tyre. Silicone compresses under load, so measure the rolling diameter, not the free one.">?</span></span></label>
+        <div class="ctl">
+          <input type="range" id="wheelDia_r" min="10" max="60" step="0.5" aria-label="Wheel diameter slider">
+          <input type="number" id="wheelDia" min="5" max="120" step="0.1" aria-label="Wheel diameter"><span class="unit">mm</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="wheelWidth"><span class="lbl-left"><span class="txt">Wheel width</span>
+          <span class="tip" tabindex="0" data-tip="Tyre width. Used for the drawing outline and to check that the wheels clear the chassis.">?</span></span></label>
+        <div class="ctl">
+          <input type="range" id="wheelWidth_r" min="4" max="40" step="0.5" aria-label="Wheel width slider">
+          <input type="number" id="wheelWidth" min="1" max="60" step="0.1" aria-label="Wheel width"><span class="unit">mm</span>
+        </div>
+      </div>
+      <div class="reads" id="dtReads"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Chassis geometry</h2>
+      <div class="field">
+        <label for="dWS"><span class="lbl-left"><span class="dimtag">A</span><span class="txt">Wheel-axle to sensor array</span>
+          <span class="tip" tabindex="0" data-tip="Perpendicular distance from the drive-wheel axle line to the centre of the sensor array. This single number sets the geometric reaction time.">?</span></span></label>
+        <div class="ctl">
+          <input type="range" id="dWS_r" min="20" max="150" step="1" aria-label="Wheel to sensor distance slider">
+          <input type="number" id="dWS" min="5" max="400" step="0.5" aria-label="Wheel to sensor distance"><span class="unit">mm</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="dWW"><span class="lbl-left"><span class="dimtag">B</span><span class="txt">Wheel-to-wheel (track)</span>
+          <span class="tip" tabindex="0" data-tip="Distance between the left and right wheel contact-point centrelines. This is L in the differential-drive equations.">?</span></span></label>
+        <div class="ctl">
+          <input type="range" id="dWW_r" min="60" max="120" step="1" aria-label="Wheel to wheel distance slider">
+          <input type="number" id="dWW" min="20" max="300" step="0.5" aria-label="Wheel to wheel distance"><span class="unit">mm</span>
+        </div>
+        <div class="seg" style="margin-top:8px">
+          <button type="button" data-preset="Compact" id="pbC">Compact</button>
+          <button type="button" data-preset="Balanced" id="pbB">Balanced</button>
+          <button type="button" data-preset="Stable" id="pbS">Stable</button>
+        </div>
+        <div class="ctl" style="margin-top:7px;gap:5px">
+          <input type="number" id="pvC" min="20" max="300" step="1" style="width:100%" aria-label="Compact preset value">
+          <input type="number" id="pvB" min="20" max="300" step="1" style="width:100%" aria-label="Balanced preset value">
+          <input type="number" id="pvS" min="20" max="300" step="1" style="width:100%" aria-label="Stable preset value">
+          <span class="unit">mm</span>
+        </div>
+        <div class="hint" id="presetHint"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Sensor array</h2>
+      <div class="field">
+        <div class="flabel"><span class="lbl-left"><span class="txt">Sensor count</span>
+          <span class="tip" tabindex="0" data-tip="The board width stays fixed, so adding sensors shrinks the pitch rather than widening the array.">?</span></span></div>
+        <div class="seg">
+          <button type="button" data-n="8">8</button><button type="button" data-n="12">12</button><button type="button" data-n="16">16</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="boardWidth"><span class="lbl-left"><span class="dimtag">C</span><span class="txt">Array width</span>
+          <span class="tip" tabindex="0" data-tip="Switch below whether this number is the outer-sensor centre-to-centre span, or the full PCB edge-to-edge width.">?</span></span></label>
+        <div class="ctl">
+          <input type="range" id="boardWidth_r" min="20" max="180" step="1" aria-label="Array width slider">
+          <input type="number" id="boardWidth" min="10" max="400" step="0.5" aria-label="Array width"><span class="unit">mm</span>
+        </div>
+        <div class="ctl" style="margin-top:7px">
+          <select id="widthMode" class="full" aria-label="Array width refers to">
+            <option value="span">centre-to-centre span of outer sensors</option>
+            <option value="pcb">total physical PCB width</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="pkgWidth"><span class="lbl-left"><span class="txt">Sensor package width</span>
+          <span class="tip" tabindex="0" data-tip="QRE1113 SMD body measures about 3.7 mm across. Pitch below this value means the packages physically collide.">?</span></span></label>
+        <div class="ctl"><input type="number" id="pkgWidth" class="full" min="0.5" max="20" step="0.1" aria-label="Sensor package width"><span class="unit">mm</span></div>
+      </div>
+      <div class="field">
+        <label for="edgeClear"><span class="lbl-left"><span class="txt">PCB edge clearance</span>
+          <span class="tip" tabindex="0" data-tip="Copper-to-board-edge gap outboard of the end sensors. Only used to convert between span and total PCB width.">?</span></span></label>
+        <div class="ctl"><input type="number" id="edgeClear" class="full" min="0" max="30" step="0.1" aria-label="Edge clearance"><span class="unit">mm</span></div>
+      </div>
+      <div class="field">
+        <div class="flabel"><span class="lbl-left"><span class="txt">Array shape</span>
+          <span class="tip" tabindex="0" data-tip="A curved array places outer sensors at a different longitudinal position, so they see the line earlier or later than the centre ones.">?</span></span></div>
+        <div class="seg">
+          <button type="button" data-shape="straight">Straight</button><button type="button" data-shape="curved">Curved</button>
+        </div>
+      </div>
+      <div class="field" id="arcFields" hidden>
+        <label for="arcRadius"><span class="lbl-left"><span class="txt">Arc radius</span>
+          <span class="tip" tabindex="0" data-tip="Radius of the circle the sensors sit on. The chord is held equal to the straight-array span so lateral coverage stays comparable.">?</span></span></label>
+        <div class="ctl">
+          <input type="range" id="arcRadius_r" min="40" max="600" step="5" aria-label="Arc radius slider">
+          <input type="number" id="arcRadius" min="10" max="5000" step="1" aria-label="Arc radius"><span class="unit">mm</span>
+        </div>
+        <div class="ctl" style="margin-top:7px">
+          <select id="arcDir" class="full" aria-label="Arc direction">
+            <option value="forward">bows forward — outer sensors trail</option>
+            <option value="back">bows backward — outer sensors lead</option>
+          </select>
+        </div>
+      </div>
+      <div class="reads" id="arrReads"></div>
+      <div id="arrFlags"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Control loop &amp; latency</h2>
+      <div class="field">
+        <label for="loopHz"><span class="lbl-left"><span class="txt">Control-loop frequency</span>
+          <span class="tip" tabindex="0" data-tip="How often the controller reads sensors and updates motor commands.">?</span></span></label>
+        <div class="ctl">
+          <input type="range" id="loopHz_r" min="100" max="5000" step="50" aria-label="Control loop frequency slider">
+          <input type="number" id="loopHz" min="1" max="50000" step="10" aria-label="Control loop frequency"><span class="unit">Hz</span>
+        </div>
+      </div>
+      <div class="field">
+        <label for="latency"><span class="lbl-left"><span class="txt">System latency</span>
+          <span class="tip" tabindex="0" data-tip="Everything between light hitting the phototransistor and torque changing at the wheel: ADC acquisition, filtering, computation, PWM update, driver slew, motor electrical time constant.">?</span></span></label>
+        <div class="ctl">
+          <input type="range" id="latency_r" min="0" max="40" step="0.1" aria-label="System latency slider">
+          <input type="number" id="latency" min="0" max="500" step="0.05" aria-label="System latency"><span class="unit">ms</span>
+        </div>
+        <div class="hint">Kept separate from the geometric window — subtracted only afterwards, never mixed into it.</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Assumptions <span class="badge">editable</span></h2>
+      <div class="field">
+        <label for="interpK"><span class="lbl-left"><span class="txt">Interpolation factor</span>
+          <span class="tip" tabindex="0" data-tip="How much better than raw pitch a weighted-centroid position estimate gets. 1 means no interpolation. Verify this against your own array on the bench — it is an assumption, not a measurement.">?</span></span></label>
+        <div class="ctl"><input type="number" id="interpK" class="full" min="1" max="32" step="0.5" aria-label="Interpolation factor"><span class="unit">×</span></div>
+      </div>
+      <div class="field">
+        <label for="warnReactMs"><span class="lbl-left"><span class="txt">Warn below reaction time</span>
+          <span class="tip" tabindex="0" data-tip="Threshold for the short-window warning. Set it from your own testing, not from this default.">?</span></span></label>
+        <div class="ctl"><input type="number" id="warnReactMs" class="full" min="0" max="500" step="0.5" aria-label="Reaction time warning threshold"><span class="unit">ms</span></div>
+      </div>
+      <div class="field">
+        <label for="warnUpdates"><span class="lbl-left"><span class="txt">Warn below loop updates</span></span></label>
+        <div class="ctl"><input type="number" id="warnUpdates" class="full" min="0" max="10000" step="1" aria-label="Loop update warning threshold"><span class="unit">upd</span></div>
+      </div>
+      <div class="field">
+        <label for="warnRemainPct"><span class="lbl-left"><span class="txt">Warn below remaining budget</span>
+          <span class="tip" tabindex="0" data-tip="Remaining time after latency, as a share of the geometric window.">?</span></span></label>
+        <div class="ctl"><input type="number" id="warnRemainPct" class="full" min="0" max="100" step="1" aria-label="Remaining budget warning threshold"><span class="unit">%</span></div>
+      </div>
+      <div class="field">
+        <label for="chassisRear"><span class="lbl-left"><span class="txt">Chassis rear overhang</span>
+          <span class="tip" tabindex="0" data-tip="Drawing only — how far the board extends behind the axle. Has no effect on any calculation.">?</span></span></label>
+        <div class="ctl"><input type="number" id="chassisRear" class="full" min="0" max="200" step="1" aria-label="Chassis rear overhang"><span class="unit">mm</span></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ================= DRAWING + RESULTS ================= -->
+  <div class="col-draw">
+
+    <section class="panel">
+      <h2>Top view <span class="badge" id="scaleBadge">—</span></h2>
+      <div class="sheet"><div id="dwgHost"></div></div>
+      <div class="legend">
+        <span><i style="border-color:var(--signal)"></i>dimension</span>
+        <span><i style="border-color:var(--ink-3);border-top-style:dashed"></i>centreline</span>
+        <span><i style="border-color:var(--warn)"></i>track line</span>
+        <span id="scaleNote"></span>
+      </div>
+      <div class="field" style="border-top:1px solid var(--rule-2);border-bottom:0">
+        <div class="flabel"><span class="lbl-left"><span class="txt">Curved-track overlay</span>
+          <span class="tip" tabindex="0" data-tip="Draws a constant-radius track line tangent to the robot heading at the axle centre, so you can see where it crosses the array.">?</span></span>
+          <span class="seg" style="width:150px">
+            <button type="button" id="trkOff">Off</button><button type="button" id="trkL">Left</button><button type="button" id="trkR">Right</button>
+          </span></div>
+        <div class="ctl" id="trkCtl">
+          <input type="range" id="trackRadius_r" min="40" max="1200" step="5" aria-label="Track radius slider">
+          <input type="number" id="trackRadius" min="10" max="20000" step="1" aria-label="Track radius"><span class="unit">mm</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Geometric reaction time</h2>
+      <div class="reads" id="mainReads"></div>
+      <div id="mainFlags"></div>
+      <div class="note"><strong>What this number is.</strong> Purely the time for the robot to physically travel the distance between the sensor array and the wheel axle. It is the window you have <em>before</em> the wheels arrive at the point the sensors just read — not the electrical or software response time, which is entered separately above and subtracted afterwards.</div>
+    </section>
+
+    <section class="panel">
+      <h2>Required loop frequency</h2>
+      <div class="reads" id="freqReads"></div>
+      <div class="note">Frequency needed to fit 5, 10 or 20 controller updates inside the geometric window at the current speed and arm length. Compare against your configured loop rate.</div>
+    </section>
+
+    <div class="row2">
+      <section class="panel">
+        <h2>Differential drive on a curve</h2>
+        <div class="reads" id="diffReads"></div>
+        <div id="diffFlags"></div>
+        <details class="doc"><summary>Model and assumptions</summary><div class="pad">
+          <p>Standard kinematic differential-drive model, with the robot treated as a rigid body rolling without lateral slip:</p>
+          <div class="eq">v      = (v_right + v_left) / 2
+ω      = (v_right − v_left) / L
+R      = (L/2)·(v_right + v_left)/(v_right − v_left)</div>
+          <p>Solved in reverse here: you give the track radius <code>R</code> and forward speed <code>v</code>, and it returns the wheel speeds needed. Equal wheel speeds are handled explicitly — <code>ω = 0</code> reports an infinite radius rather than dividing by zero.</p>
+          <p><strong>Assumes:</strong> no wheel slip, no tyre scrub, point contact patches, rigid chassis, and that both motors actually reach the commanded speed. Real silicone tyres 22 mm wide scrub noticeably in tight turns, so treat this as a first-order figure.</p>
+        </div></details>
+      </section>
+
+      <section class="panel">
+        <h2>Curve tracking</h2>
+        <div class="reads" id="curveReads"></div>
+        <div id="curveFlags"></div>
+        <details class="doc"><summary>Model and assumptions</summary><div class="pad">
+          <p>With the array rigidly mounted <code>A</code> ahead of the axle, a curved line does not stay centred on the array. Taking the path as a circle of radius <code>R</code> tangent to the robot heading at the axle centre, the line crosses the array plane offset laterally by:</p>
+          <div class="eq">offset = R − √(R² − A²)          ( ≈ A²/2R for R ≫ A )</div>
+          <p>The line stays inside the array only while that offset is under the half-span <code>s</code>, which gives a tightest trackable radius of:</p>
+          <div class="eq">R_min = (A² + s²) / (2s)</div>
+          <p>This is the geometric trade-off behind the arm length: a longer arm buys reaction time and costs tight-curve capability, growing as <code>A²</code>.</p>
+          <p><strong>Assumes:</strong> steady-state cornering with the robot already aligned to the curve, and the array plane perpendicular to the heading. During entry into a curve the real offset is larger, so treat <code>R_min</code> as optimistic.</p>
+        </div></details>
+      </section>
+    </div>
+
+    <section class="panel">
+      <h2>Configuration comparison</h2>
+      <div class="pad" style="padding-bottom:4px">
+        <div class="seg" style="max-width:420px">
+          <button type="button" data-cmp="track">Track presets</button>
+          <button type="button" data-cmp="sensors">Sensor counts</button>
+          <button type="button" data-cmp="arm">Arm lengths</button>
+          <button type="button" data-cmp="all">All</button>
+        </div>
+      </div>
+      <div class="tblwrap"><table id="cmpTable">
+        <thead><tr>
+          <th>Configuration</th><th>Track B<br>mm</th><th>Arm A<br>mm</th><th>Sensors</th><th>Pitch<br>mm</th>
+          <th>Speed<br>m/s</th><th>Reaction<br>ms</th><th>Updates<br>@loop</th><th>After latency<br>ms</th><th>R min<br>mm</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table></div>
+      <div class="note">Highlighted row is your current configuration. Thresholds for the amber and red styling come from the editable assumptions panel — nothing here is a fixed verdict.</div>
+    </section>
+
+    <section class="panel">
+      <h2>Verification examples <span class="badge" id="verBadge">—</span></h2>
+      <div class="pad" style="padding-bottom:6px">
+        <div class="hint" style="margin:0">Each case runs against the same functions the calculator uses, so the check is live rather than hard-coded text. Load a case to push it into the inputs.</div>
+      </div>
+      <div id="verList"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Reference</h2>
+      <details class="doc" open><summary>Reaction-time definition</summary><div class="pad">
+        <div class="eq">t_react [ms] = A [mm] / v [m/s]</div>
+        <p>The units cancel conveniently: millimetres divided by metres per second lands directly in milliseconds. At <code>A = 80 mm</code> and <code>v = 2 m/s</code> that is <code>40 ms</code>, and at a 1 kHz loop rate roughly 40 controller updates fit inside it.</p>
+      </div></details>
+      <details class="doc"><summary>Sensor pitch and resolution</summary><div class="pad">
+        <div class="eq">span   = outer-sensor centre-to-centre distance
+pitch  = span / (n − 1)
+x_i    = −span/2 + i·pitch      i = 0 … n−1</div>
+        <p>Raw quantisation is one pitch, worst-case error half a pitch. Weighted-centroid interpolation across the analogue readings does better, by roughly the interpolation factor set in the assumptions panel — that factor is a placeholder for your own bench measurement, not a specification.</p>
+      </div></details>
+      <details class="doc"><summary>Curved array geometry</summary><div class="pad">
+        <div class="eq">θ_half = asin( chord / 2R )
+θ_i    = −θ_half + i·(2θ_half)/(n−1)
+x_i    = R·sin θ_i
+y_i    = A ∓ R·(1 − cos θ_i)</div>
+        <p>The chord is held equal to the straight-array span so lateral coverage stays comparable. Each sensor then sits at its own longitudinal position, so each has its own reaction time — the spread between the centre and outer sensors is reported in the array panel.</p>
+        <p>Whether that helps depends on your controller. A forward bow gives the centre sensors the longest lead; a backward bow gives it to the outer ones, which are the sensors that matter when the line is already running away from you. Neither is inherently better, and both cost you a slightly longer array arc for the same width.</p>
+      </div></details>
+      <details class="doc"><summary>Drivetrain speed ceiling</summary><div class="pad">
+        <div class="eq">v_noload = (rpm_out / 60) · π · D / 1000   [m/s]</div>
+        <p>No-load figures only. Under load the motor sits somewhere on its torque–speed curve, so the achievable speed is lower — how much lower depends on rolling resistance, drivetrain losses and how hard you are accelerating. The percentage shown next to your target speed is a rough duty indicator, not a PWM setting.</p>
+      </div></details>
+    </section>
+  </div>
+</div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(function () {
+'use strict';
+
+/* ============================================================================
+   1. CONFIGURATION
+   ==========================================================================*/
+
+var DEFAULTS = {
+  speed: 2.0, speedUnit: 'ms',
+  motorRPM: 3300, rpmRef: 'output', gearRatio: 26,
+  wheelDia: 26.5, wheelWidth: 22,
+  dWS: 80, dWW: 60,
+  presetC: 60, presetB: 80, presetS: 100,
+  nSensors: 16, boardWidth: 75, widthMode: 'span',
+  pkgWidth: 3.7, edgeClear: 2.0,
+  shape: 'straight', arcRadius: 120, arcDir: 'forward',
+  loopHz: 1000, latency: 1.5,
+  interpK: 4, warnReactMs: 20, warnUpdates: 10, warnRemainPct: 50,
+  chassisRear: 35,
+  trackDir: 'left', trackRadius: 200
+};
+var STORE_KEY = 'savitar.lfr.geometry.v1';
+var cfg = Object.assign({}, DEFAULTS);
+
+/* Numeric fields wired to a matching range slider (id and id_r). */
+var PAIRED = ['speed', 'motorRPM', 'wheelDia', 'wheelWidth', 'dWS', 'dWW',
+              'boardWidth', 'arcRadius', 'loopHz', 'latency', 'trackRadius'];
+/* Numeric fields with no slider. */
+var SOLO = ['gearRatio', 'pkgWidth', 'edgeClear', 'interpK',
+            'warnReactMs', 'warnUpdates', 'warnRemainPct', 'chassisRear'];
+/* Preset boxes use different element ids than their config keys. */
+var PRESET_IDS = { pvC: 'presetC', pvB: 'presetB', pvS: 'presetS' };
+
+var $ = function (id) { return document.getElementById(id); };
+var clamp = function (v, lo, hi) { return Math.min(hi, Math.max(lo, v)); };
+
+/* Fixed formatting so columns stay aligned. Guards against NaN/Infinity. */
+function fmt(v, dp) {
+  if (v === Infinity) return '∞';
+  if (!isFinite(v)) return '—';
+  return v.toFixed(dp === undefined ? 1 : dp);
+}
+
+/* ============================================================================
+   2. GEOMETRY & TIMING MATH
+   Every function is pure: it takes a config object and returns numbers.
+   The verification suite calls these directly, so what is checked is what runs.
+   ==========================================================================*/
+
+/* --- Sensor array layout -------------------------------------------------
+   The board width is held constant as sensor count changes, so pitch is the
+   variable that moves. Positions are relative to the robot centreline, with
+   +x to the right and +y forward.                                          */
+function sensorGeometry(c) {
+  var n = c.nSensors;
+
+  /* Convert between the two width conventions. The outer sensor centre sits
+     inboard of the PCB edge by (edge clearance + half a package).           */
+  var inset = c.edgeClear + c.pkgWidth / 2;
+  var span, pcbWidth;
+  if (c.widthMode === 'span') { span = c.boardWidth; pcbWidth = span + 2 * inset; }
+  else { pcbWidth = c.boardWidth; span = Math.max(0, pcbWidth - 2 * inset); }
+
+  var pitch = n > 1 ? span / (n - 1) : 0;
+  var pos = [];                       /* {x, y, tilt, dy} per sensor */
+  var arc = null;
+
+  if (c.shape === 'curved' && span > 0) {
+    /* Sensors on a circular arc whose chord equals the straight-array span,
+       so lateral coverage stays comparable between the two modes.           */
+    var R = Math.max(c.arcRadius, span / 2 + 1e-6);   /* chord can't exceed 2R */
+    var half = Math.asin(clamp(span / (2 * R), -1, 1));
+    var dTh = n > 1 ? (2 * half) / (n - 1) : 0;
+    var sag = R * (1 - Math.cos(half));               /* sagitta = bulge depth */
+    var sign = c.arcDir === 'forward' ? -1 : 1;       /* forward bow -> outers trail */
+    for (var i = 0; i < n; i++) {
+      var th = -half + i * dTh;
+      var dy = sign * R * (1 - Math.cos(th));
+      pos.push({ x: R * Math.sin(th), y: c.dWS + dy, dy: dy, tilt: th });
+    }
+    arc = { R: R, half: half, sagitta: sag, arcLen: 2 * R * half, clamped: c.arcRadius < span / 2 };
+  } else {
+    for (var j = 0; j < n; j++) {
+      pos.push({ x: -span / 2 + j * pitch, y: c.dWS, dy: 0, tilt: 0 });
+    }
+  }
+
+  return {
+    n: n, span: span, pcbWidth: pcbWidth, pitch: pitch, pos: pos, arc: arc,
+    /* Raw quantisation is one pitch; interpolation divides that down. */
+    resRaw: pitch, resInterp: pitch / Math.max(1, c.interpK),
+    collide: pitch > 0 && pitch < c.pkgWidth
+  };
+}
+
+/* --- Straight-line reaction time -----------------------------------------
+   t = A / v. Millimetres over metres-per-second gives milliseconds directly.
+   Deliberately kept independent of any curved-path approximation.          */
+function timing(c, geo) {
+  var v = Math.max(1e-9, c.speed);
+  var t = c.dWS / v;                            /* ms */
+  var perMs = v;                                /* mm travelled in 1 ms */
+  var updates = (t / 1000) * c.loopHz;
+  var remain = t - c.latency;
+
+  /* Per-sensor times differ on a curved array. */
+  var tMin = t, tMax = t;
+  if (geo && geo.arc) {
+    tMin = Infinity; tMax = -Infinity;
+    geo.pos.forEach(function (p) {
+      var ti = p.y / v;
+      if (ti < tMin) tMin = ti;
+      if (ti > tMax) tMax = ti;
+    });
+  }
+
+  return {
+    t: t, perMs: perMs, updates: updates, remain: remain,
+    remainPct: t > 0 ? (remain / t) * 100 : 0,
+    /* Loop rate required to fit N updates inside the window. */
+    fFor: function (nUpd) { return t > 0 ? nUpd / (t / 1000) : Infinity; },
+    tMin: tMin, tMax: tMax, tSpread: tMax - tMin
+  };
+}
+
+/* --- Drivetrain ceiling --------------------------------------------------- */
+function drivetrain(c) {
+  var rpmOut = c.rpmRef === 'motor' ? c.motorRPM / Math.max(1e-9, c.gearRatio) : c.motorRPM;
+  var circM = Math.PI * c.wheelDia / 1000;          /* wheel circumference, m */
+  var vMax = (rpmOut / 60) * circM;                 /* no-load ground speed, m/s */
+  return {
+    rpmOut: rpmOut, vMax: vMax, circMm: circM * 1000,
+    pct: vMax > 0 ? (c.speed / vMax) * 100 : Infinity,
+    rpmNeeded: circM > 0 ? (c.speed / circM) * 60 : Infinity
+  };
+}
+
+/* --- Differential drive ---------------------------------------------------
+   Forward:  v = (vR+vL)/2 ,  ω = (vR−vL)/L ,  R = (L/2)(vR+vL)/(vR−vL)
+   Used in reverse: given R and v, return the wheel speeds required.         */
+function differential(c, dt) {
+  var L = c.dWW / 1000;                             /* track, m */
+  var v = c.speed;
+  var R = c.trackRadius / 1000;                     /* path radius, m */
+
+  if (c.trackDir === 'off' || !isFinite(R) || R <= 0) {
+    /* Straight running: equal wheel speeds, zero yaw rate, infinite radius.
+       Handled explicitly so nothing divides by zero.                        */
+    return { straight: true, vL: v, vR: v, omega: 0, R: Infinity, L: L, dv: 0, feasible: v <= dt.vMax };
+  }
+  var omega = v / R;                                /* rad/s */
+  var dv = omega * L / 2;                           /* half the speed split */
+  var vIn = v - dv, vOut = v + dv;
+  return {
+    straight: false, omega: omega, R: R, L: L, dv: 2 * dv,
+    vL: c.trackDir === 'left' ? vIn : vOut,
+    vR: c.trackDir === 'left' ? vOut : vIn,
+    vInner: vIn, vOuter: vOut,
+    ratio: vIn !== 0 ? vOut / vIn : Infinity,
+    feasible: vOut <= dt.vMax,
+    reverseInner: vIn < 0
+  };
+}
+
+/* --- Curve tracking -------------------------------------------------------
+   The array is rigid and sits A ahead of the axle, so on a curve the line
+   drifts off the array centre. Path modelled as a circle of radius R tangent
+   to the heading at the axle centre.
+       offset = R − √(R² − A²)          (≈ A²/2R when R ≫ A)
+   The line stays on the array while offset ≤ half-span, giving
+       R_min  = (A² + s²) / (2s)                                             */
+function curveTracking(c, geo) {
+  var A = c.dWS, s = geo.span / 2, R = c.trackRadius;
+  var offset = (R > A) ? R - Math.sqrt(R * R - A * A) : Infinity;
+  var rMin = s > 0 ? (A * A + s * s) / (2 * s) : Infinity;
+  var active = null;
+
+  /* Which sensor the line falls nearest, per-sensor (handles curved arrays,
+     where each sensor sits at its own y).                                   */
+  if (c.trackDir !== 'off' && isFinite(offset)) {
+    var best = Infinity, sign = (c.trackDir === 'left' ? -1 : 1);
+    geo.pos.forEach(function (p, i) {
+      if (p.y >= R) return;                         /* path turns back first */
+      var xLine = sign * (R - Math.sqrt(Math.max(0, R * R - p.y * p.y)));
+      var e = Math.abs(p.x - xLine);
+      if (e < best) { best = e; active = i; }
+    });
+  }
+  return {
+    offset: offset, rMin: rMin, halfSpan: s, activeIdx: active,
+    onArray: isFinite(offset) && offset <= s,
+    margin: s - offset
+  };
+}
+
+/* Single entry point used by render, comparison table and verification. */
+function computeAll(c) {
+  var geo = sensorGeometry(c);
+  var dt = drivetrain(c);
+  return { geo: geo, tim: timing(c, geo), dt: dt, diff: differential(c, dt), crv: curveTracking(c, geo) };
+}
+
+/* ============================================================================
+   3. TOP-VIEW DRAWING
+   SVG in millimetre user units. viewBox + preserveAspectRatio keeps the
+   geometry undistorted at any container size.
+   ==========================================================================*/
+
+function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+function drawTopView(c, r) {
+  var geo = r.geo, compact = window.innerWidth < 620;
+  var fs = compact ? 5.2 : 4.2, fsS = compact ? 4.4 : 3.6;
+  var halfTrack = c.dWW / 2, wR = c.wheelDia / 2, wW = c.wheelWidth;
+
+  /* --- extent of real geometry, then padding for the dimension callouts --- */
+  var maxX = Math.max(halfTrack + wW / 2, geo.pcbWidth / 2) + 2;
+  var frontY = c.dWS + 10, rearY = -c.chassisRear - 4;
+  if (geo.arc) { geo.pos.forEach(function (p) { frontY = Math.max(frontY, p.y + 10); }); }
+  var padL = 34, padR = 34, padT = 20, padB = 30;
+
+  var x0 = -maxX - padL, y1 = frontY + padT, w = (maxX + padR) - x0, h = y1 - (rearY - padB);
+  /* SVG y grows downward; flip so +y is forward on screen. */
+  var vb = [x0, -y1, w, h].map(function (n) { return n.toFixed(2); }).join(' ');
+  var Y = function (v) { return (-v).toFixed(2); };
+  var X = function (v) { return v.toFixed(2); };
+
+  var o = [];
+  o.push('<svg class="dwg" viewBox="' + vb + '" preserveAspectRatio="xMidYMid meet" role="img" ' +
+    'aria-label="Scaled top view of the robot showing wheels, axle, sensor array and dimensions">');
+  o.push('<defs>' +
+    '<marker id="dA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto">' +
+      '<path d="M0 1 L9 5 L0 9 Z" fill="var(--signal)"/></marker>' +
+    '<marker id="tA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">' +
+      '<path d="M1 1 L9 5 L1 9" fill="none" stroke="var(--ink-2)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>' +
+    '<pattern id="hatch" width="2.2" height="2.2" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">' +
+      '<line x1="0" y1="0" x2="0" y2="2.2" stroke="var(--ink-3)" stroke-width="0.7"/></pattern>' +
+    '</defs>');
+
+  /* ---- chassis outline (approximate; rear overhang is a drawing assumption) */
+  var backHalf = Math.max(halfTrack - wW / 2 - 1, 8), frontHalf = geo.pcbWidth / 2;
+  var neckY = Math.min(c.dWS * 0.45, c.dWS - 12);
+  o.push('<path d="M' + X(-backHalf) + ' ' + Y(rearY + 4) + ' L' + X(backHalf) + ' ' + Y(rearY + 4) +
+    ' L' + X(backHalf) + ' ' + Y(neckY) + ' L' + X(frontHalf) + ' ' + Y(c.dWS - 6) +
+    ' L' + X(frontHalf) + ' ' + Y(frontY - 4) + ' L' + X(-frontHalf) + ' ' + Y(frontY - 4) +
+    ' L' + X(-frontHalf) + ' ' + Y(c.dWS - 6) + ' L' + X(-backHalf) + ' ' + Y(neckY) + ' Z" ' +
+    'fill="var(--paper)" stroke="var(--ink-2)" stroke-width="0.6"/>');
+
+  /* ---- wheels, hatched like a section view ---- */
+  [-1, 1].forEach(function (s) {
+    var cx = s * halfTrack;
+    o.push('<rect x="' + X(cx - wW / 2) + '" y="' + Y(wR) + '" width="' + X(wW) + '" height="' + X(2 * wR) +
+      '" rx="1.2" fill="url(#hatch)" stroke="var(--ink)" stroke-width="0.7"/>');
+  });
+
+  /* ---- axle line + ISO centreline (long-dash-dot) ---- */
+  o.push('<line x1="' + X(-halfTrack - wW / 2 - 6) + '" y1="' + Y(0) + '" x2="' + X(halfTrack + wW / 2 + 6) +
+    '" y2="' + Y(0) + '" stroke="var(--ink-3)" stroke-width="0.5" stroke-dasharray="7 2 1.2 2"/>');
+  o.push('<line x1="0" y1="' + Y(rearY) + '" x2="0" y2="' + Y(frontY) +
+    '" stroke="var(--ink-3)" stroke-width="0.5" stroke-dasharray="7 2 1.2 2"/>');
+
+  /* ---- track-line overlay ---- */
+  if (c.trackDir !== 'off') {
+    var R = c.trackRadius, sg = (c.trackDir === 'left' ? -1 : 1), cxA = sg * R, pts = [];
+    for (var yy = rearY; yy <= frontY; yy += 1.5) {
+      if (Math.abs(yy) >= R) continue;
+      pts.push(X(cxA - sg * Math.sqrt(R * R - yy * yy)) + ',' + Y(yy));
+    }
+    if (pts.length > 1) {
+      o.push('<polyline points="' + pts.join(' ') + '" fill="none" stroke="var(--warn)" ' +
+        'stroke-width="2.4" stroke-linecap="round" opacity="0.55"/>');
+    }
+  }
+
+  /* ---- sensors ---- */
+  var pk = c.pkgWidth, pl = pk * 1.15;
+  geo.pos.forEach(function (p, i) {
+    var isAct = (r.crv.activeIdx === i && c.trackDir !== 'off');
+    var deg = (-p.tilt * 180 / Math.PI).toFixed(2);
+    o.push('<g transform="translate(' + X(p.x) + ',' + Y(p.y) + ') rotate(' + deg + ')">' +
+      '<rect x="' + X(-pk / 2) + '" y="' + X(-pl / 2) + '" width="' + X(pk) + '" height="' + X(pl) + '" rx="0.5" ' +
+      'fill="' + (isAct ? 'var(--warn)' : 'var(--signal)') + '" opacity="' + (isAct ? '1' : '0.82') + '"/></g>');
+  });
+
+  /* ---- dimension A: axle to array centre (left side) ---- */
+  var dimX = -maxX - 12;
+  o.push(dimV(dimX, 0, c.dWS, 'A  ' + fmt(c.dWS, 1), fs, -maxX - 2));
+  /* ---- dimension B: wheel-to-wheel (below axle) ---- */
+  o.push(dimH(-halfTrack, halfTrack, rearY - 12, 'B  ' + fmt(c.dWW, 1), fs, 0));
+  /* ---- dimension C: array span (above array) ---- */
+  if (geo.span > 0) {
+    var topY = frontY - 1;
+    o.push(dimH(-geo.span / 2, geo.span / 2, topY, 'C  ' + fmt(geo.span, 1), fs, c.dWS));
+  }
+
+  /* ---- direction-of-travel arrow ---- */
+  var ax = maxX + 14;
+  o.push('<line x1="' + X(ax) + '" y1="' + Y(c.dWS * 0.25) + '" x2="' + X(ax) + '" y2="' + Y(c.dWS * 0.85) +
+    '" stroke="var(--ink-2)" stroke-width="1" marker-end="url(#tA)"/>');
+  var tx = X(ax + 4.5), ty = Y(c.dWS * 0.55);
+  o.push('<text x="' + tx + '" y="' + ty + '" font-size="' + fsS + '" fill="var(--ink-3)" ' +
+    'text-anchor="middle" letter-spacing="0.6" transform="rotate(-90 ' + tx + ' ' + ty + ')">TRAVEL</text>');
+
+  /* ---- scale bar ---- */
+  var sb = c.dWS >= 60 ? 20 : 10, sbY = rearY - 24, sbX = -maxX;
+  o.push('<line x1="' + X(sbX) + '" y1="' + Y(sbY) + '" x2="' + X(sbX + sb) + '" y2="' + Y(sbY) +
+    '" stroke="var(--ink)" stroke-width="1.1"/>');
+  ['0', String(sb)].forEach(function (t, k) {
+    var xx = sbX + k * sb;
+    o.push('<line x1="' + X(xx) + '" y1="' + Y(sbY - 1.6) + '" x2="' + X(xx) + '" y2="' + Y(sbY + 1.6) +
+      '" stroke="var(--ink)" stroke-width="1.1"/>');
+  });
+  o.push('<text x="' + X(sbX + sb + 2.5) + '" y="' + Y(sbY - 1.5) + '" font-size="' + fsS +
+    '" fill="var(--ink-3)">' + sb + ' mm</text>');
+
+  o.push('</svg>');
+  return o.join('');
+
+  /* Vertical dimension: extension lines + inward arrows + label in a gap. */
+  function dimV(x, ya, yb, label, size, extTo) {
+    var mid = (ya + yb) / 2, g = size * 1.1, s = [];
+    s.push('<line x1="' + X(x - 2) + '" y1="' + Y(ya) + '" x2="' + X(extTo) + '" y2="' + Y(ya) + '" stroke="var(--signal)" stroke-width="0.35" opacity="0.6"/>');
+    s.push('<line x1="' + X(x - 2) + '" y1="' + Y(yb) + '" x2="' + X(extTo) + '" y2="' + Y(yb) + '" stroke="var(--signal)" stroke-width="0.35" opacity="0.6"/>');
+    /* Drawn from the text gap outwards, so the arrowheads land on the
+       extension lines pointing away from the label (ISO convention).      */
+    s.push('<line x1="' + X(x) + '" y1="' + Y(mid - g) + '" x2="' + X(x) + '" y2="' + Y(ya) + '" stroke="var(--signal)" stroke-width="0.55" marker-end="url(#dA)"/>');
+    s.push('<line x1="' + X(x) + '" y1="' + Y(mid + g) + '" x2="' + X(x) + '" y2="' + Y(yb) + '" stroke="var(--signal)" stroke-width="0.55" marker-end="url(#dA)"/>');
+    s.push('<text x="' + X(x) + '" y="' + Y(mid) + '" font-size="' + size + '" fill="var(--signal)" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 ' + X(x) + ' ' + Y(mid) + ')">' + esc(label) + '</text>');
+    return s.join('');
+  }
+  /* Horizontal dimension: same convention, label centred above the line. */
+  function dimH(xa, xb, y, label, size, extFrom) {
+    var mid = (xa + xb) / 2, g = (String(label).length * size * 0.62) / 2 + 1.5, s = [];
+    s.push('<line x1="' + X(xa) + '" y1="' + Y(extFrom) + '" x2="' + X(xa) + '" y2="' + Y(y) + '" stroke="var(--signal)" stroke-width="0.35" opacity="0.6"/>');
+    s.push('<line x1="' + X(xb) + '" y1="' + Y(extFrom) + '" x2="' + X(xb) + '" y2="' + Y(y) + '" stroke="var(--signal)" stroke-width="0.35" opacity="0.6"/>');
+    s.push('<line x1="' + X(mid - g) + '" y1="' + Y(y) + '" x2="' + X(xa) + '" y2="' + Y(y) + '" stroke="var(--signal)" stroke-width="0.55" marker-end="url(#dA)"/>');
+    s.push('<line x1="' + X(mid + g) + '" y1="' + Y(y) + '" x2="' + X(xb) + '" y2="' + Y(y) + '" stroke="var(--signal)" stroke-width="0.55" marker-end="url(#dA)"/>');
+    s.push('<text x="' + X(mid) + '" y="' + Y(y + size * 0.42) + '" font-size="' + size + '" fill="var(--signal)" text-anchor="middle">' + esc(label) + '</text>');
+    return s.join('');
+  }
+}
+
+/* ============================================================================
+   4. RENDERING
+   ==========================================================================*/
+
+function readout(k, v, unit, tone, tip) {
+  return '<div class="read' + (tone ? ' tone-' + tone : '') + '">' +
+    '<div class="k">' + esc(k) +
+    (tip && tip.t ? '<span class="tip" tabindex="0" data-tip="' + esc(tip.t) + '">?</span>' : '') + '</div>' +
+    '<div class="v">' + v + (unit ? '<small>' + esc(unit) + '</small>' : '') + '</div></div>';
+}
+function hero(k, v, unit, tone, tip) {
+  return '<div class="read hero' + (tone ? ' tone-' + tone : '') + '"><div class="k">' + esc(k) +
+    (tip ? '<span class="tip" tabindex="0" data-tip="' + esc(tip) + '">?</span>' : '') + '</div>' +
+    '<div class="v">' + v + (unit ? '<small>' + esc(unit) + '</small>' : '') + '</div></div>';
+}
+function flag(cls, mark, text) {
+  return '<div class="flag ' + cls + '"><span class="mk">' + mark + '</span><span>' + text + '</span></div>';
+}
+
+function render() {
+  var r = computeAll(cfg), geo = r.geo, tim = r.tim, dt = r.dt, diff = r.diff, crv = r.crv;
+
+  /* ---- drivetrain ---- */
+  $('dtReads').innerHTML =
+    readout('No-load top speed', fmt(dt.vMax, 2), 'm/s', dt.vMax < cfg.speed ? 'bad' : null,
+      { t: 'Ground speed with the wheels unloaded. Real loaded speed is lower.' }) +
+    readout('Target as % of ceiling', fmt(dt.pct, 0), '%', dt.pct > 100 ? 'bad' : (dt.pct > 85 ? 'warn' : null)) +
+    readout('Output shaft', fmt(dt.rpmOut, 0), 'rpm') +
+    readout('Wheel circumference', fmt(dt.circMm, 1), 'mm');
+
+  /* ---- main timing ---- */
+  var tone = tim.t < cfg.warnReactMs ? 'warn' : null;
+  $('mainReads').innerHTML =
+    hero('Geometric reaction time', fmt(tim.t, 1), 'ms', tone,
+      'Time for the axle to reach the point the array just crossed: A / v.') +
+    readout('Distance per 1 ms', fmt(tim.perMs, 2), 'mm', null,
+      { t: 'How far the robot moves in a single millisecond at this speed.' }) +
+    readout('Loop updates available', fmt(tim.updates, 0), 'upd',
+      tim.updates < cfg.warnUpdates ? 'warn' : null) +
+    readout('After system latency', fmt(tim.remain, 1), 'ms',
+      tim.remain <= 0 ? 'bad' : (tim.remainPct < cfg.warnRemainPct ? 'warn' : null),
+      { t: 'Geometric window minus the configured latency. Negative means the wheels reach the point before the correction lands.' }) +
+    readout('Budget remaining', fmt(tim.remainPct, 0), '%',
+      tim.remainPct < 0 ? 'bad' : (tim.remainPct < cfg.warnRemainPct ? 'warn' : null));
+
+  var mf = '';
+  if (tim.remain <= 0) {
+    mf += flag('bad', '!!', 'Latency of ' + fmt(cfg.latency, 1) + ' ms exceeds the whole ' + fmt(tim.t, 1) +
+      ' ms geometric window. The axle passes the sensed point before any correction can take effect — lengthen the arm, cut latency, or slow down.');
+  } else if (tim.remainPct < cfg.warnRemainPct) {
+    mf += flag('warn', '!', 'Only ' + fmt(tim.remainPct, 0) + '% of the window survives latency (' +
+      fmt(tim.remain, 1) + ' ms). Below your ' + cfg.warnRemainPct + '% threshold.');
+  }
+  if (tim.t < cfg.warnReactMs) {
+    mf += flag('warn', '!', 'Reaction window of ' + fmt(tim.t, 1) + ' ms is below your ' +
+      cfg.warnReactMs + ' ms threshold. At ' + fmt(cfg.speed, 2) + ' m/s the robot covers ' +
+      fmt(tim.perMs, 2) + ' mm every millisecond.');
+  }
+  if (!mf) mf = flag('ok', '✓', 'Window of ' + fmt(tim.t, 1) + ' ms leaves ' + fmt(tim.remain, 1) +
+    ' ms after latency and fits ' + fmt(tim.updates, 0) + ' loop updates.');
+  $('mainFlags').innerHTML = mf;
+
+  /* ---- required frequency ---- */
+  var f5 = tim.fFor(5), f10 = tim.fFor(10), f20 = tim.fFor(20);
+  $('freqReads').innerHTML =
+    readout('For 5 updates', fmt(f5, 0), 'Hz', cfg.loopHz < f5 ? 'warn' : 'good') +
+    readout('For 10 updates', fmt(f10, 0), 'Hz', cfg.loopHz < f10 ? 'warn' : 'good') +
+    readout('For 20 updates', fmt(f20, 0), 'Hz', cfg.loopHz < f20 ? 'warn' : 'good') +
+    readout('Your loop rate', fmt(cfg.loopHz, 0), 'Hz') +
+    readout('Loop period', fmt(1000 / Math.max(1e-9, cfg.loopHz), 3), 'ms') +
+    readout('Travel per loop', fmt(cfg.speed * 1000 / Math.max(1e-9, cfg.loopHz), 2), 'mm', null,
+      { t: 'Distance covered between two controller updates.' });
+
+  /* ---- sensor array ---- */
+  $('arrReads').innerHTML =
+    readout('Sensor pitch', fmt(geo.pitch, 2), 'mm', geo.collide ? 'bad' : null) +
+    readout('Active span', fmt(geo.span, 1), 'mm') +
+    readout('Total PCB width', fmt(geo.pcbWidth, 1), 'mm') +
+    readout('Quantisation', '±' + fmt(geo.resRaw / 2, 2), 'mm', null,
+      { t: 'Worst-case lateral error with plain nearest-sensor thresholding: half a pitch.' }) +
+    readout('With interpolation', '±' + fmt(geo.resInterp / 2, 2), 'mm', null,
+      { t: 'Assumed improvement from weighted-centroid interpolation. Verify on the bench.' }) +
+    (geo.arc
+      ? readout('Arc length', fmt(geo.arc.arcLen, 1), 'mm') +
+        readout('Sagitta (bulge)', fmt(geo.arc.sagitta, 2), 'mm', null,
+          { t: 'How far the outer sensors sit fore or aft of the centre ones.' }) +
+        readout('Time spread', fmt(tim.tSpread, 2), 'ms', null,
+          { t: 'Difference in geometric reaction time between the earliest and latest sensor on the arc.' })
+      : '');
+
+  var af = '';
+  if (geo.collide) {
+    af += flag('bad', '!!', 'Pitch of ' + fmt(geo.pitch, 2) + ' mm is smaller than the ' +
+      fmt(cfg.pkgWidth, 1) + ' mm sensor package — the parts physically overlap. Widen the array or drop to fewer sensors.');
+  } else if (geo.pitch < cfg.pkgWidth * 1.15) {
+    af += flag('warn', '!', 'Pitch of ' + fmt(geo.pitch, 2) + ' mm leaves under 15% clearance between packages. Check your footprint and placement tolerances.');
+  }
+  if (geo.arc && geo.arc.clamped) {
+    af += flag('warn', '!', 'Arc radius was clamped: a chord of ' + fmt(geo.span, 1) +
+      ' mm cannot fit on a circle smaller than ' + fmt(geo.span / 2, 1) + ' mm radius.');
+  }
+  $('arrFlags').innerHTML = af;
+
+  /* ---- differential drive ---- */
+  $('diffReads').innerHTML = diff.straight
+    ? readout('Yaw rate', '0.00', 'rad/s') + readout('Path radius', '∞', '') +
+      readout('Left wheel', fmt(diff.vL, 2), 'm/s') + readout('Right wheel', fmt(diff.vR, 2), 'm/s')
+    : readout('Yaw rate', fmt(diff.omega, 2), 'rad/s', null,
+        { t: 'ω = v / R. How fast the robot rotates about its own centre.' }) +
+      readout('Left wheel', fmt(diff.vL, 2), 'm/s', diff.vL > dt.vMax ? 'bad' : null) +
+      readout('Right wheel', fmt(diff.vR, 2), 'm/s', diff.vR > dt.vMax ? 'bad' : null) +
+      readout('Speed split', fmt(diff.dv, 2), 'm/s', null,
+        { t: 'Difference between outer and inner wheel speed needed to hold this radius.' }) +
+      readout('Outer / inner', fmt(diff.ratio, 2), '×') +
+      readout('Yaw per ms', fmt(diff.omega * 180 / Math.PI / 1000, 3), '°', null,
+        { t: 'Heading change in one millisecond at this yaw rate.' });
+
+  var df = '';
+  if (!diff.straight && !diff.feasible) {
+    df += flag('bad', '!!', 'Outer wheel needs ' + fmt(diff.vOuter, 2) + ' m/s but the no-load ceiling is ' +
+      fmt(dt.vMax, 2) + ' m/s. This radius is not achievable at this speed — the robot has to slow into the curve.');
+  } else if (!diff.straight && diff.vOuter > dt.vMax * 0.9) {
+    df += flag('warn', '!', 'Outer wheel at ' + fmt(diff.vOuter, 2) + ' m/s is within 10% of the ceiling, leaving almost no headroom for correction.');
+  }
+  if (!diff.straight && diff.reverseInner) {
+    df += flag('warn', '!', 'Inner wheel speed is negative — this radius is tighter than the track allows without reversing that motor.');
+  }
+  $('diffFlags').innerHTML = df;
+
+  /* ---- curve tracking ---- */
+  $('curveReads').innerHTML =
+    readout('Line offset at array', isFinite(crv.offset) ? fmt(crv.offset, 1) : '—', 'mm',
+      !crv.onArray ? 'bad' : (crv.margin < geo.pitch ? 'warn' : null),
+      { t: 'How far off the array centre the line sits when holding this radius.' }) +
+    readout('Half-span available', fmt(crv.halfSpan, 1), 'mm') +
+    readout('Margin left', isFinite(crv.margin) ? fmt(crv.margin, 1) : '—', 'mm',
+      crv.margin < 0 ? 'bad' : (crv.margin < geo.pitch ? 'warn' : null)) +
+    readout('Tightest radius', fmt(crv.rMin, 0), 'mm',
+      null, { t: 'Below this radius the line leaves the array entirely: R_min = (A² + s²) / 2s.' }) +
+    readout('Active sensor', crv.activeIdx === null ? '—' : '#' + (crv.activeIdx + 1), '', null,
+      { t: 'Sensor nearest the line at this radius, counting from the left.' }) +
+    readout('Offset ≈ A²/2R', isFinite(crv.offset) ? fmt(cfg.dWS * cfg.dWS / (2 * cfg.trackRadius), 1) : '—', 'mm', null,
+      { t: 'Small-angle approximation, shown alongside the exact value.' });
+
+  var cf = '';
+  if (cfg.trackDir === 'off') {
+    cf = flag('ok', 'i', 'Track overlay is off. The tightest-radius figure still applies to your geometry: below ' +
+      fmt(crv.rMin, 0) + ' mm the line runs off the end of the array.');
+  } else if (!crv.onArray) {
+    cf += flag('bad', '!!', 'At ' + fmt(cfg.trackRadius, 0) + ' mm radius the line falls outside the array. ' +
+      'Tightest trackable radius for this geometry is ' + fmt(crv.rMin, 0) + ' mm — shorten the arm or widen the array.');
+  } else if (crv.margin < geo.pitch) {
+    cf += flag('warn', '!', 'Line sits ' + fmt(crv.offset, 1) + ' mm off centre, within one pitch of the array end. Very little margin before the line is lost.');
+  } else {
+    cf += flag('ok', '✓', 'Line sits ' + fmt(crv.offset, 1) + ' mm off centre with ' + fmt(crv.margin, 1) + ' mm of array left.');
+  }
+  $('curveFlags').innerHTML = cf;
+
+  /* ---- drawing ---- */
+  $('dwgHost').innerHTML = drawTopView(cfg, r);
+  $('scaleBadge').textContent = 'to scale';
+  $('scaleNote').textContent = 'sensors drawn at ' + fmt(cfg.pkgWidth, 1) + ' mm package width';
+
+  /* ---- misc chrome ---- */
+  $('speedAlt').textContent = cfg.speedUnit === 'ms'
+    ? fmt(cfg.speed * 3.6, 2) + ' km/h' : fmt(cfg.speed, 2) + ' m/s';
+  $('presetHint').innerHTML = 'Compact ' + fmt(cfg.presetC, 0) + ' mm rotates in a smaller footprint and may snap round tight corners faster. ' +
+    'Stable ' + fmt(cfg.presetS, 0) + ' mm resists yaw disturbance more but needs a larger turning radius and more track width. ' +
+    'Which wins depends on your course — treat it as a trade-off to test, not a ranking.';
+  $('arcFields').hidden = (cfg.shape !== 'curved');
+  $('trkCtl').style.opacity = cfg.trackDir === 'off' ? '0.4' : '1';
+  $('trackRadius').disabled = $('trackRadius_r').disabled = (cfg.trackDir === 'off');
+
+  syncButtons();
+  renderComparison(r);
+  runVerification();
+}
+
+/* ============================================================================
+   5. COMPARISON TABLE
+   ==========================================================================*/
+
+var cmpMode = 'all';
+
+function cmpRow(label, over, isBase) {
+  var c = Object.assign({}, cfg, over || {});
+  var r = computeAll(c);
+  var upd = r.tim.updates, rem = r.tim.remain;
+  var uCls = upd < c.warnUpdates ? (upd < c.warnUpdates / 2 ? 'b' : 'w') : '';
+  var rCls = rem <= 0 ? 'b' : (r.tim.remainPct < c.warnRemainPct ? 'w' : '');
+  var tCls = r.tim.t < c.warnReactMs ? 'w' : '';
+  var pCls = r.geo.collide ? 'b' : '';
+  return '<tr class="' + (isBase ? 'base' : '') + '"><td>' + esc(label) + '</td>' +
+    '<td>' + fmt(c.dWW, 0) + '</td><td>' + fmt(c.dWS, 0) + '</td><td>' + c.nSensors + '</td>' +
+    '<td class="' + pCls + '">' + fmt(r.geo.pitch, 2) + '</td><td>' + fmt(c.speed, 2) + '</td>' +
+    '<td class="' + tCls + '">' + fmt(r.tim.t, 1) + '</td><td class="' + uCls + '">' + fmt(upd, 0) + '</td>' +
+    '<td class="' + rCls + '">' + fmt(rem, 1) + '</td><td>' + fmt(r.crv.rMin, 0) + '</td></tr>';
+}
+
+function renderComparison() {
+  var rows = [cmpRow('Current configuration', {}, true)];
+  if (cmpMode === 'track' || cmpMode === 'all') {
+    rows.push(cmpRow('Compact track', { dWW: cfg.presetC }));
+    rows.push(cmpRow('Balanced track', { dWW: cfg.presetB }));
+    rows.push(cmpRow('Stable track', { dWW: cfg.presetS }));
+  }
+  if (cmpMode === 'sensors' || cmpMode === 'all') {
+    [8, 12, 16].forEach(function (n) { rows.push(cmpRow(n + ' sensors', { nSensors: n })); });
+  }
+  if (cmpMode === 'arm' || cmpMode === 'all') {
+    [40, 60, 80, 100, 120].forEach(function (a) {
+      rows.push(cmpRow('Arm ' + a + ' mm', { dWS: a }));
+    });
+  }
+  $('cmpTable').querySelector('tbody').innerHTML = rows.join('');
+}
+
+/* ============================================================================
+   6. VERIFICATION SUITE
+   Runs the real functions, so a formula change shows up here immediately.
+   ==========================================================================*/
+
+var CASES = [
+  { name: 'Reaction time — 80 mm arm at 2 m/s', expect: 40, unit: 'ms', dp: 1,
+    over: { dWS: 80, speed: 2 },
+    run: function (r) { return r.tim.t; } },
+  { name: 'Loop updates at 1 kHz in that 40 ms window', expect: 40, unit: 'upd', dp: 0,
+    over: { dWS: 80, speed: 2, loopHz: 1000 },
+    run: function (r) { return r.tim.updates; } },
+  { name: 'Reaction time — 40 mm arm at 4 m/s', expect: 10, unit: 'ms', dp: 1,
+    over: { dWS: 40, speed: 4 },
+    run: function (r) { return r.tim.t; } },
+  { name: 'Travel in 1 ms at 2 m/s', expect: 2, unit: 'mm', dp: 2,
+    over: { speed: 2 }, run: function (r) { return r.tim.perMs; } },
+  { name: 'Pitch — 75 mm span across 16 sensors', expect: 5, unit: 'mm', dp: 2,
+    over: { boardWidth: 75, widthMode: 'span', nSensors: 16 },
+    run: function (r) { return r.geo.pitch; } },
+  { name: 'Pitch — same 75 mm span across 8 sensors', expect: 10.714, unit: 'mm', dp: 2,
+    over: { boardWidth: 75, widthMode: 'span', nSensors: 8 },
+    run: function (r) { return r.geo.pitch; } },
+  { name: 'Required loop rate for 20 updates in 40 ms', expect: 500, unit: 'Hz', dp: 0,
+    over: { dWS: 80, speed: 2 }, run: function (r) { return r.tim.fFor(20); } },
+  { name: 'Outer wheel — 60 mm track, R 200 mm, 2 m/s', expect: 2.3, unit: 'm/s', dp: 3,
+    over: { dWW: 60, trackRadius: 200, speed: 2, trackDir: 'left' },
+    run: function (r) { return r.diff.vOuter; } },
+  { name: 'Yaw rate at 2 m/s on a 200 mm radius', expect: 10, unit: 'rad/s', dp: 2,
+    over: { trackRadius: 200, speed: 2, trackDir: 'left' },
+    run: function (r) { return r.diff.omega; } },
+  { name: 'Line offset — 80 mm arm on a 200 mm radius', expect: 16.697, unit: 'mm', dp: 2,
+    over: { dWS: 80, trackRadius: 200, trackDir: 'left' },
+    run: function (r) { return r.crv.offset; } },
+  { name: 'Tightest radius — 80 mm arm, 75 mm span', expect: 104.083, unit: 'mm', dp: 2,
+    over: { dWS: 80, boardWidth: 75, widthMode: 'span' },
+    run: function (r) { return r.crv.rMin; } },
+  { name: 'Equal wheel speeds return infinite radius', expect: Infinity, unit: '', dp: 0,
+    over: { trackDir: 'off' }, run: function (r) { return r.diff.R; } },
+  { name: 'No-load speed — 3300 rpm output, Ø26.5 wheel', expect: 4.579, unit: 'm/s', dp: 3,
+    over: { motorRPM: 3300, rpmRef: 'output', wheelDia: 26.5 },
+    run: function (r) { return r.dt.vMax; } }
+];
+
+function runVerification() {
+  var pass = 0, html = CASES.map(function (t, i) {
+    var got = t.run(computeAll(Object.assign({}, DEFAULTS, t.over)));
+    var ok = (t.expect === Infinity) ? (got === Infinity)
+           : Math.abs(got - t.expect) <= Math.max(1e-6, Math.abs(t.expect) * 0.002);
+    if (ok) pass++;
+    return '<div class="vrow"><span class="name">' + esc(t.name) + '</span>' +
+      '<span class="num">expect ' + fmt(t.expect, t.dp) + ' ' + esc(t.unit) + '</span>' +
+      '<span class="num">got ' + fmt(got, t.dp) + '</span>' +
+      '<span class="res ' + (ok ? 'p' : 'f') + '">' + (ok ? 'PASS' : 'FAIL') + '</span></div>';
+  }).join('');
+  /* Load buttons sit under the list so the checks stay scannable. */
+  html += '<div class="pad" style="border-top:1px solid var(--rule-2)">' +
+    '<button type="button" id="loadCase">Load case 1 into inputs</button></div>';
+  $('verList').innerHTML = html;
+  $('verBadge').textContent = pass + ' / ' + CASES.length + ' pass';
+  $('loadCase').addEventListener('click', function () {
+    Object.assign(cfg, CASES[0].over);
+    pushToInputs(); render(); toast('Loaded 80 mm arm at 2 m/s');
+  });
+}
+
+/* ============================================================================
+   7. INPUT PLUMBING
+   ==========================================================================*/
+
+/* Speed is stored internally in m/s regardless of the display unit. */
+function speedToDisplay(v) { return cfg.speedUnit === 'kmh' ? v * 3.6 : v; }
+function speedFromDisplay(v) { return cfg.speedUnit === 'kmh' ? v / 3.6 : v; }
+
+function pushToInputs() {
+  /* Speed slider bounds must follow the selected unit BEFORE any value is
+     clamped against them, or a unit switch parks the slider at the old max. */
+  var sr = $('speed_r');
+  sr.min = cfg.speedUnit === 'kmh' ? 0.36 : 0.1;
+  sr.max = cfg.speedUnit === 'kmh' ? 18 : 5;
+  sr.step = cfg.speedUnit === 'kmh' ? 0.1 : 0.05;
+  $('speed').min = sr.min; $('speed').max = sr.max;
+  $('speed').step = cfg.speedUnit === 'kmh' ? 0.05 : 0.01;
+
+  PAIRED.concat(SOLO).forEach(function (k) {
+    var el = $(k); if (!el) return;
+    var val = (k === 'speed') ? speedToDisplay(cfg[k]) : cfg[k];
+    el.value = (Math.round(val * 1000) / 1000);
+    var rg = $(k + '_r'); if (rg) rg.value = clamp(val, +rg.min, +rg.max);
+  });
+  Object.keys(PRESET_IDS).forEach(function (id) { $(id).value = cfg[PRESET_IDS[id]]; });
+  $('speedUnit').value = cfg.speedUnit;
+  $('rpmRef').value = cfg.rpmRef;
+  $('widthMode').value = cfg.widthMode;
+  $('arcDir').value = cfg.arcDir;
+}
+
+function syncButtons() {
+  document.querySelectorAll('[data-n]').forEach(function (b) {
+    b.classList.toggle('on', +b.dataset.n === cfg.nSensors);
+  });
+  document.querySelectorAll('[data-shape]').forEach(function (b) {
+    b.classList.toggle('on', b.dataset.shape === cfg.shape);
+  });
+  document.querySelectorAll('[data-cmp]').forEach(function (b) {
+    b.classList.toggle('on', b.dataset.cmp === cmpMode);
+  });
+  $('pbC').classList.toggle('on', cfg.dWW === cfg.presetC);
+  $('pbB').classList.toggle('on', cfg.dWW === cfg.presetB);
+  $('pbS').classList.toggle('on', cfg.dWW === cfg.presetS);
+  $('trkOff').classList.toggle('on', cfg.trackDir === 'off');
+  $('trkL').classList.toggle('on', cfg.trackDir === 'left');
+  $('trkR').classList.toggle('on', cfg.trackDir === 'right');
+}
+
+/* Validate against the element's own min/max so nothing impossible gets in. */
+function commit(key, el) {
+  var v = parseFloat(el.value);
+  if (!isFinite(v)) { pushToInputs(); return; }
+  var lo = el.min === '' ? -Infinity : +el.min, hi = el.max === '' ? Infinity : +el.max;
+  v = clamp(v, lo, hi);
+  cfg[key] = (key === 'speed') ? speedFromDisplay(v) : v;
+  pushToInputs(); render();
+}
+
+function bindInputs() {
+  PAIRED.forEach(function (k) {
+    var num = $(k), rng = $(k + '_r');
+    rng.addEventListener('input', function () { num.value = rng.value; commit(k, rng); });
+    num.addEventListener('input', function () {
+      var v = parseFloat(num.value);
+      if (isFinite(v)) { cfg[k] = (k === 'speed') ? speedFromDisplay(v) : v; var g = $(k + '_r'); g.value = clamp(v, +g.min, +g.max); render(); }
+    });
+    num.addEventListener('change', function () { commit(k, num); });
+  });
+  SOLO.forEach(function (k) {
+    var el = $(k);
+    el.addEventListener('input', function () {
+      var v = parseFloat(el.value); if (isFinite(v)) { cfg[k] = v; render(); }
+    });
+    el.addEventListener('change', function () { commit(k, el); });
+  });
+  Object.keys(PRESET_IDS).forEach(function (id) {
+    $(id).addEventListener('change', function () { commit(PRESET_IDS[id], $(id)); });
+  });
+
+  $('speedUnit').addEventListener('change', function () { cfg.speedUnit = this.value; pushToInputs(); render(); });
+  $('rpmRef').addEventListener('change', function () { cfg.rpmRef = this.value; render(); });
+  $('widthMode').addEventListener('change', function () { cfg.widthMode = this.value; render(); });
+  $('arcDir').addEventListener('change', function () { cfg.arcDir = this.value; render(); });
+
+  document.querySelectorAll('[data-n]').forEach(function (b) {
+    b.addEventListener('click', function () { cfg.nSensors = +b.dataset.n; render(); });
+  });
+  document.querySelectorAll('[data-shape]').forEach(function (b) {
+    b.addEventListener('click', function () { cfg.shape = b.dataset.shape; render(); });
+  });
+  document.querySelectorAll('[data-cmp]').forEach(function (b) {
+    b.addEventListener('click', function () { cmpMode = b.dataset.cmp; syncButtons(); renderComparison(); });
+  });
+  [['pbC', 'presetC'], ['pbB', 'presetB'], ['pbS', 'presetS']].forEach(function (p) {
+    $(p[0]).addEventListener('click', function () { cfg.dWW = cfg[p[1]]; pushToInputs(); render(); });
+  });
+  [['trkOff', 'off'], ['trkL', 'left'], ['trkR', 'right']].forEach(function (p) {
+    $(p[0]).addEventListener('click', function () { cfg.trackDir = p[1]; render(); });
+  });
+
+  $('btnReset').addEventListener('click', function () {
+    cfg = Object.assign({}, DEFAULTS); cmpMode = 'all'; pushToInputs(); render(); toast('Reset to defaults');
+  });
+  $('btnSave').addEventListener('click', function () {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify(cfg)); toast('Configuration saved'); }
+    catch (e) { toast('Could not save — browser storage is unavailable'); }
+  });
+  $('btnLoad').addEventListener('click', function () {
+    try {
+      var raw = localStorage.getItem(STORE_KEY);
+      if (!raw) { toast('No saved configuration found'); return; }
+      cfg = Object.assign({}, DEFAULTS, JSON.parse(raw));
+      pushToInputs(); render(); toast('Configuration loaded');
+    } catch (e) { toast('Saved configuration could not be read'); }
+  });
+  $('btnJSON').addEventListener('click', exportJSON);
+  $('btnCSV').addEventListener('click', exportCSV);
+
+  var t; window.addEventListener('resize', function () {
+    clearTimeout(t); t = setTimeout(function () { $('dwgHost').innerHTML = drawTopView(cfg, computeAll(cfg)); }, 120);
+  });
+}
+
+/* ============================================================================
+   8. EXPORT
+   ==========================================================================*/
+
+function download(name, mime, text) {
+  var b = new Blob([text], { type: mime }), u = URL.createObjectURL(b), a = document.createElement('a');
+  a.href = u; a.download = name; document.body.appendChild(a); a.click();
+  document.body.removeChild(a); setTimeout(function () { URL.revokeObjectURL(u); }, 800);
+}
+
+function exportJSON() {
+  var r = computeAll(cfg);
+  download('lfr-geometry-' + Date.now() + '.json', 'application/json', JSON.stringify({
+    generated: new Date().toISOString(),
+    inputs: cfg,
+    results: {
+      geometricReactionTime_ms: r.tim.t,
+      travelPerMillisecond_mm: r.tim.perMs,
+      loopUpdatesAvailable: r.tim.updates,
+      remainingAfterLatency_ms: r.tim.remain,
+      requiredHz: { for5: r.tim.fFor(5), for10: r.tim.fFor(10), for20: r.tim.fFor(20) },
+      sensorPitch_mm: r.geo.pitch, activeSpan_mm: r.geo.span, pcbWidth_mm: r.geo.pcbWidth,
+      sensorPositions_mm: r.geo.pos.map(function (p) {
+        return { x: +p.x.toFixed(3), y: +p.y.toFixed(3), tilt_deg: +(p.tilt * 180 / Math.PI).toFixed(3) };
+      }),
+      noLoadTopSpeed_ms: r.dt.vMax,
+      wheelSpeeds_ms: { left: r.diff.vL, right: r.diff.vR }, yawRate_rads: r.diff.omega,
+      lineOffsetAtArray_mm: r.crv.offset, tightestTrackableRadius_mm: r.crv.rMin
+    }
+  }, null, 2));
+  toast('JSON exported');
+}
+
+function exportCSV() {
+  var q = function (s) { return '"' + String(s).replace(/"/g, '""') + '"'; };
+  var rows = [['section', 'parameter', 'value', 'unit']];
+  Object.keys(cfg).forEach(function (k) { rows.push(['input', k, cfg[k], '']); });
+  var r = computeAll(cfg);
+  [['geometric reaction time', r.tim.t, 'ms'], ['travel per millisecond', r.tim.perMs, 'mm'],
+   ['loop updates available', r.tim.updates, 'upd'], ['remaining after latency', r.tim.remain, 'ms'],
+   ['required Hz for 5 updates', r.tim.fFor(5), 'Hz'], ['required Hz for 10 updates', r.tim.fFor(10), 'Hz'],
+   ['required Hz for 20 updates', r.tim.fFor(20), 'Hz'], ['sensor pitch', r.geo.pitch, 'mm'],
+   ['active span', r.geo.span, 'mm'], ['total PCB width', r.geo.pcbWidth, 'mm'],
+   ['no-load top speed', r.dt.vMax, 'm/s'], ['left wheel speed', r.diff.vL, 'm/s'],
+   ['right wheel speed', r.diff.vR, 'm/s'], ['yaw rate', r.diff.omega, 'rad/s'],
+   ['line offset at array', r.crv.offset, 'mm'], ['tightest trackable radius', r.crv.rMin, 'mm']
+  ].forEach(function (x) { rows.push(['result', x[0], isFinite(x[1]) ? x[1].toFixed(4) : 'inf', x[2]]); });
+
+  r.geo.pos.forEach(function (p, i) {
+    rows.push(['sensor', 'sensor ' + (i + 1) + ' x', p.x.toFixed(3), 'mm']);
+    rows.push(['sensor', 'sensor ' + (i + 1) + ' y', p.y.toFixed(3), 'mm']);
+  });
+
+  rows.push([], ['comparison', 'track_mm', 'arm_mm', 'sensors', 'pitch_mm', 'speed_ms', 'reaction_ms', 'updates', 'after_latency_ms', 'rmin_mm']);
+  var scen = [['Current', {}], ['Compact track', { dWW: cfg.presetC }], ['Balanced track', { dWW: cfg.presetB }],
+    ['Stable track', { dWW: cfg.presetS }], ['8 sensors', { nSensors: 8 }], ['12 sensors', { nSensors: 12 }],
+    ['16 sensors', { nSensors: 16 }], ['Arm 40 mm', { dWS: 40 }], ['Arm 60 mm', { dWS: 60 }],
+    ['Arm 80 mm', { dWS: 80 }], ['Arm 100 mm', { dWS: 100 }], ['Arm 120 mm', { dWS: 120 }]];
+  scen.forEach(function (s) {
+    var c = Object.assign({}, cfg, s[1]), x = computeAll(c);
+    rows.push([s[0], c.dWW, c.dWS, c.nSensors, x.geo.pitch.toFixed(3), c.speed.toFixed(3),
+      x.tim.t.toFixed(2), x.tim.updates.toFixed(1), x.tim.remain.toFixed(2), x.crv.rMin.toFixed(1)]);
+  });
+
+  download('lfr-geometry-' + Date.now() + '.csv', 'text/csv',
+    rows.map(function (rw) { return rw.map(q).join(','); }).join('\n'));
+  toast('CSV exported');
+}
+
+var toastTimer;
+function toast(msg) {
+  var el = $('toast'); el.textContent = msg; el.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(function () { el.classList.remove('show'); }, 2200);
+}
+
+/* ============================================================================
+   9. INIT
+   ==========================================================================*/
+bindInputs();
+pushToInputs();
+render();
+
+})();
+</script>
+
+</body>
+</html>
