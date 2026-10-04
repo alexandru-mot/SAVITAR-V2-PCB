@@ -1,0 +1,174 @@
+{
+  "tool": "savitar-pin-planner",
+  "version": 2,
+  "device": "ATSAMD51J19A-64TQFP",
+  "rotation": 90,
+  "assignments": {
+    "ADC0.AIN0": {
+      "pin": "PA02",
+      "mux": "B"
+    },
+    "ADC0.AIN1": {
+      "pin": "PA03",
+      "mux": "B"
+    },
+    "ADC0.AIN4": {
+      "pin": "PA04",
+      "mux": "B"
+    },
+    "ADC0.AIN5": {
+      "pin": "PA05",
+      "mux": "B"
+    },
+    "ADC0.AIN6": {
+      "pin": "PA06",
+      "mux": "B"
+    },
+    "ADC0.AIN7": {
+      "pin": "PA07",
+      "mux": "B"
+    },
+    "ADC1.AIN0": {
+      "pin": "PB08",
+      "mux": "B"
+    },
+    "ADC1.AIN1": {
+      "pin": "PB09",
+      "mux": "B"
+    },
+    "ADC1.AIN2": {
+      "pin": "PA08",
+      "mux": "B"
+    },
+    "ADC1.AIN3": {
+      "pin": "PA09",
+      "mux": "B"
+    },
+    "ADC1.AIN6": {
+      "pin": "PB04",
+      "mux": "B"
+    },
+    "ADC1.AIN7": {
+      "pin": "PB05",
+      "mux": "B"
+    },
+    "ADC1.AIN8": {
+      "pin": "PB06",
+      "mux": "B"
+    },
+    "ADC1.AIN9": {
+      "pin": "PB07",
+      "mux": "B"
+    },
+    "ADC0.AIN10": {
+      "pin": "PA10",
+      "mux": "B"
+    },
+    "ADC0.AIN11": {
+      "pin": "PA11",
+      "mux": "B"
+    },
+    "TCC1.WO2": {
+      "pin": "PA18",
+      "mux": "F"
+    },
+    "TCC1.WO3": {
+      "pin": "PA19",
+      "mux": "F"
+    },
+    "TCC1.WO6": {
+      "pin": "PA22",
+      "mux": "F"
+    },
+    "TCC1.WO7": {
+      "pin": "PA23",
+      "mux": "F"
+    },
+    "SERCOM2.PAD0": {
+      "pin": "PA12",
+      "mux": "C"
+    },
+    "SERCOM2.PAD1": {
+      "pin": "PA13",
+      "mux": "C"
+    },
+    "SERCOM3.PAD0": {
+      "pin": "PA17",
+      "mux": "D"
+    },
+    "SERCOM3.PAD1": {
+      "pin": "PA16",
+      "mux": "D"
+    },
+    "SERCOM4.PAD0": {
+      "pin": "PB12",
+      "mux": "C"
+    },
+    "SERCOM4.PAD1": {
+      "pin": "PB13",
+      "mux": "C"
+    },
+    "SERCOM4.PAD2": {
+      "pin": "PB14",
+      "mux": "C"
+    },
+    "SERCOM4.PAD3": {
+      "pin": "PB15",
+      "mux": "C"
+    },
+    "SERCOM5.PAD0": {
+      "pin": "PB31",
+      "mux": "D"
+    },
+    "SERCOM5.PAD1": {
+      "pin": "PB30",
+      "mux": "D"
+    },
+    "SERCOM5.PAD2": {
+      "pin": "PB00",
+      "mux": "D"
+    },
+    "SERCOM5.PAD3": {
+      "pin": "PB01",
+      "mux": "D"
+    },
+    "SERCOM7.PAD2": {
+      "pin": "PA30",
+      "mux": "C"
+    },
+    "SERCOM7.PAD3": {
+      "pin": "PA31",
+      "mux": "C"
+    },
+    "ADC0.AIN14": {
+      "pin": "PB02",
+      "mux": "B"
+    },
+    "SERCOM1.PAD1": {
+      "pin": "PA01",
+      "mux": "D"
+    }
+  },
+  "modes": {
+    "SERCOM0": "none",
+    "SERCOM1": "none",
+    "SERCOM2": "uart"
+  },
+  "modeCfg": {
+    "SERCOM0": {
+      "dopo": 0,
+      "dipo": 3,
+      "txpo": 0,
+      "rxpo": 3,
+      "ss": true
+    },
+    "SERCOM1": {
+      "dopo": 0,
+      "dipo": 3,
+      "txpo": 0,
+      "rxpo": 3,
+      "ss": true
+    }
+  },
+  "customDataset": null
+}
