@@ -9,6 +9,129 @@
 		(company "Alexandru Moț")
 	)
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 5.08 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C"
 			(pin_numbers
 				(hide yes)
@@ -3087,6 +3210,16 @@
 	)
 	(wire
 		(pts
+			(xy 34.29 130.81) (xy 36.83 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "016df526-91b4-4db3-be55-69478f32a750")
+	)
+	(wire
+		(pts
 			(xy 195.58 118.11) (xy 184.15 118.11)
 		)
 		(stroke
@@ -3317,16 +3450,6 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 88.9) (xy 77.47 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "216fdda1-7b9b-4ce9-aa8b-09f6245c2e7e")
-	)
-	(wire
-		(pts
 			(xy 69.85 146.05) (xy 77.47 146.05)
 		)
 		(stroke
@@ -3507,6 +3630,16 @@
 	)
 	(wire
 		(pts
+			(xy 26.67 88.9) (xy 36.83 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f1046ea-147d-45b0-8f16-96edeec05302")
+	)
+	(wire
+		(pts
 			(xy 57.15 68.58) (xy 64.77 68.58)
 		)
 		(stroke
@@ -3544,16 +3677,6 @@
 			(type default)
 		)
 		(uuid "479c7868-4845-4125-91de-171be4e78978")
-	)
-	(wire
-		(pts
-			(xy 26.67 88.9) (xy 36.83 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "485835e2-eced-4c99-8884-e98b7ba8ef3b")
 	)
 	(wire
 		(pts
@@ -3737,13 +3860,13 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 68.58) (xy 36.83 68.58)
+			(xy 236.22 127) (xy 229.87 127)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6d325382-e8d1-44a6-84e4-91c25673490e")
+		(uuid "6c2e35f2-aa53-4e4f-a96b-43b2b2689aa8")
 	)
 	(wire
 		(pts
@@ -3774,6 +3897,16 @@
 			(type default)
 		)
 		(uuid "70586b7f-4545-485e-989e-658502b8f347")
+	)
+	(wire
+		(pts
+			(xy 25.4 151.13) (xy 36.83 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "716b6b5c-3b2c-4a49-9992-291831eaa398")
 	)
 	(wire
 		(pts
@@ -3907,16 +4040,6 @@
 	)
 	(wire
 		(pts
-			(xy 34.29 130.81) (xy 36.83 130.81)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8bcbec91-17ef-4c45-8fbb-90995876eaaf")
-	)
-	(wire
-		(pts
 			(xy 195.58 128.27) (xy 184.15 128.27)
 		)
 		(stroke
@@ -3987,6 +4110,16 @@
 	)
 	(wire
 		(pts
+			(xy 233.68 121.92) (xy 229.87 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96e22dff-2425-479c-a39d-5ecc4de465b4")
+	)
+	(wire
+		(pts
 			(xy 129.54 54.61) (xy 137.16 54.61)
 		)
 		(stroke
@@ -4027,6 +4160,16 @@
 	)
 	(wire
 		(pts
+			(xy 34.29 68.58) (xy 36.83 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a30b7ae7-1dc4-4c40-b11d-e84590270e05")
+	)
+	(wire
+		(pts
 			(xy 207.01 15.24) (xy 199.39 15.24)
 		)
 		(stroke
@@ -4064,6 +4207,16 @@
 			(type default)
 		)
 		(uuid "a81622a5-e3df-4960-895d-2e76fc5f5239")
+	)
+	(wire
+		(pts
+			(xy 232.41 124.46) (xy 229.87 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aadb0370-42e6-4758-ab40-b595af1d65d8")
 	)
 	(wire
 		(pts
@@ -4137,7 +4290,7 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 68.58) (xy 77.47 68.58)
+			(xy 73.66 68.58) (xy 77.47 68.58)
 		)
 		(stroke
 			(width 0)
@@ -4267,16 +4420,6 @@
 	)
 	(wire
 		(pts
-			(xy 26.67 151.13) (xy 36.83 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d22e3630-0266-445f-92e9-c2f9a2955c00")
-	)
-	(wire
-		(pts
 			(xy 195.58 120.65) (xy 184.15 120.65)
 		)
 		(stroke
@@ -4344,6 +4487,16 @@
 			(type default)
 		)
 		(uuid "de982628-f6c4-49ed-9bf9-c9ffa27fb793")
+	)
+	(wire
+		(pts
+			(xy 67.31 88.9) (xy 77.47 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e19e2a22-4c1a-4724-bde1-206d3dbb35cd")
 	)
 	(wire
 		(pts
@@ -4556,25 +4709,15 @@
 		)
 		(uuid "0c3b34aa-7294-4c99-ba1b-6cb47f036930")
 	)
-	(label "7_8_LED"
-		(at 67.31 151.13 0)
+	(label "S3"
+		(at 64.77 146.05 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
-		(uuid "1071f70f-ec21-433d-9b68-833b2de27bb2")
-	)
-	(label "5_10_LED"
-		(at 67.31 88.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "136057dd-ffef-424a-aca4-eb825a69f3e7")
+		(uuid "111fe8ce-ed7e-4361-b6ce-966b55620c3e")
 	)
 	(label "P5"
 		(at 170.18 62.23 180)
@@ -4667,16 +4810,6 @@
 		)
 		(uuid "3489d1d6-3d71-4f70-9a0b-aa8b364cf2a6")
 	)
-	(label "S1"
-		(at 64.77 68.58 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "34e742d4-468b-44c9-8889-c247ac91cc7b")
-	)
 	(label "P8"
 		(at 223.52 73.66 0)
 		(effects
@@ -4697,16 +4830,6 @@
 		)
 		(uuid "36a9d4f4-54b2-43eb-a6ff-b1788779ee01")
 	)
-	(label "1_14_LED"
-		(at 26.67 88.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3c3e50fb-6d36-4078-a19c-44d7ef154b97")
-	)
 	(label "P4"
 		(at 187.96 74.93 0)
 		(effects
@@ -4716,6 +4839,16 @@
 			(justify left bottom)
 		)
 		(uuid "3c863fcb-d680-4988-a735-31c20d858ec6")
+	)
+	(label "S10"
+		(at 105.41 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "3cbcfec9-6c3b-41df-ba77-3574ec03e7e0")
 	)
 	(label "P1"
 		(at 170.18 52.07 180)
@@ -4747,6 +4880,26 @@
 		)
 		(uuid "3f33772e-20ab-4d79-b1b4-74b57fc6c37e")
 	)
+	(label "5_10_LED"
+		(at 67.31 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "42f01e88-cc5a-496c-8365-284e7b69f5bd")
+	)
+	(label "7_8_LED"
+		(at 67.31 151.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4587206a-d017-4f9e-b3d2-40394283a2d1")
+	)
 	(label "4_11_LED"
 		(at 207.01 68.58 180)
 		(effects
@@ -4767,6 +4920,16 @@
 		)
 		(uuid "4be8832f-c333-456a-8689-9fd8bd13bc75")
 	)
+	(label "S14"
+		(at 64.77 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "51c24b93-cd78-467f-a3e5-03cdee827582")
+	)
 	(label "P2"
 		(at 170.18 54.61 180)
 		(effects
@@ -4786,6 +4949,26 @@
 			(justify right bottom)
 		)
 		(uuid "568f803b-19ec-4786-8fdb-13a6260cfe64")
+	)
+	(label "3_12_LED"
+		(at 25.4 151.13 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5897246b-559c-42ff-9ac7-b6ea1760f73f")
+	)
+	(label "S7"
+		(at 105.41 146.05 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "5e68dbed-e81b-401f-a04b-69469b40f865")
 	)
 	(label "6_9_LED"
 		(at 67.31 119.38 0)
@@ -4838,26 +5021,6 @@
 		)
 		(uuid "6b27a302-92ee-4207-a53b-30d55afa1a3a")
 	)
-	(label "3_12_LED"
-		(at 26.67 151.13 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6bf81e9f-845d-483b-b916-c9833eed9453")
-	)
-	(label "S14"
-		(at 64.77 83.82 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "6c5593e4-dc89-4ad0-bd85-d71ce166b142")
-	)
 	(label "5_10_LED"
 		(at 207.01 50.8 180)
 		(effects
@@ -4897,6 +5060,16 @@
 			(justify right bottom)
 		)
 		(uuid "7edffe67-ca10-49af-a4fe-5505e9448001")
+	)
+	(label "S1"
+		(at 64.77 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "837ba54b-c057-4dc7-b34b-dc2d0278855d")
 	)
 	(label "S4"
 		(at 105.41 36.83 180)
@@ -4978,16 +5151,6 @@
 		)
 		(uuid "a6c9fcb5-4964-4dad-b26c-888138844bd5")
 	)
-	(label "S3"
-		(at 64.77 130.81 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "b3896b77-1a6a-4a97-87ec-abd75428cbc8")
-	)
 	(label "P7"
 		(at 223.52 57.15 0)
 		(effects
@@ -5018,15 +5181,15 @@
 		)
 		(uuid "b566601f-b837-43e6-adf4-989c391fe0d4")
 	)
-	(label "S10"
-		(at 105.41 83.82 180)
+	(label "S12"
+		(at 64.77 130.81 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right bottom)
 		)
-		(uuid "bb06f1ad-7022-4230-8fa6-adaddc80f89b")
+		(uuid "ba03e9dd-91bb-4b10-a65d-6c9141e7004e")
 	)
 	(label "P6"
 		(at 223.52 39.37 0)
@@ -5078,16 +5241,6 @@
 		)
 		(uuid "c4bc8f8a-20c5-426b-9a97-9371f1a060dd")
 	)
-	(label "S8"
-		(at 105.41 146.05 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "c641b7a6-205d-48cb-9151-8d23b2ecb5ae")
-	)
 	(label "S3"
 		(at 195.58 138.43 180)
 		(effects
@@ -5118,6 +5271,16 @@
 		)
 		(uuid "c78b1e1e-4698-4b0c-80d7-cce616d887fb")
 	)
+	(label "1_14_LED"
+		(at 26.67 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c85ff475-ce7c-4116-974f-f8013864eb04")
+	)
 	(label "P5"
 		(at 223.52 21.59 0)
 		(effects
@@ -5137,16 +5300,6 @@
 			(justify right bottom)
 		)
 		(uuid "c9d7c110-c5ec-4a44-b79f-a08bc8d9bde3")
-	)
-	(label "S12"
-		(at 64.77 146.05 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "cbc52389-682a-44a7-9f2f-9a080f905f50")
 	)
 	(label "S11"
 		(at 195.58 118.11 180)
@@ -5168,6 +5321,16 @@
 		)
 		(uuid "cc18dc4f-fea2-43dc-a0e3-995094fd1e46")
 	)
+	(label "S5"
+		(at 105.41 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ccab1a62-2960-46f4-b5f1-a0010caab710")
+	)
 	(label "P7"
 		(at 170.18 67.31 180)
 		(effects
@@ -5177,6 +5340,17 @@
 			(justify right bottom)
 		)
 		(uuid "cd73f570-dfa2-4fdd-bd48-33936cae1992")
+	)
+	(label "EN"
+		(at 233.68 121.92 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.1588)
+			)
+			(justify right bottom)
+		)
+		(uuid "ceb8fea8-eeeb-4605-99f6-986220016080")
 	)
 	(label "3_12_LED"
 		(at 242.57 15.24 180)
@@ -5218,6 +5392,16 @@
 		)
 		(uuid "d617398f-a53a-41c9-ae59-7709de8eead9")
 	)
+	(label "S8"
+		(at 105.41 130.81 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d86f2d95-9cc5-4e21-8014-a8a814f861eb")
+	)
 	(label "EN"
 		(at 195.58 97.79 180)
 		(effects
@@ -5227,16 +5411,6 @@
 			(justify right bottom)
 		)
 		(uuid "d9d45352-a829-4b84-87cc-be14f2a99628")
-	)
-	(label "S7"
-		(at 105.41 130.81 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "dbf36932-58cb-4d46-9aa5-3bb4bc15ab85")
 	)
 	(label "S1"
 		(at 195.58 143.51 180)
@@ -5267,16 +5441,6 @@
 			(justify right bottom)
 		)
 		(uuid "f5fff8c9-e8c5-4733-8ffe-6c83491c93eb")
-	)
-	(label "S5"
-		(at 105.41 68.58 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "f784be67-989d-42da-907d-a9935bd7bcda")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -5535,7 +5699,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "06c06b95-c97a-4eda-b829-12f481202949")
-		(property "Reference" "R56"
+		(property "Reference" "R55"
 			(at 93.726 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5597,7 +5761,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "R56")
+					(reference "R55")
 					(unit 1)
 				)
 			)
@@ -5782,7 +5946,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0a34dfb0-f37e-48f7-badc-c7008888b2ec")
-		(property "Reference" "R55"
+		(property "Reference" "R56"
 			(at 93.726 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5844,7 +6008,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "R55")
+					(reference "R56")
 					(unit 1)
 				)
 			)
@@ -6164,6 +6328,84 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "#PWR089")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 74.93 130.81 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "11e1ee21-db88-4ec8-9b80-b15a2ba27aa0")
+		(property "Reference" "#PWR084"
+			(at 74.93 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 74.93 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 74.93 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 74.93 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 74.93 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "8ae19f02-f621-457b-b0ad-b23043f43ef8")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "#PWR084")
 					(unit 1)
 				)
 			)
@@ -6664,7 +6906,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "21abca02-647a-46b9-b1bb-8f7bfa2645d6")
@@ -6822,6 +7064,85 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 229.87 127 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "21d46700-15aa-4376-9214-859d951b6c4c")
+		(property "Reference" "TP5"
+			(at 225.552 127.254 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 227.8379 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 229.87 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 229.87 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 229.87 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ecedf192-09ad-4c67-951a-5edbbb9ed176")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "TP5")
 					(unit 1)
 				)
 			)
@@ -7756,7 +8077,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "38ca72f2-9be8-440c-b920-19d0c0ff2014")
-		(property "Reference" "R51"
+		(property "Reference" "R52"
 			(at 93.726 64.77 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7818,7 +8139,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "R51")
+					(reference "R52")
 					(unit 1)
 				)
 			)
@@ -8298,6 +8619,85 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "#PWR0116")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 229.87 124.46 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "57316939-0244-46dd-8d35-ad89042f961c")
+		(property "Reference" "TP4"
+			(at 225.552 124.714 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 227.8379 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 229.87 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 229.87 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 229.87 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "058e4490-1cca-4183-bfcf-d0a4abe2de78")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "TP4")
 					(unit 1)
 				)
 			)
@@ -9432,7 +9832,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "7cd1bfb7-12ab-43da-9c0e-070d85bc3226")
@@ -9594,7 +9994,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8403124c-ba58-48c8-b1c1-09236403967c")
-		(property "Reference" "R52"
+		(property "Reference" "R51"
 			(at 93.726 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9656,7 +10056,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "R52")
+					(reference "R51")
 					(unit 1)
 				)
 			)
@@ -10072,6 +10472,85 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 229.87 121.92 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "8be48859-9fb8-4b22-a543-e0493a4814e1")
+		(property "Reference" "TP3"
+			(at 225.552 122.174 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 227.8379 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 229.87 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 229.87 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "test point"
+			(at 229.87 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "c20b42ac-cdd2-4e6d-bf72-217dc854e6bd")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 234.95 26.67 0)
 		(unit 1)
@@ -10396,84 +10875,6 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 74.93 130.81 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "97f9b43a-166b-402a-aea7-d658a96cffb2")
-		(property "Reference" "#PWR084"
-			(at 74.93 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 74.93 125.73 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 74.93 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 74.93 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 74.93 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "06a3100e-8da6-489c-ac82-6be37bc4309b")
-		)
-		(instances
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR084")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VCC")
 		(at 57.15 106.68 0)
 		(unit 1)
 		(body_style 1)
@@ -10723,7 +11124,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "a0ff266f-b227-4453-96ba-997439e6f3ec")
-		(property "Reference" "R44"
+		(property "Reference" "R43"
 			(at 53.086 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10785,7 +11186,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "R44")
+					(reference "R43")
 					(unit 1)
 				)
 			)
@@ -10951,84 +11352,6 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "U14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VCC")
-		(at 34.29 130.81 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a590205c-d81a-4225-9c13-437cc379f62f")
-		(property "Reference" "#PWR071"
-			(at 34.29 134.62 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 34.29 125.73 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 34.29 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 34.29 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 34.29 130.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5b4ebed8-a14d-4e5e-96a2-4f962628417c")
-		)
-		(instances
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR071")
 					(unit 1)
 				)
 			)
@@ -11519,6 +11842,83 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "R32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 236.22 127 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "aff86a5a-af74-488e-873b-c18c1b0b19b3")
+		(property "Reference" "#PWR0101"
+			(at 236.22 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 236.22 123.19 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 236.22 127 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "881048e2-60df-4d5b-81c8-19c0cbb373e4")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "#PWR0101")
 					(unit 1)
 				)
 			)
@@ -12018,7 +12418,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "c72fe38f-5cf0-4f1e-b9b4-a61dccd6d746")
-		(property "Reference" "R43"
+		(property "Reference" "R44"
 			(at 53.086 64.77 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12080,7 +12480,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "R43")
+					(reference "R44")
 					(unit 1)
 				)
 			)
@@ -12252,7 +12652,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "cc403057-1c54-4402-b5e1-e5b7965c2795")
-		(property "Reference" "R47"
+		(property "Reference" "R48"
 			(at 53.086 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12314,7 +12714,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "R47")
+					(reference "R48")
 					(unit 1)
 				)
 			)
@@ -13800,6 +14200,84 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VCC")
+		(at 73.66 68.58 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e29aef66-2781-4afc-a0da-56cdd3218c53")
+		(property "Reference" "#PWR082"
+			(at 73.66 72.39 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 73.66 63.5 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 73.66 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 73.66 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 73.66 68.58 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1cf0f720-655c-4595-9c14-c37347689be9")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "#PWR082")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_US")
 		(at 34.29 177.8 90)
 		(unit 1)
@@ -13952,6 +14430,163 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "#PWR076")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 34.29 130.81 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e663fe1b-3b07-4666-b59d-c99f51b051d6")
+		(property "Reference" "#PWR071"
+			(at 34.29 134.62 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "VCC"
+			(at 34.29 125.73 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 34.29 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 34.29 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 34.29 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b6add807-941a-4027-be8f-ac37f92fe6ff")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "#PWR071")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 232.41 124.46 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e77ba8b3-9382-4a16-9dab-79f9dcb1f7cf")
+		(property "Reference" "#PWR097"
+			(at 232.41 130.81 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 232.41 129.54 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 232.41 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 232.41 124.46 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "41d1c4fc-94d0-4fac-8651-a7860ba2f5ca")
+		)
+		(instances
+			(project "SAVITAR_V2"
+				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
+					(reference "#PWR097")
 					(unit 1)
 				)
 			)
@@ -14114,7 +14749,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 74.93 68.58 0)
+		(at 34.29 68.58 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14123,9 +14758,9 @@
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "f07eeb17-b344-4ed0-bc53-693715d91d9e")
-		(property "Reference" "#PWR082"
-			(at 74.93 72.39 0)
+		(uuid "ee7dfce6-e73b-4d03-8ee8-379f13713e8b")
+		(property "Reference" "#PWR069"
+			(at 34.29 72.39 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14136,7 +14771,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 74.93 63.5 0)
+			(at 34.29 63.5 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14146,7 +14781,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 74.93 68.58 0)
+			(at 34.29 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14157,7 +14792,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 74.93 68.58 0)
+			(at 34.29 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14168,7 +14803,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 74.93 68.58 0)
+			(at 34.29 68.58 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14179,12 +14814,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "8b174042-ff04-47ee-8f78-cfe883176d6d")
+			(uuid "5f3ecb23-2e4b-4130-a840-317b8f2f1dfc")
 		)
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR082")
+					(reference "#PWR069")
 					(unit 1)
 				)
 			)
@@ -14274,7 +14909,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
+		(on_board no)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -14546,7 +15181,7 @@
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "f986385c-3e25-48c5-be63-8b212598ce33")
-		(property "Reference" "R48"
+		(property "Reference" "R47"
 			(at 53.086 142.24 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14608,7 +15243,7 @@
 		(instances
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "R48")
+					(reference "R47")
 					(unit 1)
 				)
 			)
@@ -14783,84 +15418,6 @@
 			(project "SAVITAR_V2"
 				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
 					(reference "U7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:VCC")
-		(at 34.29 68.58 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fb1ca641-b8b9-457b-bf9b-993aa6330aa0")
-		(property "Reference" "#PWR069"
-			(at 34.29 72.39 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VCC"
-			(at 34.29 63.5 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 34.29 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 34.29 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 34.29 68.58 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "2b5123f4-2523-4199-8bca-724c96051dfd")
-		)
-		(instances
-			(project "SAVITAR_V2"
-				(path "/f6d97783-3721-4b78-8f0f-ed81f34e7161/e84093f3-7daf-47f9-beee-2a07e86aef91"
-					(reference "#PWR069")
 					(unit 1)
 				)
 			)
