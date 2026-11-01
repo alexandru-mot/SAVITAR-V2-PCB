@@ -60,9 +60,9 @@
           "width": 0.0
         },
         {
-          "gap": 0.15,
+          "gap": 0.1,
           "via_gap": 0.25,
-          "width": 0.2
+          "width": 0.1
         }
       ],
       "drc_exclusions": [],
@@ -147,7 +147,7 @@
         "min_silk_clearance": 0.0,
         "min_text_height": 1.0,
         "min_text_thickness": 0.15,
-        "min_through_hole_diameter": 0.3,
+        "min_through_hole_diameter": 0.15,
         "min_track_width": 0.1,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.25,
@@ -863,7 +863,7 @@
         "uuid": "f6d97783-3721-4b78-8f0f-ed81f34e7161"
       }
     ],
-    "used_designators": "#PWR97,#PWR101,TP3-5",
+    "used_designators": "",
     "variants": [
       {
         "name": "SENSOR_ARRAY"
