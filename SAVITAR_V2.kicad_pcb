@@ -1175,7 +1175,7 @@
 		(property "Reference" "C1"
 			(at 0 -1.43 0)
 			(layer "F.SilkS")
-			(uuid "095eb96f-f697-46a5-9d62-e847147a6244")
+			(uuid "f38d7521-a158-4281-bccb-2d5177380885")
 			(effects
 				(font
 					(size 1 1)
@@ -1183,10 +1183,10 @@
 				)
 			)
 		)
-		(property "Value" "10uF (X7R)"
+		(property "Value" "4.7uF (X7R)"
 			(at 0 1.43 0)
 			(layer "F.Fab")
-			(uuid "2f3d9f6c-26a8-47b5-8a83-1eaba91a318e")
+			(uuid "730fc09e-e8a9-43ec-b109-7c8bd7b7a728")
 			(effects
 				(font
 					(size 1 1)
@@ -1198,7 +1198,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6559fdcb-b702-4d6e-9d36-1b49dd2dca45")
+			(uuid "4b487ebf-7291-479d-bf5f-51207b7976f9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1209,7 +1209,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "8a5b3072-a7e5-4654-bf46-9066cfb45431")
+			(uuid "81d42fef-ad42-4954-bb2c-282f26a65c30")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1217,6 +1217,7 @@
 			)
 		)
 		(property ki_fp_filters "C_*")
+		(path "/c16c02dc-523d-461d-bb67-ac432d665908/f0a59150-e9e1-46aa-a340-497ab36332da")
 		(sheetname "/SAMD51 ESP32/")
 		(sheetfile "MCU.kicad_sch")
 		(units
@@ -1285,7 +1286,7 @@
 			(size 0.9 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "Net-(U2-VDDCORE)")
+			(net "GND")
 			(pintype "passive")
 			(uuid "81fdb151-30c5-48d6-b2fb-d44ff8d4ba0a")
 		)
@@ -1294,7 +1295,7 @@
 			(size 0.9 0.95)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
-			(net "GND")
+			(net "Net-(U2-VDDCORE)")
 			(pintype "passive")
 			(uuid "c848e8e6-b90d-45e2-8777-953b90e748b0")
 		)
@@ -1320,7 +1321,7 @@
 		(property "Reference" "R59"
 			(at 0 -1.17 0)
 			(layer "F.SilkS")
-			(uuid "fae21caf-c944-4953-b7ce-34c7beaee34c")
+			(uuid "7b3d55eb-4e9f-4253-8bc6-1ff455d45780")
 			(effects
 				(font
 					(size 1 1)
@@ -1331,7 +1332,7 @@
 		(property "Value" "510Ω"
 			(at 0 1.17 0)
 			(layer "F.Fab")
-			(uuid "f3abd1b0-fe6f-4b54-bb55-18762dea3505")
+			(uuid "ad4c17e9-5cac-40bf-924c-de8a94e57ff7")
 			(effects
 				(font
 					(size 1 1)
@@ -1343,33 +1344,21 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e7ada216-f0c2-4463-a509-d5212cb53515")
+			(uuid "0e8b3d33-6e37-49ea-a2a4-845952bc8597")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor, US symbol"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "90d2054e-11f3-4a21-8030-37ed71c46cb1")
+			(uuid "3e0a351c-f545-4dd5-8e93-82b90a00fd15")
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "4eccf231-2873-4f98-81d8-37b0b22e6e92")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -1881,7 +1870,7 @@
 		(property "Reference" "R58"
 			(at 0 -1.17 0)
 			(layer "F.SilkS")
-			(uuid "0d5264a6-1f26-482f-90a7-acf63a9ae18d")
+			(uuid "37039e67-b909-4096-b8ab-25c5d1687f47")
 			(effects
 				(font
 					(size 1 1)
@@ -1892,7 +1881,7 @@
 		(property "Value" "510Ω"
 			(at 0 1.17 0)
 			(layer "F.Fab")
-			(uuid "78dd8237-78cc-44f3-9bd0-1d41409a987d")
+			(uuid "05ddb1df-9dd8-4018-95a3-7458b415c3fc")
 			(effects
 				(font
 					(size 1 1)
@@ -1904,33 +1893,21 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4d217375-dfb5-4b77-bf35-04282e715431")
+			(uuid "0c88968f-a96b-44ee-a9de-3c0edee4fcb5")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor, US symbol"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "69caec61-0c31-47c2-a622-18079077f6d3")
+			(uuid "f9c667f8-c94e-46f7-b3d6-145d6e18fd4a")
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "fe3e5901-438b-47c2-8ba9-d4aeb4b0e062")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -3916,7 +3893,7 @@
 		(property "Reference" "JP1"
 			(at 0 -1.8 0)
 			(layer "F.SilkS")
-			(uuid "6d5eb9c7-0cef-48b1-8544-b5273360bbfd")
+			(uuid "b0bb6f2e-426c-4a7f-800e-504c8a1955b0")
 			(effects
 				(font
 					(size 1 1)
@@ -3927,7 +3904,7 @@
 		(property "Value" "SolderJumper_2_Open"
 			(at 0 1.9 0)
 			(layer "F.Fab")
-			(uuid "fdcb8d15-5c6e-4d5d-b260-61ca8590d72f")
+			(uuid "4d59d38e-69ca-4fed-ab84-e24d8b2d8b87")
 			(effects
 				(font
 					(size 1 1)
@@ -3940,7 +3917,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e1921ac8-e0b0-4b64-8ad3-e8a9c93bba42")
+			(uuid "83970e5c-0530-46f5-bdfe-3c926522c112")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3948,12 +3925,12 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Solder Jumper, 2-pole, open"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "812d5743-66e8-4997-9a75-cbb2b446a796")
+			(uuid "be6fee9a-40c5-4926-860f-8316a938d225")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4858,7 +4835,7 @@
 		(property "Reference" "C5"
 			(at 0 -1.16 0)
 			(layer "F.SilkS")
-			(uuid "c96a2f43-d415-4c33-873b-c1ba857b299c")
+			(uuid "3d88fe4b-4c44-4d32-b662-bc23e8fce6b8")
 			(effects
 				(font
 					(size 1 1)
@@ -4869,7 +4846,7 @@
 		(property "Value" "1uF (X7R)"
 			(at 0 1.16 0)
 			(layer "F.Fab")
-			(uuid "c8b7bfd8-350f-4137-a3d0-189d4bc2c543")
+			(uuid "6679f315-66ce-425b-b728-99393dfe2e6e")
 			(effects
 				(font
 					(size 1 1)
@@ -4881,33 +4858,21 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2892941c-9106-4c7d-8d88-b8a440286723")
+			(uuid "ad669719-1e44-4ab3-bddd-b4be21fb6bac")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7f84ec24-ab0f-4e8c-a5a0-04a6ab426bf5")
+			(uuid "def31f4e-a82a-4b4b-8789-69558ed60a53")
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "35fc45df-5412-4037-a90f-612993872afd")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -7652,7 +7617,7 @@
 		(property "Reference" "D7"
 			(at 0 -1.43 0)
 			(layer "F.SilkS")
-			(uuid "c1ce6f3d-2d19-4425-856c-c5ce4e3cfc3d")
+			(uuid "20095df4-5313-423f-acee-aed3ea3554fb")
 			(effects
 				(font
 					(size 1 1)
@@ -7663,7 +7628,7 @@
 		(property "Value" "SML-D12D8WT86"
 			(at 0 1.43 0)
 			(layer "F.Fab")
-			(uuid "f9d0da03-b664-4202-9347-fb157e25cceb")
+			(uuid "43292cdd-ecd6-404d-b42b-d1932f21a63e")
 			(effects
 				(font
 					(size 1 1)
@@ -7675,29 +7640,30 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ffe6463b-fd89-448a-9ac5-d4947f26c695")
+			(uuid "7ff85907-5f6a-444d-aa1b-12c6a1cbf3f8")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Light emitting diode"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "d5ceaf14-8d43-4ee8-9dae-4cd1bd084aeb")
+			(uuid "b03f70d4-88e1-40c9-b254-dde070dda311")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+		(property "Sim.Pins" "1=K 2=A"
 			(at 0 0 0)
-			(layer "F.SilkS")
+			(unlocked yes)
+			(layer "F.Fab")
 			(hide yes)
-			(uuid "dc186bea-be12-4eb5-84d3-45c1c015306c")
+			(uuid "fdd3e807-b338-49da-b5a4-c468b2078836")
 			(effects
 				(font
 					(size 1 1)
@@ -9100,7 +9066,7 @@
 		(property "Reference" "R39"
 			(at 0 -1.17 0)
 			(layer "F.SilkS")
-			(uuid "a9cec879-dec5-43e0-a2da-28a76c3f4cab")
+			(uuid "bc15cf09-aced-453c-9117-ab453c9d4154")
 			(effects
 				(font
 					(size 1 1)
@@ -9111,7 +9077,7 @@
 		(property "Value" "10kΩ"
 			(at 0 1.17 0)
 			(layer "F.Fab")
-			(uuid "fbe6997c-0cb1-4a4e-9e39-d4f2a214ff00")
+			(uuid "5c78929d-0fb9-4d21-ac15-ae815bef5be4")
 			(effects
 				(font
 					(size 1 1)
@@ -9123,33 +9089,21 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "dbfdac3d-7f12-4ce1-8cab-551d16478f11")
+			(uuid "471cd793-8708-4f81-95a1-e93daccb6ce4")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor, US symbol"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "31b5a2b5-539e-44ce-8413-c02014956909")
+			(uuid "0b6e640e-50f8-40ef-b89b-9df8d19ca53d")
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "766e245b-dcf0-4b96-b67e-c079c9ff3cea")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -9619,14 +9573,14 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:FPC-SMD_22P-P0.50_FPC-05F-22PH20"
+	(footprint "EasyEDA:FPC-SMD_22P-P0.50_FPC-05F-22PH20"
 		(layer "F.Cu")
 		(uuid "56159dc2-d2f9-47d4-a4b2-c88dc4fe898e")
 		(at 189.4 163.4525 180)
-		(property "Reference" "FPC1"
-			(at 0 -5.338 0)
+		(property "Reference" "FPC2"
+			(at 0 -5.338 180)
 			(layer "F.SilkS")
-			(uuid "90ce38e7-d9c7-45eb-a6ed-d736c827dfa1")
+			(uuid "4947ada7-7b36-44cc-8b3c-91160459a868")
 			(effects
 				(font
 					(size 1 1)
@@ -9635,9 +9589,9 @@
 			)
 		)
 		(property "Value" "FPC-05F-22PH20"
-			(at 0 5.338 0)
+			(at 0 5.338 180)
 			(layer "F.Fab")
-			(uuid "73d2cfc7-de69-4014-a333-cba07bd53628")
+			(uuid "b8f2c27a-1483-4240-86aa-957eba139d00")
 			(effects
 				(font
 					(size 1 1)
@@ -9645,11 +9599,11 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
-			(at 0 0 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/C2856804.pdf"
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "3c528ea8-fc93-4e10-9ec2-0b76218ad0c5")
+			(uuid "2ac1a20e-3e98-40b7-be80-c85fa0be5af8")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9657,10 +9611,10 @@
 			)
 		)
 		(property "Description" ""
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "dc5860b6-9b5f-4092-93d8-664f12d5352b")
+			(uuid "2d2152c7-fdca-4105-a01c-e98eea243dd3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9668,7 +9622,7 @@
 			)
 		)
 		(property "LCSC Part" "C2856804"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "9c472d74-a278-494b-bd74-a88843db45bd")
@@ -9679,9 +9633,35 @@
 				)
 			)
 		)
-		(path "/e84093f3-7daf-47f9-beee-2a07e86aef91/d6e18d39-233a-4dae-b693-42b3f67d902a")
-		(sheetname "/SENSOR ARRAY/")
-		(sheetfile "SENSOR_ARRAY.kicad_sch")
+		(property "Manufacturer" "XUNPU(讯普)"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "9d6b1baf-2b83-4eef-a07b-f62992c9b6b5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "MPN" "FPC-05F-22PH20"
+			(at 0 0 180)
+			(unlocked yes)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2f6998d4-b6bc-4c1c-af2d-62780204ab53")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(path "/c16c02dc-523d-461d-bb67-ac432d665908/167bbca7-f85e-4594-b03c-85a36042b12c")
+		(sheetname "/SAMD51 ESP32/")
+		(sheetfile "MCU.kicad_sch")
 		(units
 			(unit
 				(name "A")
@@ -9836,7 +9816,7 @@
 			(uuid "d39f5018-9ef7-49b6-87d7-a985ff3c6a7c")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 0)
+			(at 0 0 180)
 			(layer "F.Fab")
 			(uuid "979be9ae-c937-46e0-b61a-7e79a939dbf7")
 			(effects
@@ -9850,7 +9830,7 @@
 			(at -5.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "GND")
+			(net "/SAMD51 ESP32/SEN_EN")
 			(pinfunction "1_1")
 			(pintype "unspecified")
 			(uuid "0a8d82a4-fbc2-4c7a-978a-37fdb543d64e")
@@ -9859,7 +9839,7 @@
 			(at -4.75 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "VCC")
+			(net "/SAMD51 ESP32/SEN_A2")
 			(pinfunction "2_2")
 			(pintype "unspecified")
 			(uuid "bd860385-bd05-4bb6-9d20-c70cd81e5057")
@@ -9868,7 +9848,7 @@
 			(at -4.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S0")
+			(net "/SAMD51 ESP32/SEN_A1")
 			(pinfunction "3_3")
 			(pintype "unspecified")
 			(uuid "f1332d8e-d265-4b83-9fca-de660d5fe995")
@@ -9877,7 +9857,7 @@
 			(at -3.75 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S1")
+			(net "/SAMD51 ESP32/SEN_A0")
 			(pinfunction "4_4")
 			(pintype "unspecified")
 			(uuid "eb2c30aa-6511-424f-931c-5c60b218d174")
@@ -9886,7 +9866,7 @@
 			(at -3.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S2")
+			(net "/SAMD51 ESP32/SEN_S15")
 			(pinfunction "5_5")
 			(pintype "unspecified")
 			(uuid "03597bcc-08a1-4d5f-9596-178781a8f74f")
@@ -9895,7 +9875,7 @@
 			(at -2.75 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S3")
+			(net "/SAMD51 ESP32/SEN_S14")
 			(pinfunction "6_6")
 			(pintype "unspecified")
 			(uuid "1aeab246-535d-4407-aeaa-12aae13392fc")
@@ -9904,7 +9884,7 @@
 			(at -2.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S4")
+			(net "/SAMD51 ESP32/SEN_S13")
 			(pinfunction "7_7")
 			(pintype "unspecified")
 			(uuid "f0a10347-4e4f-4b27-bb5c-df8af99366d7")
@@ -9913,7 +9893,7 @@
 			(at -1.75 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S5")
+			(net "/SAMD51 ESP32/SEN_S12")
 			(pinfunction "8_8")
 			(pintype "unspecified")
 			(uuid "e748b457-d471-48a6-ac8c-44f45cb3ce4a")
@@ -9922,7 +9902,7 @@
 			(at -1.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S6")
+			(net "/SAMD51 ESP32/SEN_S11")
 			(pinfunction "9_9")
 			(pintype "unspecified")
 			(uuid "98758566-8e81-49d0-b6cb-d252ba16e44e")
@@ -9931,7 +9911,7 @@
 			(at -0.75 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S7")
+			(net "/SAMD51 ESP32/SEN_S10")
 			(pinfunction "10_10")
 			(pintype "unspecified")
 			(uuid "2ab71489-e65b-4a94-8bd1-61e42cf12e30")
@@ -9940,7 +9920,7 @@
 			(at -0.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S8")
+			(net "/SAMD51 ESP32/SEN_S9")
 			(pinfunction "11_11")
 			(pintype "unspecified")
 			(uuid "0462fd53-4a57-40ee-a2e0-5defafabb1b4")
@@ -9949,7 +9929,7 @@
 			(at 0.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S9")
+			(net "/SAMD51 ESP32/SEN_S8")
 			(pinfunction "12_12")
 			(pintype "unspecified")
 			(uuid "afabf63c-468b-45c1-ae7e-78d3e69e424c")
@@ -9958,7 +9938,7 @@
 			(at 0.75 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S10")
+			(net "/SAMD51 ESP32/SEN_S7")
 			(pinfunction "13_13")
 			(pintype "unspecified")
 			(uuid "0c849919-8475-4c87-aba0-0c35118675b5")
@@ -9967,7 +9947,7 @@
 			(at 1.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S11")
+			(net "/SAMD51 ESP32/SEN_S6")
 			(pinfunction "14_14")
 			(pintype "unspecified")
 			(uuid "f8fd6956-13a0-44dd-a040-6e8110872b9f")
@@ -9976,7 +9956,7 @@
 			(at 1.75 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S12")
+			(net "/SAMD51 ESP32/SEN_S5")
 			(pinfunction "15_15")
 			(pintype "unspecified")
 			(uuid "f410b6e0-36ba-4ead-a371-a5660f0dee43")
@@ -9985,7 +9965,7 @@
 			(at 2.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S13")
+			(net "/SAMD51 ESP32/SEN_S4")
 			(pinfunction "16_16")
 			(pintype "unspecified")
 			(uuid "626f4809-59cc-43e1-a574-7c780091e019")
@@ -9994,7 +9974,7 @@
 			(at 2.75 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S14")
+			(net "/SAMD51 ESP32/SEN_S3")
 			(pinfunction "17_17")
 			(pintype "unspecified")
 			(uuid "9d0122dd-28a4-4121-9f52-7c92b8555214")
@@ -10003,7 +9983,7 @@
 			(at 3.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/S15")
+			(net "/SAMD51 ESP32/SEN_S2")
 			(pinfunction "18_18")
 			(pintype "unspecified")
 			(uuid "270fbc50-bbe6-44dd-b8a4-0d9d591042a0")
@@ -10012,7 +9992,7 @@
 			(at 3.75 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/A0")
+			(net "/SAMD51 ESP32/SEN_S1")
 			(pinfunction "19_19")
 			(pintype "unspecified")
 			(uuid "4ff72d24-4a8b-4bb2-b614-5d913c3e6847")
@@ -10021,7 +10001,7 @@
 			(at 4.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/A1")
+			(net "/SAMD51 ESP32/SEN_S0")
 			(pinfunction "20_20")
 			(pintype "unspecified")
 			(uuid "8fbe6ac3-240f-43b1-8520-22ebd3e91421")
@@ -10030,7 +10010,7 @@
 			(at 4.75 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/A2")
+			(net "Net-(JP3-A)")
 			(pinfunction "21_21")
 			(pintype "unspecified")
 			(uuid "2a794c19-faa4-4eb1-9198-f57daf0bcbd1")
@@ -10039,7 +10019,7 @@
 			(at 5.25 -1.34 180)
 			(size 0.3 1.5)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(net "/SENSOR ARRAY/EN")
+			(net "GND")
 			(pinfunction "22_22")
 			(pintype "unspecified")
 			(uuid "48c9fb08-951c-4dfa-bbc4-017b459db315")
@@ -10063,7 +10043,7 @@
 			(uuid "47d58f55-3534-4e93-8d0c-a84c2637568d")
 		)
 		(embedded_fonts no)
-		(model "C:/Users/hacke/Documents/KiCad/EasyEDA2KiCad/easyeda2kicad.3dshapes/FPC-SMD_22P-P0.50_FPC-05F-22PH20.wrl"
+		(model "${KICAD_3RD_PARTY}/EasyEDA.3dshapes/FPC-SMD_22P-P0.50_FPC-05F-22PH20.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
@@ -10230,7 +10210,7 @@
 		(property "Reference" "C30"
 			(at 0 -1.16 0)
 			(layer "F.SilkS")
-			(uuid "477e9cff-e739-4a74-ad30-f33c22ce7ab1")
+			(uuid "d65c4f75-85ba-46da-a245-1fed92600285")
 			(effects
 				(font
 					(size 1 1)
@@ -10241,7 +10221,7 @@
 		(property "Value" "10uF (X7R)"
 			(at 0 1.16 0)
 			(layer "F.Fab")
-			(uuid "12956e82-54d4-400e-b01f-30469fbd4665")
+			(uuid "993fd187-8e83-4988-aa27-945e05d56a52")
 			(effects
 				(font
 					(size 1 1)
@@ -10253,33 +10233,21 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "df6758b5-3e2b-4a43-9d89-9e8d9f8dd25c")
+			(uuid "fb4023a3-daa2-4113-a993-8e1a3c283d3c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Unpolarized capacitor"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "31b771d2-d48c-4e69-9816-7a1d08026100")
+			(uuid "8f145504-a669-4ed7-b558-5265974c4a4f")
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "a5b75c79-5546-48dd-a42b-2e9640714c65")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -12051,7 +12019,7 @@
 		(property "Reference" "U2"
 			(at -5.6625 -6 0)
 			(layer "F.SilkS")
-			(uuid "74100960-a30b-4fdc-9a0b-5dbeec57c26a")
+			(uuid "b845ee9e-53cb-43b9-8104-ebb4574b4b87")
 			(effects
 				(font
 					(size 1 1)
@@ -12062,7 +12030,7 @@
 		(property "Value" "ATSAMD51J19A-A"
 			(at 0 7.35 0)
 			(layer "F.Fab")
-			(uuid "8bb9647c-653a-41e9-aa94-79f59066fb04")
+			(uuid "d0d2ff82-031d-4ec4-8384-175cdcb363b9")
 			(effects
 				(font
 					(size 1 1)
@@ -12074,7 +12042,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "226f441b-6fd5-4830-9849-39b27f0e1e67")
+			(uuid "c9ad7ce4-b6dc-4c3f-a8c5-22b23682e431")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12085,7 +12053,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "b514d53c-88f7-450c-9ae8-73bc7095757f")
+			(uuid "bc9c499e-45b4-4c79-a025-781ebf885058")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12101,7 +12069,7 @@
 				(name "A")
 				(pins "1" "2" "3" "4" "13" "14" "15" "16" "17" "18" "19" "20" "29" "30"
 					"31" "32" "35" "36" "37" "38" "41" "42" "43" "44" "45" "46" "51" "57"
-					"58" "52" "55" "53" "21" "34" "47" "22" "33" "54" "48" "7" "56" "8"
+					"58" "52" "55" "53" "21" "34" "47" "54" "33" "22" "48" "7" "56" "8"
 					"61" "62" "63" "64" "5" "6" "9" "10" "11" "12" "23" "24" "25" "26" "27"
 					"28" "39" "40" "49" "50" "59" "60"
 				)
@@ -13715,7 +13683,7 @@
 		(property "Reference" "FB1"
 			(at 0 -1.55 0)
 			(layer "F.SilkS")
-			(uuid "d8b7fb64-8782-4305-a089-c10d31d5d1e7")
+			(uuid "6226f738-172a-4625-82d1-58630d7fa28c")
 			(effects
 				(font
 					(size 1 1)
@@ -13726,7 +13694,7 @@
 		(property "Value" "1kΩ@100MHz"
 			(at 0 1.55 0)
 			(layer "F.Fab")
-			(uuid "2b930a93-ddf4-4efa-943d-6c6f51d99d87")
+			(uuid "fd9395ef-b18b-4273-9b3c-72d5eccf8335")
 			(effects
 				(font
 					(size 1 1)
@@ -13738,33 +13706,21 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "63236b01-d8ff-4642-9f1c-4d638119bddd")
+			(uuid "97fed652-be44-48f9-a5b5-47a1522a18ab")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "FERRITE BEAD 1kΩ 0805 1LN 1.5A 150mΩ"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e80b55fe-28f9-4f47-8ac7-88b3d7f0e1be")
+			(uuid "3c510f68-30d2-4da4-935f-ed1f5b617745")
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "7e192558-ed61-4238-8d6e-00ef287db2cd")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -15659,7 +15615,7 @@
 		(property "Reference" "JP4"
 			(at 0 -1.8 0)
 			(layer "F.SilkS")
-			(uuid "5ff9a1ba-9a53-49bc-9932-20a45a72b479")
+			(uuid "f966fbaa-b6f0-4499-8adc-dcd2545299e4")
 			(effects
 				(font
 					(size 1 1)
@@ -15670,7 +15626,7 @@
 		(property "Value" "SolderJumper_2_Open"
 			(at 0 1.9 0)
 			(layer "F.Fab")
-			(uuid "dc9fad84-d983-4d24-8ab3-32f6eb09a4ea")
+			(uuid "d7e85dfb-ceee-46b8-8ab0-1cf6b081d9a5")
 			(effects
 				(font
 					(size 1 1)
@@ -15683,7 +15639,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5b4960ce-f3ec-4e35-9b30-7214d21f2d61")
+			(uuid "26affc43-4a80-4d8b-9992-46cb4ac3abfa")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -15691,12 +15647,12 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Solder Jumper, 2-pole, open"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "2c9f4038-2f3e-49fe-946a-360be9c61a07")
+			(uuid "f01b8823-a1ec-4dc3-937c-8bf1183ee865")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16192,7 +16148,7 @@
 		(property "Reference" "USBC1"
 			(at 0 -5.645 90)
 			(layer "F.SilkS")
-			(uuid "17ec5b69-874a-40a2-b5a3-ef91864630d6")
+			(uuid "71e5884a-3c36-483a-9735-632b47a7bf9d")
 			(effects
 				(font
 					(size 1 1)
@@ -16203,7 +16159,7 @@
 		(property "Value" "USB_C_Receptacle_USB2.0_16P"
 			(at 0 5.1 90)
 			(layer "F.Fab")
-			(uuid "f67a8ad2-6a9a-46a2-8f8a-75eaa196effc")
+			(uuid "133f0027-f388-4365-82aa-f2456a4c38e7")
 			(effects
 				(font
 					(size 1 1)
@@ -16216,7 +16172,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "37bf693f-c244-4b85-a9ae-1f87fffa8585")
+			(uuid "80690482-258e-477c-8e6c-e6161261cee1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -16229,7 +16185,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "761fc027-3d22-492b-8255-888f3925f7b0")
+			(uuid "a528ac90-9a4a-4256-9bb5-50c24a63321a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17088,7 +17044,7 @@
 		(property "Reference" "SWD_PWR1"
 			(at 0 -1.998 0)
 			(layer "F.SilkS")
-			(uuid "140e70f8-2fe3-40d6-9c5e-d898dde7595e")
+			(uuid "ada36695-86b5-4c3f-8bc7-15df7b1aca2e")
 			(effects
 				(font
 					(size 1 1)
@@ -17099,7 +17055,7 @@
 		(property "Value" "TestPoint"
 			(at 0 2.05 0)
 			(layer "F.Fab")
-			(uuid "f61bbe44-8049-40d2-b5e1-b91f2e89800a")
+			(uuid "6d5cf9da-eee2-4c23-9c21-10c314bc37f7")
 			(effects
 				(font
 					(size 1 1)
@@ -17112,7 +17068,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "02e2697f-2d67-4d34-bdb3-c322f1906458")
+			(uuid "110a9ca5-d815-4400-a1f6-367b52e67fb9")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17120,12 +17076,12 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "test point"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "7a3a7a91-dfbe-411e-9e1c-2c666239645f")
+			(uuid "b304426a-1d81-4f0e-ab93-e39837c26f8e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17347,7 +17303,7 @@
 		(property "Reference" "JP3"
 			(at 0 -1.8 0)
 			(layer "F.SilkS")
-			(uuid "98fd956c-18fc-4df7-8ea7-1eb439b7a697")
+			(uuid "b15c2e4d-9c4f-43ba-8699-07bb0752ce98")
 			(effects
 				(font
 					(size 1 1)
@@ -17358,7 +17314,7 @@
 		(property "Value" "SolderJumper_2_Open"
 			(at 0 1.9 0)
 			(layer "F.Fab")
-			(uuid "3c5263d3-cca1-4a3a-ae89-6871c70a7aa0")
+			(uuid "59c4321b-f951-4b7c-acdf-21e5f11fb7ce")
 			(effects
 				(font
 					(size 1 1)
@@ -17371,7 +17327,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "c5206327-af4f-4819-859e-f1e48589b630")
+			(uuid "c06a6244-edc7-4ccd-a2c0-76e55cb8ff3c")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17379,12 +17335,12 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Solder Jumper, 2-pole, open"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "e9a1055f-fa7e-45c7-a848-d4184387ff5e")
+			(uuid "82b6cb69-22ce-42cf-9049-4501b52c6e4e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17393,7 +17349,7 @@
 			)
 		)
 		(property ki_fp_filters "SolderJumper*Open*")
-		(path "/c16c02dc-523d-461d-bb67-ac432d665908/642437ed-4d4f-4f8a-8d31-b5c8a072f34b")
+		(path "/c16c02dc-523d-461d-bb67-ac432d665908/ca7d332e-2101-4f1a-8430-927244d1d708")
 		(sheetname "/SAMD51 ESP32/")
 		(sheetfile "MCU.kicad_sch")
 		(units
@@ -17544,7 +17500,7 @@
 			(at -0.65 0)
 			(size 1 0.5)
 			(layers "F.Cu" "F.Mask")
-			(net "VCC")
+			(net "Net-(JP3-A)")
 			(pinfunction "A_1")
 			(pintype "passive")
 			(zone_connect 2)
@@ -17580,7 +17536,7 @@
 			(at 0.65 0)
 			(size 1 0.5)
 			(layers "F.Cu" "F.Mask")
-			(net "Net-(JP3-B)")
+			(net "VCC")
 			(pinfunction "B_2")
 			(pintype "passive")
 			(zone_connect 2)
@@ -18132,7 +18088,7 @@
 		(property "Reference" "JP5"
 			(at 0 -1.8 0)
 			(layer "F.SilkS")
-			(uuid "13f4709f-9293-446e-bf85-b4af0a896408")
+			(uuid "6478efac-2d5f-4c8e-a8b5-13e17fa1d04d")
 			(effects
 				(font
 					(size 1 1)
@@ -18143,7 +18099,7 @@
 		(property "Value" "SolderJumper_2_Open"
 			(at 0 1.9 0)
 			(layer "F.Fab")
-			(uuid "01b8b058-8aa0-4f15-be59-530c2363de2c")
+			(uuid "fed99b2c-e235-42c1-ad1f-ec0d26b8d87a")
 			(effects
 				(font
 					(size 1 1)
@@ -18156,7 +18112,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "526c4ef7-a729-4021-9216-eb95a8fe2ef1")
+			(uuid "59550f3b-4eac-4ef8-8c76-1c78a971de1e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18164,12 +18120,12 @@
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Solder Jumper, 2-pole, open"
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "f2b52f94-e1f4-402c-861e-fe318d65c2cb")
+			(uuid "72f3b177-0d49-47cb-ae26-a5eee5009a82")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24328,7 +24284,7 @@
 		(property "Reference" "DRV2"
 			(at 0 0 0)
 			(layer "F.SilkS")
-			(uuid "11efac2a-297a-44e6-a2a9-2c67092750e4")
+			(uuid "49c554d9-6417-4962-8d0e-36220ae50a07")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24340,7 +24296,7 @@
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "c4eb23d3-c304-4780-8269-16ed076447df")
+			(uuid "ebeb512c-4457-4dee-8ab2-9ea205c1201e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24352,7 +24308,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "851dc7d8-a93b-4fd8-bc9d-41f7498f92fb")
+			(uuid "ef6f3381-8b31-4eb8-8de0-efe2e8950b35")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -24363,7 +24319,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6424cda6-4740-45e4-9ff1-b3a34c25f4cb")
+			(uuid "471d924b-a161-4ead-bcad-94753ea8adb1")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25100,7 +25056,7 @@
 		(property "Reference" "D6"
 			(at 0 -1.43 0)
 			(layer "F.SilkS")
-			(uuid "503cb8b4-ec63-47ef-b2a0-ebfe053cbd07")
+			(uuid "4d78a646-b9df-4fed-b868-65502b1629a8")
 			(effects
 				(font
 					(size 1 1)
@@ -25111,7 +25067,7 @@
 		(property "Value" "SML-D12D8WT86"
 			(at 0 1.43 0)
 			(layer "F.Fab")
-			(uuid "3054bea4-bf98-40a6-81aa-1a96af2c8ba9")
+			(uuid "f984db9a-f0a5-4d81-bbb5-7c86e0354a22")
 			(effects
 				(font
 					(size 1 1)
@@ -25123,29 +25079,30 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "ece8f4f0-154f-40af-8910-d09d58017bb7")
+			(uuid "c0037900-484f-4875-9168-a9bddce43984")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Light emitting diode"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "5f42b4fc-bdcd-4b4b-871c-49836af36ebc")
+			(uuid "c7d3c0bc-2abc-4052-9927-1930907bf334")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
+		(property "Sim.Pins" "1=K 2=A"
 			(at 0 0 0)
-			(layer "F.SilkS")
+			(unlocked yes)
+			(layer "F.Fab")
 			(hide yes)
-			(uuid "2482101c-0e0e-446a-aa6e-c4834a6058a9")
+			(uuid "886fa2e4-0888-49ff-9565-da81e365ff04")
 			(effects
 				(font
 					(size 1 1)
@@ -25457,7 +25414,7 @@
 		(property "Reference" "DRV1"
 			(at 0 0 0)
 			(layer "F.SilkS")
-			(uuid "65a41e86-4f44-495f-bfdb-4ccc0966defa")
+			(uuid "d122cad2-e8a0-480f-9e3f-df98b1d0c903")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25469,7 +25426,7 @@
 			(at 0 0 0)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "088a2578-4b27-45a9-9833-19dd713222ca")
+			(uuid "f5d0909b-b0d9-4f82-b9ec-c3af8d28f45d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25481,7 +25438,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6c5e063f-fd44-4cf9-b527-5a62ffbdf498")
+			(uuid "84c80d01-2ff7-4e41-ab3c-30968a9848a0")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -25492,7 +25449,7 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "6afd568d-b139-4b5d-a5b2-7fcaa09e6d53")
+			(uuid "2c4e73bd-da77-4ddd-b419-4e1206540ad3")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -26081,7 +26038,7 @@
 		(property "Reference" "L2"
 			(at 0 -3.55 0)
 			(layer "F.SilkS")
-			(uuid "7d23fe29-0099-4db9-be85-e42db83390ae")
+			(uuid "72704342-643b-43cf-b3e9-c3f400174c13")
 			(effects
 				(font
 					(size 1 1)
@@ -26092,7 +26049,7 @@
 		(property "Value" "10uH"
 			(at 0 3.55 0)
 			(layer "F.Fab")
-			(uuid "973c7fb1-6aa1-49f5-9073-15655971f1ea")
+			(uuid "ae8166c7-6af5-4b04-993d-d4db28f75d9a")
 			(effects
 				(font
 					(size 1 1)
@@ -26104,33 +26061,21 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "faf584ea-2212-473b-9b9c-630a4fa10390")
+			(uuid "ebea8dea-1b14-4514-8e35-c5af211ca97a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Inductor"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "1e323678-a14f-455f-bdf7-a56fb196e38a")
+			(uuid "f440cd1d-0105-4cba-a617-c50c1012c920")
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "inductor/SMD"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "83292195-dc3f-4b99-8f70-67e14c273287")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -27389,7 +27334,7 @@
 		(property "Reference" "R37"
 			(at 0 -1.17 0)
 			(layer "F.SilkS")
-			(uuid "793afc1b-665d-4c3f-a467-45e8701a8345")
+			(uuid "6d452a18-0898-4f70-866f-c52108473c78")
 			(effects
 				(font
 					(size 1 1)
@@ -27400,7 +27345,7 @@
 		(property "Value" "10kΩ"
 			(at 0 1.17 0)
 			(layer "F.Fab")
-			(uuid "c558be6f-ab10-4999-88a3-343bff5a727d")
+			(uuid "d847301b-c39b-4117-b709-1cd4c033a1e9")
 			(effects
 				(font
 					(size 1 1)
@@ -27412,33 +27357,21 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "028c5d8d-0d67-4b1c-951f-7cffc939b8e9")
+			(uuid "1cf1c9c7-e665-46e7-b2ee-e1e2447849a2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Resistor, US symbol"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "dce00364-11cd-47f6-815d-a80dc7557a55")
+			(uuid "91af85fe-a463-4e11-896e-e96cc1919be4")
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "57338857-423a-4023-a682-3c40b4b9c614")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -33049,6 +32982,82 @@
 			(at 188.328539 224.32 0)
 			(layer "Dwgs.User")
 			(uuid "8cb3eb70-21b6-41d8-9ead-82dfb88c72fe")
+			(effects
+				(font
+					(size 1.5 1.5)
+					(thickness 0.3)
+				)
+			)
+		)
+	)
+	(dimension
+		(type orthogonal)
+		(layer "Dwgs.User")
+		(uuid "b8e1dffe-aa01-4fb7-a555-b83d02a8f099")
+		(pts
+			(xy 173.381361 41.829002) (xy 284.427153 41.829002)
+		)
+		(height -40.829002)
+		(orientation 0)
+		(format
+			(prefix "")
+			(suffix "")
+			(units 3)
+			(units_format 0)
+			(precision 4)
+			(suppress_zeroes yes)
+		)
+		(style
+			(thickness 0.2)
+			(arrow_length 1.27)
+			(text_position_mode 0)
+			(arrow_direction outward)
+			(extension_height 0.58642)
+			(extension_offset 0.5)
+			(keep_text_aligned yes)
+		)
+		(gr_text "111.0458"
+			(at 228.904257 -0.8 0)
+			(layer "Dwgs.User")
+			(uuid "b8e1dffe-aa01-4fb7-a555-b83d02a8f099")
+			(effects
+				(font
+					(size 1.5 1.5)
+					(thickness 0.3)
+				)
+			)
+		)
+	)
+	(dimension
+		(type orthogonal)
+		(layer "Dwgs.User")
+		(uuid "d94cda4d-16a6-4cb8-8209-2a6c098ec14b")
+		(pts
+			(xy 293.112295 38.775573) (xy 165.039546 38.775573)
+		)
+		(height -46.375573)
+		(orientation 0)
+		(format
+			(prefix "")
+			(suffix "")
+			(units 3)
+			(units_format 0)
+			(precision 4)
+			(suppress_zeroes yes)
+		)
+		(style
+			(thickness 0.2)
+			(arrow_length 1.27)
+			(text_position_mode 0)
+			(arrow_direction outward)
+			(extension_height 0.58642)
+			(extension_offset 0.5)
+			(keep_text_aligned yes)
+		)
+		(gr_text "128.0727"
+			(at 229.07592 -9.4 0)
+			(layer "Dwgs.User")
+			(uuid "d94cda4d-16a6-4cb8-8209-2a6c098ec14b")
 			(effects
 				(font
 					(size 1.5 1.5)

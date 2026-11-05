@@ -1,0 +1,138 @@
+{
+  "generated": "2026-11-04T09:30:17.159Z",
+  "inputs": {
+    "speed": 2,
+    "speedUnit": "ms",
+    "motorRPM": 3000,
+    "rpmRef": "output",
+    "gearRatio": 26,
+    "wheelDia": 26,
+    "wheelWidth": 22,
+    "dWS": 80,
+    "dWW": 100,
+    "presetC": 60,
+    "presetB": 80,
+    "presetS": 100,
+    "nSensors": 16,
+    "boardWidth": 111,
+    "widthMode": "span",
+    "pkgWidth": 3.7,
+    "edgeClear": 4,
+    "shape": "curved",
+    "arcRadius": 175,
+    "arcDir": "forward",
+    "loopHz": 1000,
+    "latency": 1.5,
+    "interpK": 4,
+    "warnReactMs": 20,
+    "warnUpdates": 10,
+    "warnRemainPct": 50,
+    "chassisRear": 35,
+    "trackDir": "left",
+    "trackRadius": 80
+  },
+  "results": {
+    "geometricReactionTime_ms": 40,
+    "travelPerMillisecond_mm": 2,
+    "loopUpdatesAvailable": 40,
+    "remainingAfterLatency_ms": 38.5,
+    "requiredHz": {
+      "for5": 125,
+      "for10": 250,
+      "for20": 500
+    },
+    "sensorPitch_mm": 7.4,
+    "activeSpan_mm": 111,
+    "pcbWidth_mm": 122.7,
+    "sensorPositions_mm": [
+      {
+        "x": -55.5,
+        "y": 70.966,
+        "tilt_deg": -18.49
+      },
+      {
+        "x": -48.31,
+        "y": 73.2,
+        "tilt_deg": -16.025
+      },
+      {
+        "x": -41.03,
+        "y": 75.122,
+        "tilt_deg": -13.559
+      },
+      {
+        "x": -33.674,
+        "y": 76.73,
+        "tilt_deg": -11.094
+      },
+      {
+        "x": -26.256,
+        "y": 78.019,
+        "tilt_deg": -8.629
+      },
+      {
+        "x": -18.789,
+        "y": 78.988,
+        "tilt_deg": -6.163
+      },
+      {
+        "x": -11.287,
+        "y": 79.636,
+        "tilt_deg": -3.698
+      },
+      {
+        "x": -3.765,
+        "y": 79.96,
+        "tilt_deg": -1.233
+      },
+      {
+        "x": 3.765,
+        "y": 79.96,
+        "tilt_deg": 1.233
+      },
+      {
+        "x": 11.287,
+        "y": 79.636,
+        "tilt_deg": 3.698
+      },
+      {
+        "x": 18.789,
+        "y": 78.988,
+        "tilt_deg": 6.163
+      },
+      {
+        "x": 26.256,
+        "y": 78.019,
+        "tilt_deg": 8.629
+      },
+      {
+        "x": 33.674,
+        "y": 76.73,
+        "tilt_deg": 11.094
+      },
+      {
+        "x": 41.03,
+        "y": 75.122,
+        "tilt_deg": 13.559
+      },
+      {
+        "x": 48.31,
+        "y": 73.2,
+        "tilt_deg": 16.025
+      },
+      {
+        "x": 55.5,
+        "y": 70.966,
+        "tilt_deg": 18.49
+      }
+    ],
+    "noLoadTopSpeed_ms": 4.084070449666732,
+    "wheelSpeeds_ms": {
+      "left": 0.75,
+      "right": 3.25
+    },
+    "yawRate_rads": 25,
+    "lineOffsetAtArray_mm": null,
+    "tightestTrackableRadius_mm": 85.40765765765765
+  }
+}
