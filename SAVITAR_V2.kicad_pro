@@ -811,6 +811,30 @@
           "label": "#",
           "name": "${ITEM_NUMBER}",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer",
+          "name": "Manufacturer",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC Part #",
+          "name": "LCSC Part #",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC Part",
+          "name": "LCSC Part",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "MPN",
+          "name": "MPN",
+          "show": false
         }
       ],
       "filter_string": "",
@@ -863,7 +887,7 @@
         "uuid": "f6d97783-3721-4b78-8f0f-ed81f34e7161"
       }
     ],
-    "used_designators": "JP6-9,Q10,#PWR37,#PWR141,R12,R26,C17,C26,C31-33",
+    "used_designators": "#PWR48,#PWR52,#PWR55-56,#PWR99,ESP_BOOT_JMP1-2,J2-3,SW1",
     "variants": [
       {
         "name": "SENSOR_ARRAY"
