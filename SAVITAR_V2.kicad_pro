@@ -39,9 +39,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 0.8,
-          "height": 1.27,
-          "width": 2.54
+          "drill": 1.2,
+          "height": 2.2,
+          "width": 2.2
         },
         "silk_line_width": 0.1,
         "silk_text_italic": false,
@@ -538,73 +538,13 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
-      },
-      {
-        "bus_width": 31,
-        "clearance": 0.0,
-        "line_style": 0,
-        "name": "Motor",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "priority": 0,
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "tuning_profile": "",
-        "wire_width": 31
       }
     ],
     "meta": {
       "version": 5
     },
     "net_colors": null,
-    "netclass_assignments": {
-      "/SAMD51 ESP32/MOT_A1": [
-        "Motor"
-      ],
-      "/SAMD51 ESP32/MOT_A2": [
-        "Motor"
-      ],
-      "/SAMD51 ESP32/MOT_B1": [
-        "Motor"
-      ],
-      "/SAMD51 ESP32/MOT_B2": [
-        "Motor"
-      ],
-      "/SAMD51 ESP32/SENSE_IN_A1": [
-        "Motor"
-      ],
-      "/SAMD51 ESP32/SENSE_IN_B1": [
-        "Motor"
-      ],
-      "/TEENSY4 ESP32/AOUT1": [
-        "Motor"
-      ],
-      "/TEENSY4 ESP32/AOUT2": [
-        "Motor"
-      ],
-      "/TEENSY4 ESP32/BOUT1": [
-        "Motor"
-      ],
-      "/TEENSY4 ESP32/BOUT2": [
-        "Motor"
-      ],
-      "/TEENSY4 ESP32/MOT_A1": [
-        "Motor"
-      ],
-      "/TEENSY4 ESP32/MOT_A2": [
-        "Motor"
-      ],
-      "/TEENSY4 ESP32/MOT_B1": [
-        "Motor"
-      ],
-      "/TEENSY4 ESP32/MOT_B2": [
-        "Motor"
-      ],
-      "/TEENSY4 ESP32/SENSE_IN_A1": [
-        "Motor"
-      ],
-      "/TEENSY4 ESP32/SENSE_IN_B1": [
-        "Motor"
-      ]
-    },
+    "netclass_assignments": null,
     "netclass_patterns": []
   },
   "pcbnew": {
@@ -887,7 +827,7 @@
         "uuid": "f6d97783-3721-4b78-8f0f-ed81f34e7161"
       }
     ],
-    "used_designators": "#PWR48,#PWR52,#PWR55-56,#PWR99,ESP_BOOT_JMP1-2,J2-3,SW1",
+    "used_designators": "",
     "variants": [
       {
         "name": "SENSOR_ARRAY"

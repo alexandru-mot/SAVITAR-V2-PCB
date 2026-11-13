@@ -2,4 +2,5 @@
 	(version 7)
 	(lib (name "SAVITAR") (type "KiCad") (uri "${KIPRJMOD}/footprints/SAVITAR.pretty") (options "") (descr ""))
 	(lib (name "easyeda2kicad") (type "KiCad") (uri "${KIPRJMOD}/EasyEDA2KiCad/easyeda2kicad.pretty") (options "") (descr ""))
+	(lib (name "TS1187ABAB") (type "KiCad") (uri "${KIPRJMOD}/footprints/TS1187ABAB.pretty") (options "") (descr ""))
 )
