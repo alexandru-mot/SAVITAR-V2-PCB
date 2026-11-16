@@ -48,7 +48,7 @@
 	(fp_line (start -7.70 -0.89) (end 7.70 -0.89) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 7.70 -0.89) (end 7.70 4.23) (layer F.CrtYd) (width 0.05))
 	(fp_line (start 7.70 4.23) (end -7.70 4.23) (layer F.CrtYd) (width 0.05))
-	(model "C:/Users/hacke/Documents/KiCad/EasyEDA2KiCad/easyeda2kicad.3dshapes/FPC-SMD_22P-P0.50_FPC-05F-22PH20.wrl"
+	(model "${KIPRJMOD}/EasyEDA2KiCad/easyeda2kicad.3dshapes/FPC-SMD_22P-P0.50_FPC-05F-22PH20.wrl"
 		(offset (xyz 0.000 0.000 0.000))
 		(scale (xyz 1 1 1))
 		(rotate (xyz 0 0 0))

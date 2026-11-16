@@ -1,0 +1,3 @@
+MAC: easyeda2kicad --full --lcsc_id=C2040 --output /Users/alexandrumot/Documents/KiCad/10.0/projects/SAVITAR-PCB/EasyEDA2KiCad --project-relative
+
+WINDOWS: easyeda2kicad --full --lcsc_id=C131337 --output C:\Users\hacke\Documents\KiCad\10.0\projects\SAVITAR_PCB\EasyEDA2KiCad --project-relative
